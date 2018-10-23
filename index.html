@@ -13,22 +13,19 @@
     
 </body>
 <script>
-var student_array=[];
+var settings = {
+  url: "http://api.meetup.com/2/events?key=6d367432270505e343b4d7c60634879&group_urlname=girl-develop-it-orange-county&sign=true",
+  method: "GET",
+  dataType:"jsonp",
+  success: function(response){
+      console.log(response);
 
-function getDataFromServer(){
-        var the_data={api_key:'6d367432270505e343b4d7c60634879'}
-    
-
-$.ajax({
-    data:the_data,
-    dataType:'json',
-    method:'get',
-    url:'https://api.meetup.com/2/events?key=6d367432270505e343b4d7c60634879&group_urlname=girl-develop-it-orange-county&sign=true',
-    success: function(response){
-        console.log(response);
-    }
-});
+  },
+  error: err=>console.log(err)
 }
+
+
+$.ajax(settings)
 
 </script>
 </html>
