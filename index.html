@@ -17,29 +17,51 @@
 <body>
     <header>
         <h1>Women in Tech Event Finder</h1>
-
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav id="navigation">
-        <ul>
-            <li>Home</li>
-            <li>About Us</li>
-        </ul>
-    </nav>
-    <div id="events">
-        <figure></figure>
-        <figure></figure>
-        <figure></figure>
-        <figure></figure>
-        <figure></figure>
+    <div id="events-to-choose">
+        <figure><img src="" onclick=""></figure>
+        <figure><img src="" onclick=""></figure>
+        <figure><img src="" onclick=""></figure>
+        <figure><img src="" onclick=""></figure>
+        <figure><img src="" onclick=""></figure>
         <!--when we implement bootstrap - large screens - 4 images across?-->
         <!--phones - 1 image?-->
         <!--figure and figcaption? -->
     </div>
-    <div id="description"></div>
-    <div id="map"></div>
-   
-    <script async defer
+    <div id="event-chosen">
+        <div class="event-name"></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="event-information">
+            <div class="event-img">
+                <figure></figure>
+            </div>
+            <div class="event-info">
+                <span class="date">date:</span>
+                <span class="time">time:</span>
+                <span class="address">address:</span>
+                <span class="host">hosted by:</span>
+                <button class="btn btn-success">Join Now</button>
+            </div>
+        </div>
+    </div>
+    <div id="twitter-and-google-maps">
+        <div id="twitter-feed"></div>
+        <div id="map">
+              <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7EmAMUOtRxuQL7dRVgDXjfgFpPvNa9ng&callback=initMap">
     </script>
+      </div>
+    </div>
 </body>
 </html>
