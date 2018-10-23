@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="main.js"></script>
     <title>Document</title>
     <style>
         #map{
@@ -15,61 +17,7 @@
 <body>
     <h1>Google Map</h1>
     <div id="map"></div>
-    <script>
-        function initMap () {
-            var options = {
-                zoom: 12,
-                center: {lat:34.0522, lng:-118.2437} //los angeles coords
-            }
-            var map = new google.maps.Map(document.getElementById('map'),options);
-            
-            //adding marker to the map
-            var marker = new google.maps.Marker ({
-                position:{lat:34.0235, lng:-118.2813},
-                map:map,
-            });
-            
-            //adding a custom icon
-            var icon = {
-                url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
-                scaledSize: new google.maps.Size(50, 50), 
-                origin: new google.maps.Point(0,0), 
-                anchor: new google.maps.Point(0,0)
-            }
-            
-            //the Shrine coords
-            addMarker({lat:34.0522, lng:-118.2437});
-            //hollywood bowl coords
-            addMarker({lat:34.1122, lng:-118.3391});
-            
-            
-            //adding multiple markers to the map
-            function addMarker (coordinates) {
-                var marker = new google.maps.Marker ({
-                position:coordinates,
-                map:map,
-                icon:icon
-                });
-            }
-
-        var google_maps_object = {
-            url: "https://maps.googleapis.com/maps/api/directions/json?origin=75+9th+Ave+New+York,+NY&destination=MetLife+Stadium+1+MetLife+Stadium+Dr+East+Rutherford,+NJ+07073&key=AIzaSyB7EmAMUOtRxuQL7dRVgDXjfgFpPvNa9ng",
-            method: "GET",
-            data: {
-                origin: "2301 N Highland Ave, Los Angeles, CA 90068",
-                destination: "665 W Jefferson Blvd, Los Angeles, CA 90007",
-                mode: "driving",
-                key: "AIzaSyB7EmAMUOtRxuQL7dRVgDXjfgFpPvNa9ng"
-                },
-            dataType: "json",
-            success: function (response) {
-                  console.log(response);
-            }
-        };
-
-      $.ajax(google_maps_object);
-    }
-    </script>
+   
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7EmAMUOtRxuQL7dRVgDXjfgFpPvNa9ng&callback=initMap">
     </script>
