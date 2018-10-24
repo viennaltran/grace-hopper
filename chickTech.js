@@ -1,12 +1,6 @@
 var globalReply;
 var storeReply = {};
-// var groupNameArr = [];
-// var eventDescriptionsArr = [];
-// var eventUrlArr = [];
-// var venueNameArr = [];
-// var venueAddressArr = [];
-// var venueCityArr = [];
-// var venueStateArr = [];
+
 
 $(document).ready(initializeApp);
 
@@ -120,7 +114,16 @@ console.log(storeReply);
 function addDataOntoPage () {
     if($(event.currentTarget).attr("index") === "0"){
         console.log("I am alive");
-        $(".address").text("Address: " + venueAddressArr[0] + ", " + venueCityArr[0] + ", " + venueStateArr[0]);
+        $(".event-name").text(storeReply.eventName[0]);
+        $(".date").text("Date: " + storeReply.date[0]);
+        $(".host").text("Hosted by: " + storeReply.groupName[0]);
+        $(".address").text("Address: " + storeReply.venueAddress[0] + ", " + storeReply.venueCity[0] + ", " + storeReply.venueState[0]);
+        var coordinates = {
+            lat: storeReply.latitude[0],
+            lng: storeReply.longitude[0]
+        }
+
+        addOneMarkerToMap(coordinates);
     }
 }
 
@@ -128,9 +131,23 @@ function addDataOntoPage () {
 
 function hideLandingPageAndShowDataPage () {
     // $("header").addClass("hidePage");
-    $("#events-to-choose").addClass("hidePage");
+    $("#events-to-choose").attr('id', "hidePage");
     $("#event-chosen").removeClass("hidePage");
     $("#twitter-and-google-maps").removeClass("hidePage");
 }
 
+function addOneMarkerToMap(coordinates) {
+    var icon = {
+        url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
+        scaledSize: new google.maps.Size(30, 30),
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point(0,0)
+    }
+
+    var marker = new google.maps.Marker ({
+        position:coordinates,
+        map:map,
+        icon:icon
+    });
+}
 

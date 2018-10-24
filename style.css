@@ -54,8 +54,8 @@ header{
 .event-info{
     background-color:red;
     display:inline-block;
-position:relative;
-left:80%;
+    position:relative;
+    left:80%;
 }
 .date,.time,.address,.host{
     display:block;
@@ -70,5 +70,9 @@ ol{
 }
 
 .hidePage {
+    display: none;
+}
+
+#hidePage {
     display: none;
 }

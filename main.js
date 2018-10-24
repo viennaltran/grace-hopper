@@ -67,20 +67,10 @@ function createPhotoArray(){
                 var link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
                 linkArray.push(link);
             }
-            pickRandomImages(linkArray);
+            // var randomImage = linkArray[Math.floor(Math.random()*linkArray.length)];
+            // console.log(randomImage);
         },
       });
-}
-
-function pickRandomImages(array){
-    var randomImages = [];
-    for(var i = 0; i < 12; i++){
-        var image = array[Math.floor(Math.random() * array.length)];
-        var imagePosition = array.indexOf(image);
-        array.splice(imagePosition, 1);
-        randomImages.push(image);
-    }
-    console.log(randomImages);
 }
 
 function addClickHandlerToSubmitButton(){
