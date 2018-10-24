@@ -186,10 +186,10 @@ function addHoverText (event) {
         var attributeIndex = i.toString();
         if($(event.currentTarget).find(".picture").attr("index") === attributeIndex){
             if(i > storeReply.chickTech.eventName.length-1){
-                $(".hoverText").text(storeReply.girlDev.eventName[i]);
+                $(".hoverText").text(storeReply.girlDev.eventName[i] + storeReply.girlDev.date[i]);
             }
             else{
-                $(".hoverText").text(storeReply.chickTech.eventName[i]);
+                $(".hoverText").text(storeReply.chickTech.eventName[i] + storeReply.chickTech.date[i]);
             }
         }
     }
