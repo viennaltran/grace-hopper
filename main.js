@@ -1,4 +1,4 @@
-$(document).ready(initializeApp)
+$(document).ready(initializeApp);
 
 var map;
 var storeReply = {};
@@ -7,13 +7,14 @@ storeReply.girlDev= girlDevStorage;
 
 function initializeApp () {
     addClickHandlerToSubmitButton();
+    createPhotoArray();
 }
 
 function initMap () {
     var options = {
         zoom: 10,
         center: {lat:33.6846, lng:-117.8265}, //irvine coords
-    }
+    };
     map = new google.maps.Map(document.getElementById('map'),options);
 
     //adding marker to the map
@@ -28,7 +29,7 @@ function initMap () {
         scaledSize: new google.maps.Size(30, 30),
         origin: new google.maps.Point(0,0),
         anchor: new google.maps.Point(0,0)
-    }
+    };
 
     // //the Shrine coords
     // addMarker({lat:34.0522, lng:-118.2437});
@@ -77,13 +78,25 @@ function createPhotoArray(){
 
 function pickRandomImages(array){
     var randomImages = [];
-    for(var i = 0; i < 12; i++){
+    for(var i = 0; i < 8; i++){
         var image = array[Math.floor(Math.random() * array.length)];
         var imagePosition = array.indexOf(image);
         array.splice(imagePosition, 1);
         randomImages.push(image);
     }
-    console.log(randomImages);
+    placeRandomImages(randomImages);
+}
+
+function placeRandomImages(array){
+    var figureArray = [];
+        for(var i = 0; i < 8; i++) { //array.length
+            //create an img with the src from the array and append it to the appropriate figure in the figureArray
+            //append that figureArray to #events-to-choose
+            var newFigure = $('<figure>');
+            figureArray.push(newFigure);
+            var newImage = $('<img>').attr('src', array[i]).appendTo(newFigure);
+        }
+        $('#events-to-choose').append(figureArray);
 }
 
 function addClickHandlerToSubmitButton(){
