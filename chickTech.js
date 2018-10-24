@@ -112,6 +112,24 @@ console.log(storeReply);
 // }
 
 function addDataOntoPage () {
+    for(var i = 0; i < storeReply.eventName.length; i++){
+        var attributeIndex = i.toString();
+        if($(event.currentTarget).attr("index") === attributeIndex){
+            console.log("I am alive");
+            $(".event-name").text(storeReply.eventName[i]);
+            $(".date").text("Date: " + storeReply.date[i]);
+            $(".host").text("Hosted by: " + storeReply.groupName[i]);
+            $(".address").text("Address: " + storeReply.venueAddress[i] + ", " + storeReply.venueCity[i] + ", " + storeReply.venueState[i]);
+            var coordinates = {
+                lat: storeReply.latitude[i],
+                lng: storeReply.longitude[i]
+            }
+    
+            addOneMarkerToMap(coordinates);
+        } 
+    }
+
+
     if($(event.currentTarget).attr("index") === "0"){
         console.log("I am alive");
         $(".event-name").text(storeReply.eventName[0]);
