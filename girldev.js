@@ -14,12 +14,25 @@ var settings = {
     success: function(response){
         console.log(response);
         global_result=response;
-        var events=response.results;
+        var events=global_result.results;
         for(var i=0;i<events.length; i++){
             //lat
-            var latitude = events[i]['venue'].lat; 
+            var latitude = global_result.results[i].venue.lat;
 
             //lon
+            var longitude = global_result.results[i].venue.lon;
+
+            //name
+            var eventName = global_result.results[i].name;
+            
+            //date toDateString
+            var date = global_result.results[i].time;
+            var d = new Date(date);
+            var n=d.toLocaleString();
+
+            //time   toTimeString
+            var n=d.toTimeString();
+            
         }
   
     },
