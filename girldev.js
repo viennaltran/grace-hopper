@@ -1,5 +1,5 @@
 var global_result;
-var girlDev={};
+var girlDevStorage={};
 
 $(document).ready(initializeApp);
 
@@ -82,17 +82,17 @@ function data_storage(events){
 
             
         }
-        girlDev.groupName = groupNameArr;
-        girlDev.eventName = eventNameArr;
-        girlDev.eventDescriptions = eventDescriptionsArr;
-        girlDev.eventUrl = eventUrlArr;
-        girlDev.venueName = venueNameArr;
-        girlDev.venueAddress = venueAddressArr;
-        girlDev.venueCity = venueCityArr;
-        girlDev.venueState = venueStateArr;
-        girlDev.latitude = latitudeArr;
-        girlDev.longitude = longitudeArr;
-        girlDev.date = dateArr;
+        girlDevStorage.groupName = groupNameArr;
+        girlDevStorage.eventName = eventNameArr;
+        girlDevStorage.eventDescriptions = eventDescriptionsArr;
+        girlDevStorage.eventUrl = eventUrlArr;
+        girlDevStorage.venueName = venueNameArr;
+        girlDevStorage.venueAddress = venueAddressArr;
+        girlDevStorage.venueCity = venueCityArr;
+        girlDevStorage.venueState = venueStateArr;
+        girlDevStorage.latitude = latitudeArr;
+        girlDevStorage.longitude = longitudeArr;
+        girlDevStorage.date = dateArr;
     }
   
 
