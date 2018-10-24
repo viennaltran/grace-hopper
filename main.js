@@ -1,16 +1,17 @@
-$(document).ready(initializeApp)
+$(document).ready(initializeApp);
 
 var map;
 
 function initializeApp () {
     addClickHandlerToSubmitButton();
+    createPhotoArray();
 }
 
 function initMap () {
     var options = {
         zoom: 10,
         center: {lat:33.6846, lng:-117.8265}, //irvine coords
-    }
+    };
     map = new google.maps.Map(document.getElementById('map'),options);
 
     //adding marker to the map
@@ -25,7 +26,7 @@ function initMap () {
         scaledSize: new google.maps.Size(30, 30),
         origin: new google.maps.Point(0,0),
         anchor: new google.maps.Point(0,0)
-    }
+    };
 
     // //the Shrine coords
     // addMarker({lat:34.0522, lng:-118.2437});
