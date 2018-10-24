@@ -78,4 +78,5 @@ var settings = {
         map:map,
         icon:icon
     });
+    }
 }
