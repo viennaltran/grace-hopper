@@ -1,6 +1,9 @@
 $(document).ready(initializeApp)
 
 var map;
+var storeReply = {};
+storeReply.chickTech = chickTechStorage;
+storeReply.girlDev= girlDev;
 
 function initializeApp () {
     addClickHandlerToSubmitButton();

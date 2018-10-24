@@ -1,5 +1,4 @@
 var globalReply;
-var storeReply = {};
 
 $(document).ready(initializeApp);
 
