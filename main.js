@@ -97,23 +97,24 @@ function search(){
 }
 
 function addDataOntoPage () {
-    var totalEventDescriptions = "";
-    for(var index = 0; index < 1; index++){
-        totalEventDescriptions += storeReply.girlDev.eventDescriptions[index].replace(/<[^<>]*>/g, '');
-    }
     for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
         var attributeIndex = i.toString();
         if($(event.currentTarget).attr("index") === attributeIndex){
             console.log("I am alive");
             if(i > storeReply.chickTech.eventName.length-1){
                 $(".event-name").text(storeReply.girlDev.eventName[i]);
-
+                
                 //stuff inside the replace method is a regex call
                 //it grabs everything that starts with "<" and something inside and ends with a ">"
                 //and get every instance of that
                 //then it replaces them all with an empty string
                 // storeReply.chickTech.eventDescriptions[0].replace(/<[^<>]*>/g, '');
-
+                
+                var totalEventDescriptions = "";
+                for(var index = 0; index < 1; index++){
+                    totalEventDescriptions = storeReply.girlDev.eventDescriptions[i].replace(/<[^<>]*>/g, '');
+                }
+                $(".event-description").text(totalEventDescriptions);
                 $(".event-description").text(totalEventDescriptions);
                 $(".date").text("Date: " + storeReply.girlDev.date[i]);
                 $(".host").text("Hosted by: " + storeReply.girlDev.groupName[i]);
@@ -130,9 +131,11 @@ function addDataOntoPage () {
             }
             else{
                 $(".event-name").text(storeReply.chickTech.eventName[i]);
-                var event_description = storeReply.chickTech.eventDescriptions[i];
-                event_description = event_description.replace("<p>","");
-                $(".event-description").text(event_description);
+                var totalEventDescriptions = "";
+                for(var index = 0; index < 1; index++){
+                    totalEventDescriptions = storeReply.chickTech.eventDescriptions[i].replace(/<[^<>]*>/g, '');
+                }
+                $(".event-description").text(totalEventDescriptions);
                 $(".date").text("Date: " + storeReply.chickTech.date[i]);
                 $(".host").text("Hosted by: " + storeReply.chickTech.groupName[i]);
                 if(storeReply.chickTech.venueState[i] === undefined){
