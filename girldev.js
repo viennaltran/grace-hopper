@@ -35,7 +35,7 @@ var settings = {
             var n=d.toLocaleString();
             
             //time   toTimeString
-            var n=d.toTimeString();
+            var newTime=d.toTimeString();
 
             //directions including venue name, city, address
             var venueName =global_result.results[i].venue.name;
