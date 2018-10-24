@@ -167,5 +167,7 @@ function addOneMarkerToMap(coordinates) {
         map:map,
         icon:icon
     });
+
+    map.panTo(coordinates);
 }
 

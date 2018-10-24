@@ -8,21 +8,21 @@ function initializeApp () {
 
 function initMap () {
     var options = {
-        zoom: 10,
-        center: {lat:33.6846, lng:-117.8265}, //irvine coords
+        zoom: 15,
+        // center: {lat:33.6846, lng:-117.8265}, //irvine coords
     }
     map = new google.maps.Map(document.getElementById('map'),options);
 
     //adding marker to the map
-    var marker = new google.maps.Marker ({
-        position:{lat:33.6846, lng:-117.8265},
-        map:map,
-    });
+    // var marker = new google.maps.Marker ({
+    //     position:{lat:33.6846, lng:-117.8265},
+    //     map:map,
+    // });
 
     //adding a custom icon
     var icon = {
         url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
-        scaledSize: new google.maps.Size(30, 30),
+        scaledSize: new google.maps.Size(50, 50),
         origin: new google.maps.Point(0,0),
         anchor: new google.maps.Point(0,0)
     }
