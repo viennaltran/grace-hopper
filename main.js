@@ -9,7 +9,6 @@ function initializeApp () {
     addClickHandlerToSubmitButton();
     $(".picture").on("click",addDataOntoPage);
     createPhotoArray();
-    $("figure").on("mouseenter",addHoverText);
 
 }
 
@@ -108,6 +107,8 @@ function placeRandomImages(array){
             newFigure.append(hoverP);
         }
         $('#events-to-choose').append(figureArray);
+    $("figure").on("mouseenter",addHoverText);
+
 }
 
 
@@ -188,8 +189,11 @@ function addDataOntoPage () {
 }
 
 function addHoverText (event) {
+    debugger;
+
     for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
         var attributeIndex = i.toString();
+
         if($(event.currentTarget).find(".picture").attr("index") === attributeIndex){
             if(i > storeReply.chickTech.eventName.length-1){
                 $(".hoverText").text(storeReply.girlDev.eventName[i] + storeReply.girlDev.date[i]);
