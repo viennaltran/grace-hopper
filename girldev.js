@@ -50,6 +50,12 @@ var settings = {
 
             //description
             var description=global_result.results[i].description;
+            var coordinates = {
+                lat: latitude,
+                lng: longitude
+            }
+
+            addOneMarkerToMap(coordinates);
             
         }
   
@@ -58,4 +64,18 @@ var settings = {
   } 
   
   $.ajax(settings)
+
+  function addOneMarkerToMap(coordinates) {
+    var icon = {
+        url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
+        scaledSize: new google.maps.Size(30, 30),
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point(0,0)
+    }
+
+    var marker = new google.maps.Marker ({
+        position:coordinates,
+        map:map,
+        icon:icon
+    });
 }
