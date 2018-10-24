@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="chickTech.js"></script>
     <script src="girldev.js"></script>
@@ -47,56 +46,57 @@
         <ul class="nav nav-pills">
             <li role="presentation" class="active"><a href="#">Home</a></li>
             <li role="presentation"><a href="#">About Us</a></li>
-            <!-- <li role="presentation"><a href="#">Messages</a></li> -->
-          </ul>
-        <!-- <nav class="navigation">
+        </ul>
+    </header>
+
+
+    <div id="events-to-choose" class = "landing_page">
+        <figure><img class = "picture" src="images/placeholder.jpg" index = "0" onclick=""><p class="hoverText">Lorem</p></figure>
+        <figure><img class = "picture" src="images/placeholder.jpg" index = "1" onclick=""><p class="hoverText">Lorem</p></figure>
+        <figure><img class = "picture" src="images/placeholder.jpg" index = "2" onclick=""><p class="hoverText">Lorem</p></figure>
+        <figure><img class = "picture" src="images/placeholder.jpg" index = "3" onclick=""><p class="hoverText">Lorem</p></figure>
+        <figure><img class = "picture" src="images/placeholder.jpg" index = "4" onclick=""><p class="hoverText">Lorem</p></figure>
+        <figure><img class = "picture" src="images/placeholder.jpg" index = "5" onclick=""><p class="hoverText">Lorem</p></figure>
+        <figure><img class = "picture" src="images/placeholder.jpg" index = "6" onclick=""><p class="hoverText">Lorem</p></figure>
+        <figure><img class = "picture" src="images/placeholder.jpg" index = "7" onclick=""><p class="hoverText">Lorem</p></figure>
+        <!-- <figure>
+            <img src="images/placeholder.jpg" onclick="">
+            <span class="text-content"></span>
+        </figure> -->
+    </div>
+    <div id="event-chosen" class="col-md-12">
+        <div class="event-name">Lorem</div>
+        <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
-        </nav> -->
-    </header>
-    <div id="events-to-choose" class="col-xs-12 col-md-12">
-        <figure>
-            <img src="images/placeholder.jpg" onclick="">
-            <p class="hoverText">Lorem fasfsdafdsa</p>
-        </figure>
-        <figure>
-            <img src="images/placeholder.jpg" onclick="">
-            <p class="hoverText">Lorem fdsafsdafdsag</p>
-        </figure>
-        <figure>
-            <img src="images/placeholder.jpg" onclick="">
-            <p class="hoverText">Lorem</p>
-        </figure>
-        <figure>
-            <img src="images/placeholder.jpg" onclick="">
-            <p class="hoverText">Lorem</p>
-        </figure>
-        <figure>
-            <img src="images/placeholder.jpg" onclick="">
-            <p class="hoverText">Lorem</p>
-        </figure>
-        <figure>
-            <img src="images/placeholder.jpg" onclick="">
-            <p class="hoverText">Lorem</p>
-        </figure>
-        <figure>
-            <img src="images/placeholder.jpg" onclick="">
-            <p class="hoverText">Lorem</p>
-        </figure>
-        <figure>
-            <img src="images/placeholder.jpg" onclick="">
-            <p class="hoverText">Lorem</p>
-        </figure>
-        <!-- <figure><img src="images/placeholder.jpg" onclick=""></figure>
-        <figure><img src="images/placeholder.jpg" onclick=""></figure>
-        <figure><img src="images/placeholder.jpg" onclick=""></figure>
-        <figure><img src="images/placeholder.jpg" onclick=""></figure> -->
-        <!--when we implement bootstrap - large screens - 4 images across?-->
-        <!--phones - 1 image?-->
-        <!--figure and figcaption? -->
+        </nav>
+        <div class="event-information">
+            <div class="event-img">
+                <figure><img src="images/placeholder.jpg" onclick=""></figure>
+            </div>
+            <div class="event-info">
+                <span class="date">date:</span>
+                <span class="address">address:</span>
+                <span class="host">hosted by:</span>
+                <button class="btn btn-success"><a href="" id="joinNow">Join Now</a></button>
+            </div>
+        </div>
+        <div class = "event-description">Lorem ipsum</div>
     </div>
-   
+    <div id="twitter-and-google-maps">
+
+        <div id="map">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7EmAMUOtRxuQL7dRVgDXjfgFpPvNa9ng&callback=initMap"></script>
+        </div>
+
+        <div id="twitter-feed">
+            <p style="text-align: center;"><img src="images/twitterlogo.jpg" alt="twitter logo" height="50" width="75"></p>
+            <ol id="tweets"></ol>
+            <button type="button" class="btn btn-info btn-lg center-block" id="submit">#WomenInTech</button>
+        </div>
+
+     </div>
 </body>
 </html>

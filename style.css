@@ -10,7 +10,7 @@ header{
     height:27%;
 }
 
-#events-to-choose{
+.landing_page{
     display: inline-block;
     /* background-color: blue; */
     height:73%;
@@ -18,7 +18,7 @@ header{
     
 }
 
-#events-to-choose>figure{
+.landing_page>figure{
     display:inline-block;    
     height:40%;
     width:24%;
@@ -29,14 +29,15 @@ header{
        
 }
 
-#events-to-choose>figure>img{
+.landing_page>figure>img{
     height:100%;
     width:100%;
    
 }
 
-#events-to-choose>figure>img:hover{
-    opacity: 0.2;
+
+.landing_page>figure>img:hover{
+    opacity: 0.5;
     filter: alpha(opacity=50);
 
 }
@@ -74,8 +75,8 @@ img:hover + p {
 .event-info{
     background-color:red;
     display:inline-block;
-position:relative;
-left:80%;
+    position:relative;
+    left:80%;
 }
 .date,.time,.address,.host{
     display:block;
@@ -88,3 +89,11 @@ ol{
     border: .4rem solid black;
     width: 40%;
 }
+
+.hidePage {
+    display: none;
+}
+
+/* #hidePage {
+    display: none;
+} */
