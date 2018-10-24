@@ -7,7 +7,6 @@ storeReply.girlDev= girlDevStorage;
 
 function initializeApp () {
     addClickHandlerToSubmitButton();
-    $(".picture").on("click",addDataOntoPage);
     createPhotoArray();
 
 }
@@ -48,6 +47,22 @@ function initMap () {
         icon:icon
         });
     }
+}
+
+
+function hideLandingPageAndShowDataPage () {
+    // $("header").addClass("hidePage");
+    $("#events-to-choose").addClass("hidePage");
+    $("#event-chosen").removeClass("hidePage");
+    $("#twitter-and-google-maps").removeClass("hidePage");
+}
+
+//add functionality of showing landing page and showing divs
+
+function showLandingPageAndHideDataPage () {
+    $("#events-to-choose").removeClass("hidePage");
+    $("#event-chosen").addClass("hidePage");
+    $("#twitter-and-google-maps").addClass("hidePage");
 }
 
 function createPhotoArray(){
@@ -107,7 +122,10 @@ function placeRandomImages(array){
             newFigure.append(hoverP);
         }
         $('#events-to-choose').append(figureArray);
-    $("figure").on("mouseenter",addHoverText);
+        $("figure").on("mouseenter",addHoverText);
+        $(".picture").on("click",addDataOntoPage);
+    $(".picture").on("click",hideLandingPageAndShowDataPage);
+    $(".active").on("click",showLandingPageAndHideDataPage);
 
 }
 
@@ -132,6 +150,7 @@ function search(){
 }
 
 function addDataOntoPage () {
+    debugger;
     for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
         var attributeIndex = i.toString();
         if($(event.currentTarget).attr("index") === attributeIndex){
@@ -189,8 +208,6 @@ function addDataOntoPage () {
 }
 
 function addHoverText (event) {
-    debugger;
-
     for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
         var attributeIndex = i.toString();
 
