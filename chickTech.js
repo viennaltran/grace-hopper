@@ -4,7 +4,7 @@ var storeReply = {};
 $(document).ready(initializeApp);
 
 function initializeApp() {
-    $('#joinNow').on('click', eventUrl);
+    // $('#joinNow').on('click', eventUrl);
 }
 
 var chickTech = {
@@ -16,7 +16,6 @@ var chickTech = {
         globalReply = reply;
         var events=globalReply.results;
         dataStorage(events);
-        }
     },
     error: err=>console.log(err)
 }
