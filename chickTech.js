@@ -12,12 +12,20 @@ $(document).ready(initializeApp);
 
 function initializeApp() {
     addClickHandler();
+    hideDataPage(); 
     // addImageIndex();
     // $('#joinNow').on('click', eventUrl);
 }
 
 function addClickHandler () {
-    $(".picture").on("click",someFunction);
+    $(".picture").on("click",addDataOntoPage);
+    $(".picture").on("click",hideLandingPageAndShowDataPage);
+
+}
+
+function hideDataPage () {
+    $("#event-chosen").addClass("hidePage");
+    $("#twitter-and-google-maps").addClass("hidePage");
 }
 
 var chickTech = {
@@ -60,11 +68,7 @@ function dataStorage(events) {
         venueStateArr.push(venueState);
 
     }
-    // someFunction();
-    // if($(".picture").attr("index") === "0"){
-    //     console.log("i am alive");
-    //     $(".address").text("Address: " + venueAddressArr[0] + " " + venueCityArr[0]);
-    // }
+
 }
 
 // function addImageIndex () {
@@ -74,7 +78,7 @@ function dataStorage(events) {
 //     }
 // }
 
-function someFunction () {
+function addDataOntoPage () {
     if($(event.currentTarget).attr("index") === "0"){
         console.log("I am alive");
         $(".address").text("Address: " + venueAddressArr[0] + ", " + venueCityArr[0] + ", " + venueStateArr[0]);
@@ -82,3 +86,10 @@ function someFunction () {
 }
 
 //add functionality of hiding and showing divs
+
+function hideLandingPageAndShowDataPage () {
+    // $("header").addClass("hidePage");
+    $("#events-to-choose").addClass("hidePage");
+    $("#event-chosen").removeClass("hidePage");
+    $("#twitter-and-google-maps").removeClass("hidePage");
+}

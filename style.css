@@ -10,3 +10,7 @@ ol{
     border: .4rem solid black;
     width: 40%;
 }
+
+.hidePage {
+    display: none;
+}
