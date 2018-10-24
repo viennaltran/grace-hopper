@@ -34,10 +34,22 @@ var settings = {
             var d = new Date(date);
             var n=d.toLocaleString();
             
-
             //time   toTimeString
             var n=d.toTimeString();
-           
+
+            //directions
+            var venueName =global_result.results[i].venue.name;
+            var city =global_result.results[i].venue.city;
+            var address = global_result.results[i].venue.address_1;
+        
+            //group name
+            var groupName = global_result.results[i].group.name;
+
+            //event_url
+            var url=  global_result.results[i].event_url;
+
+            //description
+            var description=global_result.results[i].description;
             
         }
   
