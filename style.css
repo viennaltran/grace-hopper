@@ -48,7 +48,7 @@ ul{
 
 .hoverText{
 color:black; 
-font-size:2rem; 
+font-size:2vh; 
 position: absolute;
   display: none;
   width: 100%;
