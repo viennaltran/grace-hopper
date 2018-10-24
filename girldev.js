@@ -37,7 +37,7 @@ var settings = {
             //time   toTimeString
             var n=d.toTimeString();
 
-            //directions
+            //directions including venue name, city, address
             var venueName =global_result.results[i].venue.name;
             var city =global_result.results[i].venue.city;
             var address = global_result.results[i].venue.address_1;
@@ -55,7 +55,7 @@ var settings = {
   
     },
     error: err=>console.log(err)
-  }
+  } 
   
   $.ajax(settings)
 }
