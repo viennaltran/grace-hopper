@@ -1,6 +1,6 @@
 body{
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
     margin:0;
     /* overflow:hidden; */
 }
@@ -36,11 +36,28 @@ header{
 }
 
 #events-to-choose>figure>img:hover{
-    opacity: 0.5;
+    opacity: 0.2;
     filter: alpha(opacity=50);
 
 }
 
+.hoverText{
+color:black; 
+font-size:2rem; 
+position: absolute;
+  display: none;
+  width: 100%;
+  text-align: center;
+  /* margin: 0; */
+ height: 30%;
+  top: 40%;
+  word-wrap: break-word;
+}
+
+img:hover + p {
+    display: block;
+  }
+  
 
 
 /* #events-to-choose, header{
