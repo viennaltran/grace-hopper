@@ -1,10 +1,23 @@
 var globalReply;
 var storeReply = {};
+var groupNameArr = [];
+var eventDescriptionsArr = [];
+var eventUrlArr = [];
+var venueNameArr = [];
+var venueAddressArr = [];
+var venueCityArr = [];
+var venueStateArr = [];
 
 $(document).ready(initializeApp);
 
 function initializeApp() {
+    addClickHandler();
+    // addImageIndex();
     // $('#joinNow').on('click', eventUrl);
+}
+
+function addClickHandler () {
+    $(".picture").on("click",someFunction);
 }
 
 var chickTech = {
@@ -23,13 +36,13 @@ var chickTech = {
 $.ajax(chickTech)
 
 function dataStorage(events) {
-    var groupNameArr = [];
-    var eventDescriptionsArr = [];
-    var eventUrlArr = [];
-    var venueNameArr = [];
-    var venueAddressArr = [];
-    var venueCityArr = [];
-    var venueStateArr = [];
+    // var groupNameArr = [];
+    // var eventDescriptionsArr = [];
+    // var eventUrlArr = [];
+    // var venueNameArr = [];
+    // var venueAddressArr = [];
+    // var venueCityArr = [];
+    // var venueStateArr = [];
     for (var x = 0; x<events.length; x++) {
         var groupName = globalReply.results[x].group.name;
         groupNameArr.push(groupName);
@@ -44,7 +57,28 @@ function dataStorage(events) {
         var venueCity = globalReply.results[x].venue.city;
         venueCityArr.push(venueCity);
         var venueState = globalReply.results[x].venue.state;
-        venueStateArr.push(venueCity);
+        venueStateArr.push(venueState);
 
     }
+    // someFunction();
+    // if($(".picture").attr("index") === "0"){
+    //     console.log("i am alive");
+    //     $(".address").text("Address: " + venueAddressArr[0] + " " + venueCityArr[0]);
+    // }
 }
+
+// function addImageIndex () {
+//     var picture = $('.picture');
+//     for (var i = 0; i < arr.length; i++){
+//         picture.attr(i);
+//     }
+// }
+
+function someFunction () {
+    if($(event.currentTarget).attr("index") === "0"){
+        console.log("I am alive");
+        $(".address").text("Address: " + venueAddressArr[0] + ", " + venueCityArr[0] + ", " + venueStateArr[0]);
+    }
+}
+
+//add functionality of hiding and showing divs
