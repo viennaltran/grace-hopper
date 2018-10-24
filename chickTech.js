@@ -1,9 +1,23 @@
 var globalReply;
 var chickTechStorage = {};
+
 $(document).ready(initializeApp);
 
 function initializeApp() {
-    // $('#joinNow').on('click', eventUrl);
+    addClickHandler();
+    hideDataPage(); 
+}
+
+function addClickHandler () {
+    $(".picture").on("click",addDataOntoPage);
+    $(".picture").on("click",hideLandingPageAndShowDataPage);
+    $(".active").on("click",showLandingPageAndHideDataPage);
+
+}
+
+function hideDataPage () {
+    $("#event-chosen").addClass("hidePage");
+    $("#twitter-and-google-maps").addClass("hidePage");
 }
 
 var chickTech = {
@@ -85,7 +99,66 @@ function dataStorage(events) {
     chickTechStorage.longitude = longitudeArr;
     chickTechStorage.date = dateArr;
 }
-
 console.log(chickTechStorage);
 
+//dynamically creates data for each specific meetup
+
+// function addDataOntoPage () {
+//     for(var i = 0; i < storeReply.eventName.length; i++){
+//         var attributeIndex = i.toString();
+//         if($(event.currentTarget).attr("index") === attributeIndex){
+//             console.log("I am alive");
+//             $(".event-name").text(storeReply.eventName[i]);
+//             $(".date").text("Date: " + storeReply.date[i]);
+//             $(".host").text("Hosted by: " + storeReply.groupName[i]);
+//             if(storeReply.venueState[i] === undefined){
+//                 storeReply.venueState[i] = "CA";
+//             }
+//             $(".address").text("Address: " + storeReply.venueAddress[i] + ", " + storeReply.venueCity[i] + ", " + storeReply.venueState[i]);
+//             var coordinates = {
+//                 lat: storeReply.latitude[i],
+//                 lng: storeReply.longitude[i]
+//             }
+    
+//             addOneMarkerToMap(coordinates);
+//         } 
+//     }
+// }
+
+// //add functionality of hiding and showing divs
+
+function hideLandingPageAndShowDataPage () {
+    // $("header").addClass("hidePage");
+    $("#events-to-choose").addClass("hidePage");
+    $("#event-chosen").removeClass("hidePage");
+    $("#twitter-and-google-maps").removeClass("hidePage");
+}
+
+//add functionality of showing landing page and showing divs
+
+function showLandingPageAndHideDataPage () {
+    $("#events-to-choose").removeClass("hidePage");
+    $("#event-chosen").addClass("hidePage");
+    $("#twitter-and-google-maps").addClass("hidePage");
+}
+
+// //adds a marker for each specific meetup location
+
+// function addOneMarkerToMap(coordinates) {
+//     var icon = {
+//         url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
+//         scaledSize: new google.maps.Size(30, 30),
+//         origin: new google.maps.Point(0,0),
+//         anchor: new google.maps.Point(0,0)
+//     }
+
+//     var marker = new google.maps.Marker ({
+//         position:coordinates,
+//         map:map,
+//         icon:icon
+//     });
+
+//     //resets the center of the google map to our specific coordinates
+//     map.panTo(coordinates);
+// }
 
