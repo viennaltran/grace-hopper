@@ -7,6 +7,7 @@ storeReply.girlDev= girlDevStorage;
 
 function initializeApp () {
     addClickHandlerToSubmitButton();
+    $(".picture").on("click",addDataOntoPage);
 }
 
 function initMap () {
@@ -93,4 +94,78 @@ function search(){
             }
         }
     });
+}
+
+function addDataOntoPage () {
+    var totalEventDescriptions = "";
+    for(var index = 0; index < 1; index++){
+        totalEventDescriptions += storeReply.girlDev.eventDescriptions[index].replace(/<[^<>]*>/g, '');
+    }
+    for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
+        var attributeIndex = i.toString();
+        if($(event.currentTarget).attr("index") === attributeIndex){
+            console.log("I am alive");
+            if(i > storeReply.chickTech.eventName.length-1){
+                $(".event-name").text(storeReply.girlDev.eventName[i]);
+
+                //stuff inside the replace method is a regex call
+                //it grabs everything that starts with "<" and something inside and ends with a ">"
+                //and get every instance of that
+                //then it replaces them all with an empty string
+                // storeReply.chickTech.eventDescriptions[0].replace(/<[^<>]*>/g, '');
+
+                $(".event-description").text(totalEventDescriptions);
+                $(".date").text("Date: " + storeReply.girlDev.date[i]);
+                $(".host").text("Hosted by: " + storeReply.girlDev.groupName[i]);
+                if(storeReply.girlDev.venueState[i] === undefined){
+                    storeReply.girlDev.venueState[i] = "CA";
+                }
+                $(".address").text("Address: " + storeReply.girlDev.venueAddress[i] + ", " + storeReply.girlDev.venueCity[i] + ", " + storeReply.girlDev.venueState[i]);
+                var coordinates = {
+                    lat: storeReply.girlDev.latitude[i],
+                    lng: storeReply.girlDev.longitude[i]
+                }
+        
+                addOneMarkerToMap(coordinates);
+            }
+            else{
+                $(".event-name").text(storeReply.chickTech.eventName[i]);
+                var event_description = storeReply.chickTech.eventDescriptions[i];
+                event_description = event_description.replace("<p>","");
+                $(".event-description").text(event_description);
+                $(".date").text("Date: " + storeReply.chickTech.date[i]);
+                $(".host").text("Hosted by: " + storeReply.chickTech.groupName[i]);
+                if(storeReply.chickTech.venueState[i] === undefined){
+                    storeReply.chickTech.venueState[i] = "CA";
+                }
+                $(".address").text("Address: " + storeReply.chickTech.venueAddress[i] + ", " + storeReply.chickTech.venueCity[i] + ", " + storeReply.chickTech.venueState[i]);
+                var coordinates = {
+                    lat: storeReply.chickTech.latitude[i],
+                    lng: storeReply.chickTech.longitude[i]
+                }
+        
+                addOneMarkerToMap(coordinates);
+            }
+        } 
+    }
+}
+
+//adds a marker for each specific meetup location
+
+function addOneMarkerToMap(coordinates) {
+    var icon = {
+        url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
+        scaledSize: new google.maps.Size(30, 30),
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point(0,0)
+    }
+
+    var marker = new google.maps.Marker ({
+        position:coordinates,
+        map:map,
+        icon:icon
+    });
+
+    //resets the center of the google map to our specific coordinates
+    map.panTo(coordinates);
 }
