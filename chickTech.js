@@ -1,6 +1,5 @@
 var globalReply;
-var storeReply = {};
-
+var chickTechStorage = {};
 
 $(document).ready(initializeApp);
 
@@ -88,20 +87,19 @@ function dataStorage(events) {
 
 
     }
-    storeReply.groupName = groupNameArr;
-    storeReply.eventName = eventNameArr;
-    storeReply.eventDescriptions = eventDescriptionsArr;
-    storeReply.eventUrl = eventUrlArr;
-    storeReply.venueName = venueNameArr;
-    storeReply.venueAddress = venueAddressArr;
-    storeReply.venueCity = venueCityArr;
-    storeReply.venueState = venueStateArr;
-    storeReply.latitude = latitudeArr;
-    storeReply.longitude = longitudeArr;
-    storeReply.date = dateArr;
-
-console.log(storeReply);
+    chickTechStorage.groupName = groupNameArr;
+    chickTechStorage.eventName = eventNameArr;
+    chickTechStorage.eventDescriptions = eventDescriptionsArr;
+    chickTechStorage.eventUrl = eventUrlArr;
+    chickTechStorage.venueName = venueNameArr;
+    chickTechStorage.venueAddress = venueAddressArr;
+    chickTechStorage.venueCity = venueCityArr;
+    chickTechStorage.venueState = venueStateArr;
+    chickTechStorage.latitude = latitudeArr;
+    chickTechStorage.longitude = longitudeArr;
+    chickTechStorage.date = dateArr;
 }
+console.log(chickTechStorage);
 
 //dynamically creates data for each specific meetup
 

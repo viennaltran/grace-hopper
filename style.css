@@ -38,7 +38,10 @@ header{
 .landing_page>figure>img:hover{
     opacity: 0.5;
     filter: alpha(opacity=50);
+
 }
+
+
 
 /* #events-to-choose, header{
     display:none;
