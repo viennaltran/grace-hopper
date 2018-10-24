@@ -31,8 +31,7 @@ header{
 
 .landing_page>figure>img{
     height:100%;
-    width:100%;
-   
+    width:100%;   
 }
 
 
@@ -53,6 +52,7 @@ position: absolute;
  height: 30%;
   top: 40%;
   word-wrap: break-word;
+  z-index:-1;
 }
 
 img:hover + p {
