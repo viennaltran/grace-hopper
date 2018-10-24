@@ -9,7 +9,7 @@ function initializeApp() {
 }
 
 function addClickHandler () {
-    $(".picture").on("click",addDataOntoPage);
+    // $(".picture").on("click",addDataOntoPage);
     $(".picture").on("click",hideLandingPageAndShowDataPage);
     $(".active").on("click",showLandingPageAndHideDataPage);
 

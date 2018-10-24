@@ -9,6 +9,7 @@ function initializeApp () {
     addClickHandlerToSubmitButton();
     $(".picture").on("click",addDataOntoPage);
     createPhotoArray();
+    $("figure").on("mouseenter",addHoverText);
 
 }
 
@@ -178,6 +179,23 @@ function addDataOntoPage () {
             }
         } 
     }
+}
+
+function addHoverText (event) {
+    for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
+        var attributeIndex = i.toString();
+        if($(event.currentTarget).find(".picture").attr("index") === attributeIndex){
+            if(i > storeReply.chickTech.eventName.length-1){
+                $(".hoverText").text(storeReply.girlDev.eventName[i]);
+            }
+            else{
+                $(".hoverText").text(storeReply.chickTech.eventName[i]);
+            }
+        }
+    }
+
+    // var index = $(event.currentTarget).find(".picture").attr("index");
+    // $(".hoverText").text(storeReply.girlDev.eventName[index]);
 }
 
 //adds a marker for each specific meetup location
