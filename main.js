@@ -74,13 +74,25 @@ function createPhotoArray(){
 
 function pickRandomImages(array){
     var randomImages = [];
-    for(var i = 0; i < 12; i++){
+    for(var i = 0; i < 8; i++){
         var image = array[Math.floor(Math.random() * array.length)];
         var imagePosition = array.indexOf(image);
         array.splice(imagePosition, 1);
         randomImages.push(image);
     }
-    console.log(randomImages);
+    placeRandomImages(randomImages);
+}
+
+function placeRandomImages(array){
+    var figureArray = [];
+        for(var i = 0; i < 8; i++) { //array.length
+            //create an img with the src from the array and append it to the appropriate figure in the figureArray
+            //append that figureArray to #events-to-choose
+            var newFigure = $('<figure>');
+            figureArray.push(newFigure);
+            var newImage = $('<img>').attr('src', array[i]).appendTo(newFigure);
+        }
+        $('#events-to-choose').append(figureArray);
 }
 
 function addClickHandlerToSubmitButton(){
