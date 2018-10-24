@@ -7,8 +7,6 @@ $(document).ready(initializeApp);
 function initializeApp() {
     addClickHandler();
     hideDataPage(); 
-    // addImageIndex();
-    // $('#joinNow').on('click', eventUrl);
 }
 
 function addClickHandler () {
@@ -105,6 +103,8 @@ function dataStorage(events) {
 console.log(storeReply);
 }
 
+//dynamically creates data for each specific meetup
+
 function addDataOntoPage () {
     for(var i = 0; i < storeReply.eventName.length; i++){
         var attributeIndex = i.toString();
@@ -113,6 +113,9 @@ function addDataOntoPage () {
             $(".event-name").text(storeReply.eventName[i]);
             $(".date").text("Date: " + storeReply.date[i]);
             $(".host").text("Hosted by: " + storeReply.groupName[i]);
+            if(storeReply.venueState[i] === undefined){
+                storeReply.venueState[i] = "CA";
+            }
             $(".address").text("Address: " + storeReply.venueAddress[i] + ", " + storeReply.venueCity[i] + ", " + storeReply.venueState[i]);
             var coordinates = {
                 lat: storeReply.latitude[i],
@@ -133,11 +136,15 @@ function hideLandingPageAndShowDataPage () {
     $("#twitter-and-google-maps").removeClass("hidePage");
 }
 
+//add functionality of showing landing page and showing divs
+
 function showLandingPageAndHideDataPage () {
     $("#events-to-choose").removeClass("hidePage");
     $("#event-chosen").addClass("hidePage");
     $("#twitter-and-google-maps").addClass("hidePage");
 }
+
+//adds a marker for each specific meetup location
 
 function addOneMarkerToMap(coordinates) {
     var icon = {
@@ -153,6 +160,7 @@ function addOneMarkerToMap(coordinates) {
         icon:icon
     });
 
+    //resets the center of the google map to our specific coordinates
     map.panTo(coordinates);
 }
 
