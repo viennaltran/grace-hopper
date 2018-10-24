@@ -1,5 +1,7 @@
 $(document).ready(initializeApp)
 
+var map;
+
 function initializeApp () {
     addClickHandlerToSubmitButton();
 }
@@ -9,7 +11,7 @@ function initMap () {
         zoom: 10,
         center: {lat:34.0522, lng:-118.2437}, //los angeles coords
     }
-    var map = new google.maps.Map(document.getElementById('map'),options);
+    map = new google.maps.Map(document.getElementById('map'),options);
 
     //adding marker to the map
     var marker = new google.maps.Marker ({
@@ -25,10 +27,10 @@ function initMap () {
         anchor: new google.maps.Point(0,0)
     }
 
-    //the Shrine coords
-    addMarker({lat:34.0522, lng:-118.2437});
-    //hollywood bowl coords
-    addMarker({lat:34.1122, lng:-118.3391});
+    // //the Shrine coords
+    // addMarker({lat:34.0522, lng:-118.2437});
+    // //hollywood bowl coords
+    // addMarker({lat:34.1122, lng:-118.3391});
 
 
     //adding multiple markers to the map
