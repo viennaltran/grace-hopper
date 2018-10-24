@@ -75,8 +75,7 @@ function createPhotoArray(){
                 var link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
                 linkArray.push(link);
             }
-            // var randomImage = linkArray[Math.floor(Math.random()*linkArray.length)];
-            // console.log(randomImage);
+            pickRandomImages(linkArray);
         },
       });
 }
@@ -90,16 +89,23 @@ function pickRandomImages(array){
         randomImages.push(image);
     }
     placeRandomImages(randomImages);
+    console.log(randomImages);
 }
 
 function placeRandomImages(array){
     var figureArray = [];
-        for(var i = 0; i < 8; i++) { //array.length
+        for(var i = 0; i < array.length; i++) {
             //create an img with the src from the array and append it to the appropriate figure in the figureArray
             //append that figureArray to #events-to-choose
             var newFigure = $('<figure>');
+            var newImage = $('<img>').addClass('picture').attr({
+                src: array[i],
+                index: i
+            });
+            newFigure.append(newImage);
             figureArray.push(newFigure);
-            var newImage = $('<img>').attr('src', array[i]).appendTo(newFigure);
+            var hoverP = $('<p>').addClass('hoverText');
+            newFigure.append(hoverP);
         }
         $('#events-to-choose').append(figureArray);
 }
