@@ -14,6 +14,7 @@ function initializeApp() {
 function addClickHandler () {
     $(".picture").on("click",addDataOntoPage);
     $(".picture").on("click",hideLandingPageAndShowDataPage);
+    $(".active").on("click",showLandingPageAndHideDataPage);
 
 }
 
@@ -104,13 +105,6 @@ function dataStorage(events) {
 console.log(storeReply);
 }
 
-// function addImageIndex () {
-//     var picture = $('.picture');
-//     for (var i = 0; i < arr.length; i++){
-//         picture.attr(i);
-//     }
-// }
-
 function addDataOntoPage () {
     for(var i = 0; i < storeReply.eventName.length; i++){
         var attributeIndex = i.toString();
@@ -128,30 +122,21 @@ function addDataOntoPage () {
             addOneMarkerToMap(coordinates);
         } 
     }
-
-
-    if($(event.currentTarget).attr("index") === "0"){
-        console.log("I am alive");
-        $(".event-name").text(storeReply.eventName[0]);
-        $(".date").text("Date: " + storeReply.date[0]);
-        $(".host").text("Hosted by: " + storeReply.groupName[0]);
-        $(".address").text("Address: " + storeReply.venueAddress[0] + ", " + storeReply.venueCity[0] + ", " + storeReply.venueState[0]);
-        var coordinates = {
-            lat: storeReply.latitude[0],
-            lng: storeReply.longitude[0]
-        }
-
-        addOneMarkerToMap(coordinates);
-    }
 }
 
 //add functionality of hiding and showing divs
 
 function hideLandingPageAndShowDataPage () {
     // $("header").addClass("hidePage");
-    $("#events-to-choose").attr('id', "hidePage");
+    $("#events-to-choose").addClass("hidePage");
     $("#event-chosen").removeClass("hidePage");
     $("#twitter-and-google-maps").removeClass("hidePage");
+}
+
+function showLandingPageAndHideDataPage () {
+    $("#events-to-choose").removeClass("hidePage");
+    $("#event-chosen").addClass("hidePage");
+    $("#twitter-and-google-maps").addClass("hidePage");
 }
 
 function addOneMarkerToMap(coordinates) {

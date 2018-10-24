@@ -10,7 +10,7 @@ header{
     height:27%;
 }
 
-#events-to-choose{
+.landing_page{
     display: inline-block;
     /* background-color: blue; */
     height:73%;
@@ -18,7 +18,7 @@ header{
     
 }
 
-#events-to-choose>figure{
+.landing_page>figure{
     display:inline-block;    
     height:40%;
     width:24%;
@@ -29,13 +29,13 @@ header{
        
 }
 
-#events-to-choose>figure>img{
+.landing_page>figure>img{
     height:100%;
     width:100%;
    
 }
 
-#events-to-choose>figure>img:hover{
+.landing_page>figure>img:hover{
     opacity: 0.5;
     filter: alpha(opacity=50);
 }
@@ -73,6 +73,6 @@ ol{
     display: none;
 }
 
-#hidePage {
+/* #hidePage {
     display: none;
-}
+} */
