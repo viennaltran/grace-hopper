@@ -4,10 +4,9 @@ body{
     position: relative;
 }
 
-ol {
+ol{
     display: inline-block;
     margin-left: 30%;
-    border: 1rem solid black;
+    border: .4rem solid black;
     width: 40%;
-
 }
