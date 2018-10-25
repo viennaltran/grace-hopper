@@ -59,18 +59,25 @@ img:hover + p {
   }
 
 .event-information{
-    background-color:green;
+    background-color:white;
+    text-align:center;
 }
 .event-information>.event-img>figure{
     display:inline-block;    
-
+    margin-bottom: 2%;
 }
 .event-info{
-    background-color:red;
-    display:inline-block;
+    background-color:white;
+    display:block;
     position:relative;
-    left:80%;
+    margin-bottom: 2%;
 }
+
+.event-description {
+    margin-bottom: 2%;
+
+}
+
 .date,.time,.address,.host{
     display:block;
 
@@ -78,9 +85,9 @@ img:hover + p {
 
 ol{
     display: inline-block;
-    margin-left: 30%;
+    margin-left: 13%;
     border: .4rem solid black;
-    width: 40%;
+    width: 75%;
 }
 
 .hidePage {
@@ -90,7 +97,7 @@ ol{
 
 #map{
     height: 400px;
-    width:50%;
+    width:100%;
 }
 
 header {
@@ -98,14 +105,14 @@ header {
 }
 #websiteHeader{
     text-align: center;
-    background-color: #F2D6F5;
 }
 
 /* will create this dynamically */
 .event-name {
     text-align: center;
-    background-color: #F2D6F5;
     font-size:36px;
+    border-bottom: 1px solid black;
+    margin-bottom: 2%;
 }
 
 /* credit to Sara Vieira from developerdrive.com */
