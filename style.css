@@ -1,0 +1,138 @@
+body{
+    margin:0;
+    font-family: "Libre Baskerville", serif;
+}
+
+header{
+    height:27%;
+}
+
+ul{
+    margin-left: 44%;
+}
+
+.landing_page{
+    display: inline-block;
+    height:10%;
+    position:relative;
+    margin-top: 2%;
+    
+}
+
+.landing_page>figure{
+    display:inline-block;    
+    width:24%;
+    position:relative;
+    margin-left:.5%;
+    margin-top: 2.5%;
+    margin-bottom:2.5%;
+       
+}
+
+.landing_page>figure>img{
+    width:100%;  
+    border-radius:10%; 
+}
+
+
+.landing_page>figure>img:hover{
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+
+}
+
+.hoverText{
+color:black; 
+font-size:2vh; 
+position: absolute;
+  display: none;
+  width: 100%;
+  text-align: center;
+    height: 30%;
+  top: 40%;
+  word-wrap: break-word;
+  z-index:-1;
+}
+
+img:hover + p {
+    display: block;
+  }
+
+.event-information{
+    background-color:white;
+    text-align:center;
+}
+.event-information>.event-img>figure{
+    display:inline-block;    
+    margin-bottom: 2%;
+}
+.event-info{
+    background-color:white;
+    display:block;
+    position:relative;
+    margin-bottom: 2%;
+}
+
+.event-description {
+    margin-bottom: 2%;
+
+}
+
+.date,.time,.address,.host{
+    display:block;
+
+}
+
+ol{
+    display: inline-block;
+    margin-left: 13%;
+    border: .4rem solid black;
+    width: 75%;
+}
+
+.hidePage {
+    display: none;
+}
+
+
+#map{
+    height: 400px;
+    width:100%;
+}
+
+header {
+    margin: 0 auto;
+}
+#websiteHeader{
+    text-align: center;
+}
+
+/* will create this dynamically */
+.event-name {
+    text-align: center;
+    font-size:36px;
+    border-bottom: 1px solid black;
+    margin-bottom: 2%;
+}
+
+/* credit to Sara Vieira from developerdrive.com */
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+.landing_page>figure>img:hover {
+	animation: bounce 1s;
+}

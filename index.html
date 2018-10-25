@@ -1,52 +1,69 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-    <title>Women In Tech Event Finder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="chickTech.js"></script>
+    <script src="girldev.js"></script>
+    <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Grace Hopper: Women In Tech Event Finder</title>
 </head>
-<body>
-    <header>
-        <h1>Women in Tech Event Finder</h1>
-        <nav class="navigation">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-            </ul>
-        </nav>
+<body class="container">
+    <header class="col-xs-12">
+        <p style="text-align: center;"><img src="images/headerTitle.png" alt="Grace Hopper" height="160" width="450"></p>
+
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About Us</a></li>
+        </ul>
     </header>
-    <div id="events-to-choose">
-        <figure><img src="" onclick=""></figure>
-        <figure><img src="" onclick=""></figure>
-        <figure><img src="" onclick=""></figure>
-        <figure><img src="" onclick=""></figure>
-        <figure><img src="" onclick=""></figure>
-        <!--when we implement bootstrap - large screens - 4 images across?-->
-        <!--phones - 1 image?-->
-        <!--figure and figcaption? -->
+
+
+    <div id="events-to-choose" class = "landing_page">
+
     </div>
-    <div id="event-chosen">
-        <div class="event-name"></div>
+    <div id="event-chosen" class="col-md-12">
+        <div class="event-name">Lorem</div>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-            </ul>
+            <!--<ul>-->
+                <!--<li><a href="#" class="active">Home</a></li>-->
+                <!--<li><a href="#">About Us</a></li>-->
+            <!--</ul>-->
         </nav>
         <div class="event-information">
             <div class="event-img">
-                <figure></figure>
+                <figure><img src="images/placeholder.jpg" onclick=""></figure>
             </div>
             <div class="event-info">
                 <span class="date">date:</span>
-                <span class="time">time:</span>
                 <span class="address">address:</span>
                 <span class="host">hosted by:</span>
-                <button class="btn btn-success">Join Now</button>
+                <button class="btn btn-success"><a href="" id="joinNow">Join Now</a></button>
             </div>
         </div>
+        <div class = "event-description">Lorem ipsum</div>
     </div>
     <div id="twitter-and-google-maps">
-        <div id="twitter-feed"></div>
-        <div id="map"></div>
+
+        <div id="map">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7EmAMUOtRxuQL7dRVgDXjfgFpPvNa9ng&callback=initMap"></script>
+        </div>
+
+        <div id="twitter-feed">
+        <p style="text-align: center"><img src="images/twitterlogo.jpg" alt="twitter logo" height="50" width="75"></p>
+        <ol id="tweets"></ol>
+        <button type="button" class="btn btn-info btn-lg center-block" id="submit">#WomenInTech</button>
+        <a href="https://twitter.com/intent/tweet?button_hashtag=womenintech&ref_src=twsrc%5Etfw" class="btn btn-lg center-block" data-show-count="false">Join The Conversation</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+
     </div>
 </body>
 </html>
