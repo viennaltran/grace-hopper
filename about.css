@@ -3,7 +3,7 @@ body {
     height: 100vh;
     width: 100vw;
     font-family: "Libre Baskerville", serif;
-    background-color: #FCC2DC;
+    background-color: aliceblue;
     /*display: flex;*/
     /*justify-content: space-between;*/
 
@@ -23,7 +23,7 @@ header {
 
 
 img {
-    width: auto;
+    width: auto%;
     height: 70%;
     border-radius: 50%;
 
@@ -31,37 +31,37 @@ img {
 }
 
 .erinContainer {
-    height: 60%;
+    height: 90%;
     width: 80%;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
 }
 
 .viennaContainer {
-    height: 60%;
+    height: 90%;
     width: 80%;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
 }
 
 .brandonContainer {
-    height: 60%;
+    height: 90%;
     width: 80%;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
 }
 
 .julianContainer {
-    height: 60%;
+    height: 90%;
     width: 80%;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
 }
 
 .kyleContainer {
-    height: 60%;
+    height: 90%;
     width: 80%;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
 }
 
 .futureReleases {
     width: 80%;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
 }
 
