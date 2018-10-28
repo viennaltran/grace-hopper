@@ -53,16 +53,16 @@ function initMap () {
 function hideLandingPageAndShowDataPage () {
     // $("header").addClass("hidePage");
     $("#events-to-choose").addClass("hidePage");
-    $("#event-chosen").removeClass("hidePage");
-    $("#twitter-and-google-maps").removeClass("hidePage");
+    $("#event-chosen").removeClass("hidePage").addClass("event_chosen");
+    $("#twitter-and-google-maps").removeClass("hidePage").addClass("twitter_and_google_maps");
 }
 
 //add functionality of showing landing page and showing divs
 
 function showLandingPageAndHideDataPage () {
     $("#events-to-choose").removeClass("hidePage");
-    $("#event-chosen").addClass("hidePage");
-    $("#twitter-and-google-maps").addClass("hidePage");
+    $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
+    $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
 }
 
 function createPhotoArray(){
