@@ -11,6 +11,11 @@ ul{
     margin-left: 44%;
 }
 
+.container {
+    display: grid;
+    grid-row-gap: 2vh;
+}
+
 .landing_page{
     display: inline-block;
     height:10%;
