@@ -118,8 +118,10 @@ function placeRandomImages(array){
             });
             newFigure.append(newImage);
             figureArray.push(newFigure);
-            var hoverP = $('<p>').addClass('hoverText');
+            var hoverP = $('<p>').addClass('hoverText firstp');
+            var hoverP2 = $('<p>').addClass('hoverText2 secondp');
             newFigure.append(hoverP);
+            newFigure.append(hoverP2);
         }
         $('#events-to-choose').append(figureArray);
         $("figure").on("mouseenter",addHoverText);
@@ -212,10 +214,13 @@ function addHoverText (event) {
 
         if($(event.currentTarget).find(".picture").attr("index") === attributeIndex){
             if(i > storeReply.chickTech.eventName.length-1){
-                $(".hoverText").text(storeReply.girlDev.eventName[i] + storeReply.girlDev.date[i]);
+                $(".firstp").text(storeReply.girlDev.eventName[i]);
+                $(".secondp").text(storeReply.girlDev.date[i]);
             }
             else{
-                $(".hoverText").text(storeReply.chickTech.eventName[i] + storeReply.chickTech.date[i]);
+                $(".firstp").text(storeReply.chickTech.eventName[i]);
+                $(".secondp").text(storeReply.chickTech.date[i]);
+                // $(".hoverText").text(storeReply.chickTech.eventName[i] + " " + storeReply.chickTech.date[i]);
             }
         }
     }
