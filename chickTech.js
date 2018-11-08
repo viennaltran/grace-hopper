@@ -41,10 +41,16 @@ function dataStorage(events) {
     var longitudeArr = [];
     var eventNameArr = [];
     var dateArr = [];
+    var photoUrl = [];
 
     for (var x = 0; x<events.length; x++) {
         var groupName = globalReply.results[x].group.name;
         groupNameArr.push(groupName);
+
+        var groupPhoto1 = globalReply.results[x].photo_url;
+        var groupPhoto1;
+        var groupPhoto = groupPhoto1.replace("global_", "highres_");
+        photoUrl.push(groupPhoto);
 
         var eventDescriptions = globalReply.results[x].description;
         eventDescriptionsArr.push(eventDescriptions);
@@ -82,6 +88,7 @@ function dataStorage(events) {
 
     }
     chickTechStorage.groupName = groupNameArr;
+    chickTechStorage.groupPhoto = photoUrl;
     chickTechStorage.eventName = eventNameArr;
     chickTechStorage.eventDescriptions = eventDescriptionsArr;
     chickTechStorage.eventUrl = eventUrlArr;

@@ -14,16 +14,9 @@ function initializeApp () {
 function initMap () {
     var options = {
         zoom: 15,
-        // center: {lat:33.6846, lng:-117.8265}, //irvine coords
     }
 
     map = new google.maps.Map(document.getElementById('map'),options);
-
-    //adding marker to the map
-    // var marker = new google.maps.Marker ({
-    //     position:{lat:33.6846, lng:-117.8265},
-    //     map:map,
-    // });
 
     //adding a custom icon
     var icon = {
@@ -32,12 +25,6 @@ function initMap () {
         origin: new google.maps.Point(0,0),
         anchor: new google.maps.Point(0,0)
     };
-
-    // //the Shrine coords
-    // addMarker({lat:34.0522, lng:-118.2437});
-    // //hollywood bowl coords
-    // addMarker({lat:34.1122, lng:-118.3391});
-
 
     //adding multiple markers to the map
     function addMarker (coordinates) {
@@ -169,10 +156,12 @@ function addDataOntoPage () {
                 for(var index = 0; index < 1; index++){
                     totalEventDescriptions = storeReply.girlDev.eventDescriptions[i].replace(/<[^<>]*>/g, '');
                 }
-                $(".event-description").text(totalEventDescriptions);
+                // $(".event-description").text(totalEventDescriptions);
                 $(".event-description").text(totalEventDescriptions);
                 $(".date").text("Date: " + storeReply.girlDev.date[i]);
                 $(".host").text("Hosted by: " + storeReply.girlDev.groupName[i]);
+                var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
+                $('img[src="' + oldSrc + '"]').attr('src', storeReply.girlDev.groupPhoto[i]);
                 if(storeReply.girlDev.venueState[i] === undefined){
                     storeReply.girlDev.venueState[i] = "CA";
                 }
@@ -193,6 +182,8 @@ function addDataOntoPage () {
                 $(".event-description").text(totalEventDescriptions);
                 $(".date").text("Date: " + storeReply.chickTech.date[i]);
                 $(".host").text("Hosted by: " + storeReply.chickTech.groupName[i]);
+                var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
+                $('img[src="' + oldSrc + '"]').attr('src', storeReply.chickTech.groupPhoto[i]);
                 if(storeReply.chickTech.venueState[i] === undefined){
                     storeReply.chickTech.venueState[i] = "CA";
                 }
