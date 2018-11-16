@@ -13,7 +13,11 @@ header{
 
 .headerImg{
     width: 100%;
+    display: block;
+    max-width: 600px;
+    max-height: 400px;
     height: 5%;
+    margin: 0 auto;
 }
 
 /* navigation bar */
@@ -42,6 +46,10 @@ header{
 }
 
 /* landing page */
+
+figure {
+    margin: 0;
+}
 
 .landing_page{
     display: flex;
