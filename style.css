@@ -9,6 +9,7 @@ body{
 
 header{
     flex-direction: column;
+    margin: 10px 0;
 }
 
 .headerImg{
@@ -84,7 +85,7 @@ figure {
     display: none;
     width: 100%;
     text-align: center;
-    top: 30%;
+    top: 18%;
     word-wrap: break-word;
     z-index:-1;
 }
@@ -112,28 +113,32 @@ img:hover + p {
 
 .event-information{
     display: grid;
-    grid-template-columns: 60% 38%;
     grid-column-gap: 2%;
 }
 .event-information>.event-img>figure{
-    display:inline-block;
+    display:flex;
     height: 100%;
     width: 100%;
 }
 
 .event-information>.event-img>figure>img{
     width: 100%;
-    height: 100%
+    height: 100%;
+    max-width: 600px;
+    max-height: 450px;
+    margin: 0 auto;
 }
 
 .event-info{
     background-color:white;
     display:block;
     position:relative;
+    text-align: center;
 }
 
-.event-description {
-
+.event-info > span {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .date,.time,.address,.host{
@@ -142,8 +147,8 @@ img:hover + p {
 }
 
 ol{
-    display: inline-block;
-    margin-left: 13%;
+    display: block;
+    margin: 10px auto;
     border: .4rem solid black;
     width: 75%;
 }
@@ -165,7 +170,19 @@ ol{
 
 .twitter_and_google_maps {
     display: grid;
+    margin: 10px 0;
     grid-row-gap: 3vh;
+}
+
+.twitter_and_google_maps > button {
+    display: block;
+    margin: 0 auto;
+}
+
+#twitter-feed > div > * {
+    display: block;
+    margin: 10px auto;
+    width: 25%;
 }
 
 #websiteHeader{
@@ -202,6 +219,7 @@ ol{
 }
 /* media queries */
 @media(max-width: 700px){
+    /* landing page */
     .landing_page > figure {
         position:relative;
         justify-content: space-around;
@@ -229,7 +247,7 @@ ol{
         display: none;
         width: 100%;
         text-align: center;
-        top: 40%;
+        top: 48%;
         word-wrap: break-word;
         z-index:-1;
     }
@@ -240,5 +258,17 @@ ol{
     
     .secondp {
         display: block;
+    }
+
+    /* Data Page */
+
+    .event-name {
+        font-size:20px;
+    }
+
+    #twitter-feed > div > * {
+        display: block;
+        margin: 10px auto;
+        width: 100%;
     }
 }

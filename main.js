@@ -38,7 +38,6 @@ function initMap () {
 
 
 function hideLandingPageAndShowDataPage () {
-    // $("header").addClass("hidePage");
     $("#events-to-choose").addClass("hidePage");
     $("#event-chosen").removeClass("hidePage").addClass("event_chosen");
     $("#twitter-and-google-maps").removeClass("hidePage").addClass("twitter_and_google_maps");
@@ -156,7 +155,6 @@ function addDataOntoPage () {
                 for(var index = 0; index < 1; index++){
                     totalEventDescriptions = storeReply.girlDev.eventDescriptions[i].replace(/<[^<>]*>/g, '');
                 }
-                // $(".event-description").text(totalEventDescriptions);
                 $(".event-description").text(totalEventDescriptions);
                 $(".date").text("Date: " + storeReply.girlDev.date[i]);
                 $(".host").text("Hosted by: " + storeReply.girlDev.groupName[i]);
@@ -170,6 +168,7 @@ function addDataOntoPage () {
                     lat: storeReply.girlDev.latitude[i],
                     lng: storeReply.girlDev.longitude[i]
                 }
+                $(".eventURL").attr("href", storeReply.girlDev.eventUrl[i]).css("color", "white");
         
                 addOneMarkerToMap(coordinates);
             }
@@ -192,6 +191,8 @@ function addDataOntoPage () {
                     lat: storeReply.chickTech.latitude[i],
                     lng: storeReply.chickTech.longitude[i]
                 }
+
+                $(".eventURL").attr("href", storeReply.chickTech.eventUrl[i]).css("color", "white");
         
                 addOneMarkerToMap(coordinates);
             }
@@ -211,13 +212,10 @@ function addHoverText (event) {
             else{
                 $(".firstp").text(storeReply.chickTech.eventName[i]);
                 $(".secondp").text(storeReply.chickTech.date[i]);
-                // $(".hoverText").text(storeReply.chickTech.eventName[i] + " " + storeReply.chickTech.date[i]);
             }
         }
     }
 
-    // var index = $(event.currentTarget).find(".picture").attr("index");
-    // $(".hoverText").text(storeReply.girlDev.eventName[index]);
 }
 
 //adds a marker for each specific meetup location
