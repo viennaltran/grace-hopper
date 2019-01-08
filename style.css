@@ -98,12 +98,24 @@ figure {
     margin: 0;
 }
 
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
 .landing_page{
     display: flex;
     height:10%;
     position:relative;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.landing-page-image {
+    max-width: 1000px;
+    max-height: 550px;
+    width: 100%;
+    height: 70%;
 }
 
 .landing_page > figure {
@@ -317,4 +329,17 @@ ol{
         margin: 10px auto;
         width: 100%;
     }
+}
+
+
+.twitter-section, .newest-section{
+    width: 48%;
+    height: 400px;
+    background-color: pink;
+}
+
+.contents-section {
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
 }
