@@ -109,12 +109,17 @@ function placeRandomImages(array){
             newFigure.append(hoverP);
             newFigure.append(hoverP2);
         }
-        $('#events-to-choose').append(figureArray);
+        $(".events-page").on("click",showEventsPage(figureArray));
         $("figure").on("mouseenter",addHoverText);
         $(".picture").on("click",addDataOntoPage);
     $(".picture").on("click",hideLandingPageAndShowDataPage);
     $(".active").on("click",showLandingPageAndHideDataPage);
 
+}
+
+function showEventsPage (figureArray){
+    $('#events-to-choose').append(figureArray);
+    $('.landing-page').addClass("hidePage");
 }
 
 
