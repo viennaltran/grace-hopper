@@ -42,8 +42,54 @@ header{
     margin-right: 5%;
 }
 
+.navbar-default {
+    margin: 0 auto;
+    background-color: #ef5350;
+    border-color: #E7E7E7;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #E7E7E7;
+}
+
+.navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    background-color: #b9403e;
+    color: #E7E7E7;
+}
+
 .nav-bar > li > a {
     color: white;
+}
+
+.navbar-toggle {
+    float: left;
+    margin: 10px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #E7E7E7;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #b9403e;
+}
+
+.navigation-links {
+    margin-left: 10px;
+}
+
+.navigation-li {
+    margin: 0 auto;
+}
+
+.navbar-nav {
+    width: 100%;
+    margin: 0;
 }
 
 /* landing page */
