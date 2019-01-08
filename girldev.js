@@ -34,6 +34,7 @@ function data_storage(events){
     var longitudeArr = [];
     var eventNameArr = [];
     var dateArr = [];
+    var photoUrl = [];
 
         for(var i=0;i<events.length; i++){
             //lat
@@ -72,6 +73,11 @@ function data_storage(events){
             var groupName = global_result.results[i].group.name;
             groupNameArr.push(groupName);
 
+            var groupPhoto1 = global_result.results[i].photo_url;
+            var groupPhoto1;
+            var groupPhoto = groupPhoto1.replace("global_", "highres_");
+            photoUrl.push(groupPhoto);
+
             //event_url
             var url=  global_result.results[i].event_url;
             eventUrlArr.push(url);
@@ -83,6 +89,7 @@ function data_storage(events){
             
         }
         girlDevStorage.groupName = groupNameArr;
+        girlDevStorage.groupPhoto = photoUrl;
         girlDevStorage.eventName = eventNameArr;
         girlDevStorage.eventDescriptions = eventDescriptionsArr;
         girlDevStorage.eventUrl = eventUrlArr;

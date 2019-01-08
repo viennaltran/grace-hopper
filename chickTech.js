@@ -4,15 +4,10 @@ var chickTechStorage = {};
 $(document).ready(initializeApp);
 
 function initializeApp() {
-    addClickHandler();
+
     hideDataPage(); 
 }
 
-function addClickHandler () {
-    // $(".picture").on("click",addDataOntoPage);
-
-
-}
 
 function hideDataPage () {
     $("#event-chosen").addClass("hidePage");
@@ -46,10 +41,16 @@ function dataStorage(events) {
     var longitudeArr = [];
     var eventNameArr = [];
     var dateArr = [];
+    var photoUrl = [];
 
     for (var x = 0; x<events.length; x++) {
         var groupName = globalReply.results[x].group.name;
         groupNameArr.push(groupName);
+
+        var groupPhoto1 = globalReply.results[x].photo_url;
+        var groupPhoto1;
+        var groupPhoto = groupPhoto1.replace("global_", "highres_");
+        photoUrl.push(groupPhoto);
 
         var eventDescriptions = globalReply.results[x].description;
         eventDescriptionsArr.push(eventDescriptions);
@@ -87,6 +88,7 @@ function dataStorage(events) {
 
     }
     chickTechStorage.groupName = groupNameArr;
+    chickTechStorage.groupPhoto = photoUrl;
     chickTechStorage.eventName = eventNameArr;
     chickTechStorage.eventDescriptions = eventDescriptionsArr;
     chickTechStorage.eventUrl = eventUrlArr;
@@ -99,51 +101,4 @@ function dataStorage(events) {
     chickTechStorage.date = dateArr;
 }
 console.log(chickTechStorage);
-
-//dynamically creates data for each specific meetup
-
-// function addDataOntoPage () {
-//     for(var i = 0; i < storeReply.eventName.length; i++){
-//         var attributeIndex = i.toString();
-//         if($(event.currentTarget).attr("index") === attributeIndex){
-//             console.log("I am alive");
-//             $(".event-name").text(storeReply.eventName[i]);
-//             $(".date").text("Date: " + storeReply.date[i]);
-//             $(".host").text("Hosted by: " + storeReply.groupName[i]);
-//             if(storeReply.venueState[i] === undefined){
-//                 storeReply.venueState[i] = "CA";
-//             }
-//             $(".address").text("Address: " + storeReply.venueAddress[i] + ", " + storeReply.venueCity[i] + ", " + storeReply.venueState[i]);
-//             var coordinates = {
-//                 lat: storeReply.latitude[i],
-//                 lng: storeReply.longitude[i]
-//             }
-    
-//             addOneMarkerToMap(coordinates);
-//         } 
-//     }
-// }
-
-// //add functionality of hiding and showing divs
-
-
-// //adds a marker for each specific meetup location
-
-// function addOneMarkerToMap(coordinates) {
-//     var icon = {
-//         url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
-//         scaledSize: new google.maps.Size(30, 30),
-//         origin: new google.maps.Point(0,0),
-//         anchor: new google.maps.Point(0,0)
-//     }
-
-//     var marker = new google.maps.Marker ({
-//         position:coordinates,
-//         map:map,
-//         icon:icon
-//     });
-
-//     //resets the center of the google map to our specific coordinates
-//     map.panTo(coordinates);
-// }
 

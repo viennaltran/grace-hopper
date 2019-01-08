@@ -1,81 +1,190 @@
 body{
-    margin:0;
+    margin:0 10%;
     font-family: "Libre Baskerville", serif;
+    display: flex;
+    flex-direction: column; 
 }
+
+/* header */
 
 header{
-    height:27%;
+    flex-direction: column;
+    margin: 10px 0;
 }
 
-ul{
-    margin-left: 44%;
+.headerImg{
+    width: 100%;
+    display: block;
+    max-width: 600px;
+    max-height: 400px;
+    height: 5%;
+    margin: 0 auto;
+}
+
+/* navigation bar */
+
+.nav-bar {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    padding: 0;
+    background-color: lightblue;
+}
+
+.nav-bar > li {
+    font-size: 2vw;
+    justify-content: space-evenly;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1%;
+    margin-right: 5%;
+}
+
+.navbar-default {
+    margin: 0 auto;
+    background-color: #ef5350;
+    border-color: #E7E7E7;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #E7E7E7;
+}
+
+.navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    background-color: #b9403e;
+    color: #E7E7E7;
+}
+
+.nav-bar > li > a {
+    color: white;
+}
+
+.navbar-toggle {
+    float: left;
+    margin: 10px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #E7E7E7;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #b9403e;
+}
+
+.navigation-links {
+    margin-left: 10px;
+}
+
+.navigation-li {
+    margin: 0 auto;
+}
+
+.navbar-nav {
+    width: 100%;
+    margin: 0;
+}
+
+/* landing page */
+
+figure {
+    margin: 0;
 }
 
 .landing_page{
-    display: inline-block;
+    display: flex;
     height:10%;
     position:relative;
-    margin-top: 2%;
-    
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.landing_page>figure{
-    display:inline-block;    
-    width:24%;
+.landing_page > figure {
+    flex-basis:24%;
     position:relative;
-    margin-left:.5%;
-    margin-top: 2.5%;
-    margin-bottom:2.5%;
-       
+    justify-content: space-around;
 }
 
-.landing_page>figure>img{
+.landing_page > figure > img {
     width:100%;  
     border-radius:10%; 
+    height: 95%
 }
 
-
-.landing_page>figure>img:hover{
-    opacity: 0.5;
+.landing_page > figure > img:hover {
+    opacity: 0.25;
     filter: alpha(opacity=50);
-
 }
 
-.hoverText{
-color:black; 
-font-size:2vh; 
-position: absolute;
-  display: none;
-  width: 100%;
-  text-align: center;
-    height: 30%;
-  top: 40%;
-  word-wrap: break-word;
-  z-index:-1;
+.hoverText {
+    align-items: center;
+    color:black; 
+    font-size:1.2vw; 
+    position: absolute;
+    display: none;
+    width: 100%;
+    text-align: center;
+    top: 18%;
+    word-wrap: break-word;
+    z-index:-1;
+}
+
+.hoverText2 {
+    align-items: center;
+    color:black; 
+    font-size:1.2vw; 
+    position: absolute;
+    display: none;
+    width: 100%;
+    text-align: center;
+    top: 60%;
+    word-wrap: break-word;
+    z-index:-1;
 }
 
 img:hover + p {
     display: block;
-  }
+}
+
+.secondp {
+    display: block;
+}
 
 .event-information{
-    background-color:white;
-    text-align:center;
+    display: grid;
+    grid-column-gap: 2%;
 }
 .event-information>.event-img>figure{
-    display:inline-block;    
-    margin-bottom: 2%;
+    display:flex;
+    height: 100%;
+    width: 100%;
 }
+
+.event-information>.event-img>figure>img{
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 450px;
+    margin: 0 auto;
+}
+
 .event-info{
     background-color:white;
     display:block;
     position:relative;
-    margin-bottom: 2%;
+    text-align: center;
 }
 
-.event-description {
-    margin-bottom: 2%;
-
+.event-info > span {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .date,.time,.address,.host{
@@ -84,8 +193,8 @@ img:hover + p {
 }
 
 ol{
-    display: inline-block;
-    margin-left: 13%;
+    display: block;
+    margin: 10px auto;
     border: .4rem solid black;
     width: 75%;
 }
@@ -100,9 +209,28 @@ ol{
     width:100%;
 }
 
-header {
+.event_chosen {
+    display: grid;
+    grid-row-gap: 3vh;
+}
+
+.twitter_and_google_maps {
+    display: grid;
+    margin: 10px 0;
+    grid-row-gap: 3vh;
+}
+
+.twitter_and_google_maps > button {
+    display: block;
     margin: 0 auto;
 }
+
+#twitter-feed > div > * {
+    display: block;
+    margin: 10px auto;
+    width: 25%;
+}
+
 #websiteHeader{
     text-align: center;
 }
@@ -112,7 +240,6 @@ header {
     text-align: center;
     font-size:36px;
     border-bottom: 1px solid black;
-    margin-bottom: 2%;
 }
 
 /* credit to Sara Vieira from developerdrive.com */
@@ -135,4 +262,59 @@ header {
 }
 .landing_page>figure>img:hover {
 	animation: bounce 1s;
+}
+/* media queries */
+@media(max-width: 700px){
+    /* landing page */
+    .landing_page > figure {
+        position:relative;
+        justify-content: space-around;
+        flex-basis: 98%;
+    }
+    
+    .hoverText {
+        align-items: center;
+        color:black; 
+        font-size:3vw; 
+        position: absolute;
+        display: none;
+        width: 100%;
+        text-align: center;
+        top: 30%;
+        word-wrap: break-word;
+        z-index:-1;
+    }
+    
+    .hoverText2 {
+        align-items: center;
+        color:black; 
+        font-size:3vw; 
+        position: absolute;
+        display: none;
+        width: 100%;
+        text-align: center;
+        top: 48%;
+        word-wrap: break-word;
+        z-index:-1;
+    }
+    
+    img:hover + p {
+        display: block;
+    }
+    
+    .secondp {
+        display: block;
+    }
+
+    /* Data Page */
+
+    .event-name {
+        font-size:20px;
+    }
+
+    #twitter-feed > div > * {
+        display: block;
+        margin: 10px auto;
+        width: 100%;
+    }
 }
