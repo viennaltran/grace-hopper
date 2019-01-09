@@ -27,13 +27,13 @@ function initMap () {
     };
 
     //adding multiple markers to the map
-    function addMarker (coordinates) {
-        var marker = new google.maps.Marker ({
-        position:coordinates,
-        map:map,
-        icon:icon
-        });
-    }
+    // function addMarker (coordinates) {
+    //     var marker = new google.maps.Marker ({
+    //     position:coordinates,
+    //     map:map,
+    //     icon:icon
+    //     });
+    // }
 }
 
 
@@ -170,7 +170,7 @@ function addDataOntoPage () {
                 }
                 $(".eventURL").attr("href", storeReply.girlDev.eventUrl[i]).css("color", "white");
         
-                addOneMarkerToMap(coordinates);
+                addOneMarkerToMap(coordinates,oldSrc);
             }
             else{
                 $(".event-name").text(storeReply.chickTech.eventName[i]);
@@ -220,7 +220,7 @@ function addHoverText (event) {
 
 //adds a marker for each specific meetup location
 
-function addOneMarkerToMap(coordinates) {
+function addOneMarkerToMap(coordinates,oldSrc) {
     var icon = {
         url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
         scaledSize: new google.maps.Size(30, 30),
@@ -232,6 +232,31 @@ function addOneMarkerToMap(coordinates) {
         position:coordinates,
         map:map,
         icon:icon
+    });
+
+    var contentString = '<img>{oldSrc}</img><p>Address Placeholder<p>';
+
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+    //   marker.addListener('click', function() {
+    //     infowindow.open(map, marker);
+    //   });
+
+    marker.addListener('mouseover', function() {
+        infowindow.open(map, this);
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+    });
+    
+    // assuming you also want to hide the infowindow when user mouses-out
+    marker.addListener('mouseout', function() {
+        infowindow.close();
+        marker.setAnimation(null);
+    });
+
+    marker.addListener('click', function () {
+        marker.setAnimation(null);
     });
 
     //resets the center of the google map to our specific coordinates
