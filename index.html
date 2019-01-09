@@ -42,13 +42,31 @@
             </div>
         </nav>
     </header>
+    <br>
+    <div style="font-size: 250%; font-family: sans-serif; font-weight: bold; text-align: center" > Who is Grace Hopper?</div>
+    <br>
+    <div style="margin-left:20%; margin-right:20%; font-size: 150%; font-family: sans-serif;"> "Grace Hopper helped pioneer the Harvard Mark 1 electromechanical computer in 1943. Our goal is to connect and inspire
+    a community of tech-savvy women through local meet-ups." </div>
 
     <div class="landing-page">
         <div class="img-container">
             <img class = "landing-page-image" src="images/Women_in_Tech_Know_Their_Worth_Its_Time-Everyone_Else_Does_Too_1.jpg" alt="landing-page-img">
         </div>
         <div class="contents-section">
-            <div class = "twitter-section">Twitter Section</div>
+            
+            <div class = "twitter-section">
+                <div id="twitter-feed">
+                    <p style="text-align: center"><img src="images/twitterlogo.jpg" alt="twitter logo" height="50" width="75"></p>
+                    <ol id="tweets"></ol>
+                    <div>
+                        <button type="button" class="btn btn-info btn-md center-block" id="submit">#WomenInTech</button>
+                        <a href="https://twitter.com/intent/tweet?button_hashtag=womenintech&ref_src=twsrc%5Etfw" class="btn btn-lg center-block"
+                            data-show-count="false">Join The Conversation</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+            </div>
+            
             <div class="newest-section">Newest Events Section</div>
         </div>
     </div>
@@ -78,16 +96,6 @@
         <div id="map">
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7EmAMUOtRxuQL7dRVgDXjfgFpPvNa9ng&callback=initMap"></script>
         </div>
-
-        <div id="twitter-feed">
-            <p style="text-align: center"><img src="images/twitterlogo.jpg" alt="twitter logo" height="50" width="75"></p>
-            <ol id="tweets"></ol>
-            <div>
-                <button type="button" class="btn btn-info btn-lg center-block" id="submit">#WomenInTech</button>
-                <a href="https://twitter.com/intent/tweet?button_hashtag=womenintech&ref_src=twsrc%5Etfw" class="btn btn-lg center-block" data-show-count="false">Join The Conversation</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-        </div>
-
 
     </div>
 </body>
