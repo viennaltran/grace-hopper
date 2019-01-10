@@ -8,7 +8,16 @@ storeReply.girlDev= girlDevStorage;
 function initializeApp () {
     addClickHandlerToSubmitButton();
     createPhotoArray();
+    addClickHandlers();
+}
 
+function addClickHandlers(){
+    $(".events-page").on("click",showEventsPage);
+}
+
+function showEventsPage (){
+    $("figure").removeClass("hidePage");
+    $(".landing-page").addClass("hidePage");
 }
 
 function initMap () {
@@ -37,7 +46,7 @@ function initMap () {
 }
 
 
-function hideLandingPageAndShowDataPage () {
+function hideEventsPageAndShowDataPage () {
     $("#events-to-choose").addClass("hidePage");
     $("#event-chosen").removeClass("hidePage").addClass("event_chosen");
     $("#twitter-and-google-maps").removeClass("hidePage").addClass("twitter_and_google_maps");
@@ -108,11 +117,14 @@ function placeRandomImages(array){
             var hoverP2 = $('<p>').addClass('hoverText2 secondp');
             newFigure.append(hoverP);
             newFigure.append(hoverP2);
+            newFigure.addClass("hidePage");
+            // $('figure').addClass("hidePage");
+
         }
         $('#events-to-choose').append(figureArray);
         $("figure").on("mouseenter",addHoverText);
         $(".picture").on("click",addDataOntoPage);
-    $(".picture").on("click",hideLandingPageAndShowDataPage);
+    $(".picture").on("click",hideEventsPageAndShowDataPage);
     $(".active").on("click",showLandingPageAndHideDataPage);
 
 }
