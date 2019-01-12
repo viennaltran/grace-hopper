@@ -18,6 +18,9 @@ function addClickHandlers(){
 function showEventsPage (){
     $("figure").removeClass("hidePage");
     $(".landing-page").addClass("hidePage");
+    $("#events-to-choose").removeClass("hidePage");
+    $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
+    $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
 }
 
 function initMap () {
