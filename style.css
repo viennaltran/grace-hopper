@@ -1,8 +1,19 @@
 body{
-    margin:0 10%;
+    margin:0 15%;
     font-family: "Libre Baskerville", serif;
     display: flex;
     flex-direction: column; 
+}
+
+.brandon {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+}
+
+.bp {
+    font-size: 150%;
+    font-family: sans-serif;
 }
 
 /* header */
@@ -10,6 +21,21 @@ body{
 header{
     flex-direction: column;
     margin: 10px 0;
+}
+
+.header-text{
+    font-size: 250%;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header-text2 {
+    margin-left:20%;
+    margin-right:20%;
+    text-align: center;
+    font-size: 150%;
+    font-family: sans-serif;
 }
 
 .headerImg{
@@ -112,7 +138,7 @@ figure {
 }
 
 .landing-page-image {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     max-height: 550px;
     width: 100%;
     height: 70%;
@@ -239,8 +265,26 @@ ol{
 
 #twitter-feed > div > * {
     display: block;
+    text-align: center;
     margin: 10px auto;
-    width: 40%;
+    /* width: 100%; */
+}
+
+#twitter-feed {
+    background-color: #E7E7E7;
+}
+
+.twitter-content {
+    width: 100%;
+}
+
+.twitter-section {
+    background-color: #E7E7E7;
+}
+
+.newest-section {
+    background-color: #E7E7E7;
+    text-align: center;
 }
 
 #websiteHeader{
@@ -277,6 +321,27 @@ ol{
 }
 /* media queries */
 @media(max-width: 700px){
+    body {
+        margin:0 10%;
+    }
+
+    .twitter-content > * {
+        font-size: 1.2rem;
+    }
+
+    .header-text{
+        font-size: 2rem;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .header-text2{
+        font-size: 1.5rem;
+        margin-left:10%;
+        margin-right:10%;
+    }
+
     /* landing page */
     .landing_page > figure {
         position:relative;
@@ -324,17 +389,43 @@ ol{
         font-size:20px;
     }
 
-    #twitter-feed > div > * {
+    /* #twitter-feed > div > * {
         display: block;
         margin: 10px auto;
         width: 100%;
+    } */
+}
+
+@media(max-width: 500px){
+    body {
+        margin:0 5%;
+    }
+
+    .twitter-content > button {
+        font-size: 1.1rem;
+    }
+
+    .twitter-content > a {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .header-text{
+        font-size: 1.6rem;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .header-text2{
+        font-size: 1.2rem;
+        margin-left:10%;
+        margin-right:10%;
     }
 }
 
-
 .twitter-section, .newest-section{
     width: 48%;
-    height: 400px;
 }
 
 .contents-section {
