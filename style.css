@@ -31,8 +31,8 @@ header{
 }
 
 .header-text2 {
-    margin-left:20%;
-    margin-right:20%;
+    margin-left:10%;
+    margin-right:10%;
     text-align: center;
     font-size: 150%;
     font-family: sans-serif;
@@ -219,6 +219,7 @@ img:hover + p {
     display:block;
     position:relative;
     text-align: center;
+    margin: 1rem 0;
 }
 
 .event-info > span {
@@ -248,8 +249,9 @@ ol{
 }
 
 .event_chosen {
-    display: grid;
-    grid-row-gap: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .twitter_and_google_maps {
@@ -295,6 +297,8 @@ ol{
 .event-name {
     text-align: center;
     font-size:36px;
+    margin-bottom: 10px;
+    width: 100%;
     border-bottom: 1px solid black;
 }
 
@@ -389,6 +393,15 @@ ol{
         font-size:20px;
     }
 
+    .event-info > span {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .event-description {
+        font-size: 12px;
+    }
+
     /* #twitter-feed > div > * {
         display: block;
         margin: 10px auto;
@@ -421,6 +434,20 @@ ol{
         font-size: 1.2rem;
         margin-left:10%;
         margin-right:10%;
+    }
+    /* Data Page */
+
+    /* .event-name {
+        font-size:12px;
+    } */
+
+    .event-info > span {
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    .event-description {
+        font-size: 12px;
     }
 }
 

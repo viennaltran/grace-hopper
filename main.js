@@ -193,7 +193,6 @@ console.log(chickTechStorage);
 //         },
 //       });
 // }
-=======
 function showEventsPage (){
     $("figure").removeClass("hidePage");
     $(".landing-page").addClass("hidePage");
@@ -208,23 +207,6 @@ function initMap () {
     }
 
     map = new google.maps.Map(document.getElementById('map'),options);
-
-    //adding a custom icon
-    var icon = {
-        url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
-        scaledSize: new google.maps.Size(50, 50),
-        origin: new google.maps.Point(0,0),
-        anchor: new google.maps.Point(0,0)
-    };
-
-    //adding multiple markers to the map
-    // function addMarker (coordinates) {
-    //     var marker = new google.maps.Marker ({
-    //     position:coordinates,
-    //     map:map,
-    //     icon:icon
-    //     });
-    // }
 }
 
 
@@ -456,6 +438,39 @@ function addDataOntoPage () {
                 $(".eventURL").attr("href", storeReply.girlDev.eventUrl[i]).css("color", "white");
 
         
+                addOneMarkerToMap(coordinates);
+            }
+        } 
+    }
+}
+
+function addHoverText (event) {
+    for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
+        var attributeIndex = i.toString();
+
+        if($(event.currentTarget).find(".picture").attr("index") === attributeIndex){
+            if(i > storeReply.chickTech.eventName.length-1){
+                $(".firstp").text(storeReply.girlDev.eventName[i]);
+                $(".secondp").text(storeReply.girlDev.date[i]);
+            }
+            else{
+                $(".firstp").text(storeReply.chickTech.eventName[i]);
+                $(".secondp").text(storeReply.chickTech.date[i]);
+            }
+        }
+    }
+
+}
+
+//adds a marker for each specific meetup location
+
+function addOneMarkerToMap(coordinates,oldSrc) {
+    var icon = {
+        url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
+        scaledSize: new google.maps.Size(50, 50),
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point(0,0)
+    }
 // //                 addOneMarkerToMap(coordinates);
 // //             }
 // //         } 
