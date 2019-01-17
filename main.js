@@ -9,6 +9,7 @@ var meetupStorage = {};
 function initializeApp () {
     $.ajax(meetup);
     addClickHandlerToSubmitButton();
+    addClickHandlerToCloseButton();
     createPhotoArray();
     addClickHandlers();
     // hideDataPage(); 
@@ -215,9 +216,10 @@ function createPhotoArray(){
 
 function addClickHandlerToSubmitButton(){
     $('#submit').click(search)
+    $("#close").hide();
 }
 
-function search(){
+function search () {
     $.ajax({
         url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php?search_term=womenintech',
         dataType:'json',
@@ -230,6 +232,17 @@ function search(){
             }
         }
     });
+    $("#submit").hide();
+    $("#close").show();
+}
+
+function addClickHandlerToCloseButton () {
+    $("#close").click(closeTwitter)
+}
+
+function closeTwitter () {
+    $("#tweets").hide()
+    $("#close").hide();
 }
 
 function hideDataPage () {
