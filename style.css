@@ -207,10 +207,8 @@ img:hover + p {
 }
 
 .event-information > .event-img > figure > img {
-  width: 100%;
+  width: 80%;
   height: 100%;
-  max-width: 600px;
-  max-height: 450px;
   margin: 0 auto;
 }
 
@@ -259,6 +257,7 @@ ol {
   display: grid;
   margin: 10px 0;
   grid-row-gap: 3vh;
+  
 }
 
 .twitter_and_google_maps > button {
@@ -406,6 +405,10 @@ ol {
 
   .event-description {
     font-size: 12px;
+  }
+
+  #twitter-and-google-maps{
+    margin: 1rem 0;
   }
 
   /* #twitter-feed > div > * {

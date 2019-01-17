@@ -7,10 +7,11 @@ var meetupStorage = {};
 // storeReply.meetup = meetupStorage;
 
 function initializeApp () {
+    $.ajax(meetup);
     addClickHandlerToSubmitButton();
     createPhotoArray();
     addClickHandlers();
-    hideDataPage(); 
+    // hideDataPage(); 
 }
 
 var meetup = {
@@ -28,12 +29,13 @@ var meetup = {
         global_result = result;
         var events=global_result.results;
         dataStorage(events);
+        addDataOntoPage();
     },
     error: err=>console.log("error:",err)
 }
 
 
-$.ajax(meetup);
+// $.ajax(meetup);
 
 function dataStorage(events) {
     var groupNameArr = [];
@@ -117,8 +119,8 @@ function showEventsPage (){
     $("figure").removeClass("hidePage");
     $(".landing-page").addClass("hidePage");
     $("#events-to-choose").removeClass("hidePage");
-    $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
-    $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+    // $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
+    // $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
 }
 
 function initMap () {
@@ -264,12 +266,42 @@ function placeRandomImages(array){
 }
 
 function addDataOntoPage () {
-    for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
-        var attributeIndex = i.toString();
-        if($(event.currentTarget).attr("index") === attributeIndex){
-            console.log("I am alive");
-            if(i > storeReply.chickTech.eventName.length-1){
-                $(".event-name").text(storeReply.girlDev.eventName[i]);
+    for(let i = 0; i < 1; i++){
+
+        // console.log(meetupStorage.venueAddress[0]);
+
+        var address = `${meetupStorage.venueAddress[i]}, ${meetupStorage.venueCity[i]}, ${meetupStorage.venueState[i]}`;
+        var eventName = meetupStorage.eventName[i];
+
+        $(".date").text("Date: " + meetupStorage.date[i]);
+        $(".event-name").text(meetupStorage.eventName[i]);
+        $(".event-description").text(meetupStorage.eventDescriptions[i]).css("margin", "1rem 0px");
+        $(".address").text(`Address: ${address}`);
+        $(".host").text("Hosted by: " + meetupStorage.groupName[i]);
+        var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
+        $('img[src="' + oldSrc + '"]').attr('src', meetupStorage.groupPhoto[i]);
+
+        var coordinates = {
+            lat: meetupStorage.latitude[i],
+            lng: meetupStorage.longitude[i]
+        }
+
+        $(".eventURL").attr({
+            href: meetupStorage.eventUrl[i],
+            target: "_blank"
+        }).css("color", "white");
+            
+        addOneMarkerToMap(coordinates, eventName, address);
+
+
+        // var attributeIndex = i.toString();
+        // if($(event.currentTarget).attr("index") === attributeIndex){
+        //     console.log("I am alive");
+
+
+
+        //     if(i > storeReply.chickTech.eventName.length-1){
+        //         $(".event-name").text(storeReply.girlDev.eventName[i]);
                 
                 //stuff inside the replace method is a regex call
                 //it grabs everything that starts with "<" and something inside and ends with a ">"
@@ -277,29 +309,29 @@ function addDataOntoPage () {
                 //then it replaces them all with an empty string
                 // storeReply.chickTech.eventDescriptions[0].replace(/<[^<>]*>/g, '');
                 
-                var totalEventDescriptions = "";
-                for(var index = 0; index < 1; index++){
-                    totalEventDescriptions = storeReply.girlDev.eventDescriptions[i].replace(/<[^<>]*>/g, '');
-                }
-                $(".event-description").text(totalEventDescriptions);
-                $(".date").text("Date: " + storeReply.girlDev.date[i]);
-                $(".host").text("Hosted by: " + storeReply.girlDev.groupName[i]);
-                var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
-                $('img[src="' + oldSrc + '"]').attr('src', storeReply.girlDev.groupPhoto[i]);
-                if(storeReply.girlDev.venueState[i] === undefined){
-                    storeReply.girlDev.venueState[i] = "CA";
-                }
-                $(".address").text("Address: " + storeReply.girlDev.venueAddress[i] + ", " + storeReply.girlDev.venueCity[i] + ", " + storeReply.girlDev.venueState[i]);
-                var coordinates = {
-                    lat: storeReply.girlDev.latitude[i],
-                    lng: storeReply.girlDev.longitude[i]
-                }
-                $(".eventURL").attr("href", storeReply.girlDev.eventUrl[i]).css("color", "white");
+        //         var totalEventDescriptions = "";
+        //         for(var index = 0; index < 1; index++){
+        //             totalEventDescriptions = storeReply.girlDev.eventDescriptions[i].replace(/<[^<>]*>/g, '');
+        //         }
+        //         $(".event-description").text(totalEventDescriptions);
+        //         $(".date").text("Date: " + storeReply.girlDev.date[i]);
+        //         $(".host").text("Hosted by: " + storeReply.girlDev.groupName[i]);
+        //         var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
+        //         $('img[src="' + oldSrc + '"]').attr('src', storeReply.girlDev.groupPhoto[i]);
+        //         if(storeReply.girlDev.venueState[i] === undefined){
+        //             storeReply.girlDev.venueState[i] = "CA";
+        //         }
+        //         $(".address").text("Address: " + storeReply.girlDev.venueAddress[i] + ", " + storeReply.girlDev.venueCity[i] + ", " + storeReply.girlDev.venueState[i]);
+        //         var coordinates = {
+        //             lat: storeReply.girlDev.latitude[i],
+        //             lng: storeReply.girlDev.longitude[i]
+        //         }
+        //         $(".eventURL").attr("href", storeReply.girlDev.eventUrl[i]).css("color", "white");
 
         
-                addOneMarkerToMap(coordinates);
-            }
-        } 
+        //         addOneMarkerToMap(coordinates);
+        //     }
+        // } 
     }
 }
 
@@ -323,14 +355,14 @@ function addHoverText (event) {
 
 //adds a marker for each specific meetup location
 
-function addOneMarkerToMap(coordinates,oldSrc) {
-    var icon = {
-        url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
-        scaledSize: new google.maps.Size(50, 50),
-        origin: new google.maps.Point(0,0),
-        anchor: new google.maps.Point(0,0)
-    }
-}
+// function addOneMarkerToMap(coordinates,oldSrc) {
+//     var icon = {
+//         url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
+//         scaledSize: new google.maps.Size(50, 50),
+//         origin: new google.maps.Point(0,0),
+//         anchor: new google.maps.Point(0,0)
+//     }
+// }
 // //                 addOneMarkerToMap(coordinates);
 // //             }
 // //         } 
@@ -351,7 +383,7 @@ function addOneMarkerToMap(coordinates,oldSrc) {
 
 // //adds a marker for each specific meetup location
 
-function addOneMarkerToMap(coordinates,oldSrc) {
+function addOneMarkerToMap(coordinates, eventName, address) {
     var icon = {
         url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
         scaledSize: new google.maps.Size(50, 50),
@@ -365,7 +397,7 @@ function addOneMarkerToMap(coordinates,oldSrc) {
         icon:icon
     });
 
-    var contentString = '<img>{oldSrc}</img><p>Address Placeholder<p>';
+    var contentString = `<p><strong>${eventName}<strong><p><p>${address}</p>`;
 
     var infowindow = new google.maps.InfoWindow({
         content: contentString
