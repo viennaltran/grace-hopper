@@ -8,6 +8,7 @@ storeReply.chickTech = chickTechStorage;
 
 function initializeApp () {
     addClickHandlerToSubmitButton();
+    addClickHandlerToCloseButton();
     createPhotoArray();
     addClickHandlers();
     hideDataPage(); 
@@ -218,7 +219,7 @@ function addClickHandlerToSubmitButton(){
     $('#submit').click(search)
 }
 
-function search(){
+function search () {
     $.ajax({
         url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php?search_term=womenintech',
         dataType:'json',
@@ -231,6 +232,14 @@ function search(){
             }
         }
     });
+}
+
+function addClickHandlerToCloseButton () {
+    $("#close").click(closeTwitter)
+}
+
+function closeTwitter () {
+    $("#tweets").hide()
 }
 
 function hideDataPage () {
