@@ -217,6 +217,7 @@ function createPhotoArray(){
 
 function addClickHandlerToSubmitButton(){
     $('#submit').click(search)
+    $("#close").hide();
 }
 
 function search () {
@@ -232,6 +233,8 @@ function search () {
             }
         }
     });
+    $("#submit").hide();
+    $("#close").show();
 }
 
 function addClickHandlerToCloseButton () {
@@ -240,6 +243,7 @@ function addClickHandlerToCloseButton () {
 
 function closeTwitter () {
     $("#tweets").hide()
+    $("#close").hide();
 }
 
 function hideDataPage () {

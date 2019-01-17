@@ -239,7 +239,7 @@ img:hover + p {
 ol {
   display: block;
   margin: 10px auto;
-  width: 75%;
+  width: 95%;
 }
 
 .hidePage {
@@ -281,6 +281,10 @@ ol {
   overflow: scroll;
 }
 
+#tweets {
+  max-height: 200px;
+  overflow: scroll;
+}
 .twitter-content {
   width: 100%;
 }
