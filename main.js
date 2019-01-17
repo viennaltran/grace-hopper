@@ -4,7 +4,6 @@ var map;
 var storeReply = {};
 var global_result;
 var meetupStorage = {};
-// storeReply.meetup = meetupStorage;
 
 function initializeApp () {
     $.ajax(meetup);
@@ -12,7 +11,7 @@ function initializeApp () {
     addClickHandlerToCloseButton();
     createPhotoArray();
     addClickHandlers();
-    // hideDataPage(); 
+    hideDataPage(); 
 }
 
 var meetup = {
@@ -30,6 +29,7 @@ var meetup = {
         global_result = result;
         var events=global_result.results;
         dataStorage(events);
+        getEventsList(meetupStorage);
         addDataOntoPage();
     },
     error: err=>console.log("error:",err)
@@ -93,7 +93,6 @@ function dataStorage(events) {
         var newDate = new Date(date);
         var dateToString = newDate.toLocaleString();
         dateArr.push(dateToString);
-
 
     }
     meetupStorage.groupName = groupNameArr;
@@ -194,9 +193,9 @@ function createPhotoArray(){
     //     },
         
     //   });
-    var b = "wit.jpg";
-    var placeholderImages = [b,b,b,b,b,b,b,b,b,b,b,b];
-    placeRandomImages(placeholderImages);
+    // var b = "wit.jpg";
+    // var placeholderImages = [b,b,b,b,b,b,b,b,b,b,b,b];
+    // placeRandomImages(placeholderImages);
 }
 
 
@@ -250,28 +249,27 @@ function hideDataPage () {
     $("#twitter-and-google-maps").addClass("hidePage");
 }
 
-function placeRandomImages(array){
+function getEventsList(meetupStorage){
     var figureArray = [];
-        for(var i = 0; i < array.length; i++) {
+        for(let i = 0; i <meetupStorage.groupName.length; i++) {
             //create an img with the src from the array and append it to the appropriate figure in the figureArray
             //append that figureArray to #events-to-choose
             var newFigure = $('<figure>');
-            var newImage = $('<img>').addClass('picture').attr({
-                src: array[i],
-                index: i
-            });
+            var newImage = $('<img>').addClass('picture').attr(
+                'src', meetupStorage.groupPhoto[i]
+            );
+            var nameOfEvent=$('<figcaption>').text(meetupStorage.eventName[i]);
+            newFigure.append(nameOfEvent);
             newFigure.append(newImage);
             figureArray.push(newFigure);
-            var hoverP = $('<p>').addClass('hoverText firstp');
-            var hoverP2 = $('<p>').addClass('hoverText2 secondp');
-            newFigure.append(hoverP);
-            newFigure.append(hoverP2);
+            var location = $('<figcaption>').text(meetupStorage.venueName[i]);
+            var date = $('<figcaption>').text(meetupStorage.date[i]);
+            newFigure.append(location);
+            newFigure.append(date);
             newFigure.addClass("hidePage");
-            // $('figure').addClass("hidePage");
-
         }
         $('#events-to-choose').append(figureArray);
-        $("figure").on("mouseenter",addHoverText);
+        // $("figure").on("mouseenter",addHoverText);
         $(".picture").on("click",addDataOntoPage);
     $(".picture").on("click",hideEventsPageAndShowDataPage);
     $(".active").on("click",showLandingPageAndHideDataPage);
@@ -348,23 +346,23 @@ function addDataOntoPage () {
     }
 }
 
-function addHoverText (event) {
-    for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
-        var attributeIndex = i.toString();
+// function addHoverText (event) {
+    // for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
+    //     var attributeIndex = i.toString();
 
-        if($(event.currentTarget).find(".picture").attr("index") === attributeIndex){
-            if(i > storeReply.chickTech.eventName.length-1){
-                $(".firstp").text(storeReply.girlDev.eventName[i]);
-                $(".secondp").text(storeReply.girlDev.date[i]);
-            }
-            else{
-                $(".firstp").text(storeReply.chickTech.eventName[i]);
-                $(".secondp").text(storeReply.chickTech.date[i]);
-            }
-        }
-    }
+    //     if($(event.currentTarget).find(".picture").attr("index") === attributeIndex){
+    //         if(i > storeReply.chickTech.eventName.length-1){
+    //             $(".firstp").text(storeReply.girlDev.eventName[i]);
+    //             $(".secondp").text(storeReply.girlDev.date[i]);
+    //         }
+    //         else{
+    //             $(".firstp").text(storeReply.chickTech.eventName[i]);
+    //             $(".secondp").text(storeReply.chickTech.date[i]);
+    //         }
+    //     }
+    // }
 
-}
+// }
 
 //adds a marker for each specific meetup location
 

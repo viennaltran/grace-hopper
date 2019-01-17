@@ -146,9 +146,8 @@ figure {
 }
 
 .landing_page > figure {
-  flex-basis: 24%;
-  position: relative;
-  justify-content: space-around;
+  width: 33%;
+  height: 100%;
 }
 
 .landing_page > figure > img {
@@ -157,12 +156,12 @@ figure {
   height: 95%;
 }
 
-.landing_page > figure > img:hover {
+/* .landing_page > figure > img:hover {
   opacity: 0.25;
   filter: alpha(opacity=50);
-}
+} */
 
-.hoverText {
+/* .hoverText {
   align-items: center;
   color: black;
   font-size: 1.2vw;
@@ -186,11 +185,11 @@ figure {
   top: 60%;
   word-wrap: break-word;
   z-index: -1;
-}
+} */
 
-img:hover + p {
+/* img:hover + p {
   display: block;
-}
+} */
 
 .secondp {
   display: block;
@@ -310,7 +309,7 @@ ol {
 
 /* credit to Sara Vieira from developerdrive.com */
 
-@keyframes bounce {
+/* @keyframes bounce {
   0%,
   20%,
   60%,
@@ -331,7 +330,7 @@ ol {
 }
 .landing_page > figure > img:hover {
   animation: bounce 1s;
-}
+} */
 /* media queries */
 @media (max-width: 700px) {
   body {
@@ -357,7 +356,7 @@ ol {
 
   /* landing page */
   .landing_page > figure {
-    position: relative;
+    position:relative;
     justify-content: space-around;
     flex-basis: 98%;
   }
