@@ -140,10 +140,8 @@ figure {
 }
 
 .landing-page-image {
-  /* max-width: 1000px; */
-  max-height: 550px;
-  width: 100%;
-  height: 70%;
+  width: 90%;
+  height: 25%;
   padding: 2%;
 }
 
