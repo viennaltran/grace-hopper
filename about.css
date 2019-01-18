@@ -100,15 +100,15 @@ header{
 
 img {
     width: auto;
-    height: 70%;
+    height: 420px;
     border-radius: 50%;
 }
 
-.personContainer {
+/* .personContainer {
     height: 90%;
     width: 80%;
     margin: 0 auto;
-}
+} */
 
 
 
