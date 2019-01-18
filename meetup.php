@@ -1,5 +1,5 @@
 <?php
-$proxyURL = "https://api.meetup.com/2/open_events.xml?zip=92833&and_text=True&offset=0&format=xml&limited_events=False&text_format=plain&text=women+AND+tech&page=200&time=%2C2w&radius=25.0&key=554071754212291c41435871a39671&desc=False&status=upcoming&sign=true";
+$proxyURL = "https://api.meetup.com/2/open_events.xml?zip=92833&and_text=True&offset=0&format=xml&limited_events=False&text_format=plain&text=women+AND+tech&page=200&time=%2C2w&radius=35.0&key=554071754212291c41435871a39671&desc=False&status=upcoming&sign=true";
 $acceptableHeaders = [];
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: ". implode(',',$acceptableHeaders));

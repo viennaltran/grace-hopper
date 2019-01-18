@@ -1,5 +1,5 @@
 body {
-  margin: 0 15%;
+  margin: 0 5%;
   font-family: "Libre Baskerville", serif;
   display: flex;
   flex-direction: column;
@@ -151,15 +151,16 @@ figure {
 
 .landing_page > figure {
   width: 30%;
-  background-color: lightblue;
+  background-color: #f3eaff;
   height: 100%;
   min-height: 230px;
   margin: 10px 0;
   border-radius: 10px;
+  text-align: center;
 }
 
 .landing_page > figure > img {
-  width: 100%;
+  width: 80%;
   border-radius: 10%;
   height: 95%;
 }

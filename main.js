@@ -20,7 +20,12 @@ var meetup = {
     dataType: "json",
     data: {
         format: 'json',
-        zip: '92602',
+        zip: '92833',
+        text: 'women AND tech',
+        time: ',2w',
+        and_text: 'true',
+        text_format: 'plain',
+        radius: '35',
         sign: true,
         key: '554071754212291c41435871a39671'
     },
@@ -57,9 +62,18 @@ function dataStorage(events) {
         groupNameArr.push(groupName);
 
         var groupPhoto1 = global_result.results[x].photo_url;
-        var groupPhoto1;
-        var groupPhoto = groupPhoto1.replace("global_", "highres_");
-        photoUrl.push(groupPhoto);
+        if(groupPhoto1 === undefined){
+            var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
+
+            groupPhoto1 = oldSrc;
+            photoUrl.push(groupPhoto1);
+        }
+        if(groupPhoto1.indexOf("highres_") === -1){
+            var groupPhoto = groupPhoto1.replace("global_", "highres_");
+            photoUrl.push(groupPhoto);
+        } else{
+            photoUrl.push(groupPhoto1);
+        }
 
         var eventDescriptions = global_result.results[x].description;
         eventDescriptionsArr.push(eventDescriptions);
@@ -131,21 +145,21 @@ function initMap () {
     map = new google.maps.Map(document.getElementById('map'),options);
 
     //adding a custom icon
-    var icon = {
-        url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
-        scaledSize: new google.maps.Size(50, 50),
-        origin: new google.maps.Point(0,0),
-        anchor: new google.maps.Point(0,0)
-    };
+    // var icon = {
+    //     url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
+    //     scaledSize: new google.maps.Size(50, 50),
+    //     origin: new google.maps.Point(0,0),
+    //     anchor: new google.maps.Point(0,0)
+    // };
 
-    //adding multiple markers to the map
-    function addMarker (coordinates) {
-        var marker = new google.maps.Marker ({
-        position:coordinates,
-        map:map,
-        icon:icon
-        });
-    }
+    // //adding multiple markers to the map
+    // function addMarker (coordinates) {
+    //     var marker = new google.maps.Marker ({
+    //     position:coordinates,
+    //     map:map,
+    //     icon:icon
+    //     });
+    // }
 }
 
 
@@ -251,10 +265,10 @@ function hideDataPage () {
 
 function getEventsList(meetupStorage){
     var figureArray = [];
-        for(let i = 0; i <meetupStorage.groupName.length; i++) {
+        for(let i = 0; i < 12; i++) {
             //create an img with the src from the array and append it to the appropriate figure in the figureArray
             //append that figureArray to #events-to-choose
-            var newFigure = $('<figure>');
+            var newFigure = $('<figure>').addClass('figure').attr('index',i);
             var newImage = $('<img>').addClass('picture').attr(
                 'src', meetupStorage.groupPhoto[i]
             );
@@ -270,40 +284,40 @@ function getEventsList(meetupStorage){
         }
         $('#events-to-choose').append(figureArray);
         // $("figure").on("mouseenter",addHoverText);
-        $(".picture").on("click",addDataOntoPage);
-    $(".picture").on("click",hideEventsPageAndShowDataPage);
+        $(".figure").on("click",addDataOntoPage);
+    $(".figure").on("click",hideEventsPageAndShowDataPage);
     $(".active").on("click",showLandingPageAndHideDataPage);
 
 }
 
 function addDataOntoPage () {
-    for(let i = 0; i < 1; i++){
-
-        // console.log(meetupStorage.venueAddress[0]);
-
-        var address = `${meetupStorage.venueAddress[i]}, ${meetupStorage.venueCity[i]}, ${meetupStorage.venueState[i]}`;
-        var eventName = meetupStorage.eventName[i];
-
-        $(".date").text("Date: " + meetupStorage.date[i]);
-        $(".event-name").text(meetupStorage.eventName[i]);
-        $(".event-description").text(meetupStorage.eventDescriptions[i]).css("margin", "1rem 0px");
-        $(".address").text(`Address: ${address}`);
-        $(".host").text("Hosted by: " + meetupStorage.groupName[i]);
-        var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
-        $('img[src="' + oldSrc + '"]').attr('src', meetupStorage.groupPhoto[i]);
-
-        var coordinates = {
-            lat: meetupStorage.latitude[i],
-            lng: meetupStorage.longitude[i]
+    for(let i = 0; i < meetupStorage.eventName.length; i++){
+        var attributeIndex = i.toString();
+        if($(event.currentTarget).attr("index") === attributeIndex){
+            var address = `${meetupStorage.venueAddress[i]}, ${meetupStorage.venueCity[i]}, ${meetupStorage.venueState[i]}`;
+            var eventName = meetupStorage.eventName[i];
+    
+            $(".date").text("Date: " + meetupStorage.date[i]);
+            $(".event-name").text(meetupStorage.eventName[i]);
+            $(".event-description").text(meetupStorage.eventDescriptions[i]).css("margin", "1rem 0px");
+            $(".address").text(`Address: ${address}`);
+            $(".host").text("Hosted by: " + meetupStorage.groupName[i]);
+            // var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
+            // $('img[src="' + oldSrc + '"]').attr('src', meetupStorage.groupPhoto[i]);
+            $('.event-img').attr('src', meetupStorage.groupPhoto[i]);
+    
+            var coordinates = {
+                lat: meetupStorage.latitude[i],
+                lng: meetupStorage.longitude[i]
+            }
+    
+            $(".eventURL").attr({
+                href: meetupStorage.eventUrl[i],
+                target: "_blank"
+            }).css("color", "white");
+                
+            addOneMarkerToMap(coordinates, eventName, address);
         }
-
-        $(".eventURL").attr({
-            href: meetupStorage.eventUrl[i],
-            target: "_blank"
-        }).css("color", "white");
-            
-        addOneMarkerToMap(coordinates, eventName, address);
-
 
         // var attributeIndex = i.toString();
         // if($(event.currentTarget).attr("index") === attributeIndex){
