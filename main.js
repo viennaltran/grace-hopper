@@ -258,12 +258,12 @@ function getEventsList(meetupStorage){
             var newImage = $('<img>').addClass('picture').attr(
                 'src', meetupStorage.groupPhoto[i]
             );
-            var nameOfEvent=$('<figcaption>').text(meetupStorage.eventName[i]);
+            var nameOfEvent=$('<p>').text(meetupStorage.eventName[i]).addClass("figure-text");
             newFigure.append(nameOfEvent);
             newFigure.append(newImage);
             figureArray.push(newFigure);
-            var location = $('<figcaption>').text(meetupStorage.venueName[i]);
-            var date = $('<figcaption>').text(meetupStorage.date[i]);
+            var location = $('<figcaption>').text(meetupStorage.venueName[i]).addClass("figure-text");
+            var date = $('<figcaption>').text(meetupStorage.date[i]).addClass("figure-text");
             newFigure.append(location);
             newFigure.append(date);
             newFigure.addClass("hidePage");

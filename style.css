@@ -11,6 +11,10 @@ body {
   border-radius: 10%;
 }
 
+.figure-text {
+  text-align: center;
+}
+
 .bp {
   font-size: 150%;
   font-family: sans-serif;
@@ -146,8 +150,12 @@ figure {
 }
 
 .landing_page > figure {
-  width: 33%;
+  width: 30%;
+  background-color: lightblue;
   height: 100%;
+  min-height: 230px;
+  margin: 10px 0;
+  border-radius: 10px;
 }
 
 .landing_page > figure > img {
