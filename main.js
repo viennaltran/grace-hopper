@@ -63,7 +63,7 @@ function dataStorage(events) {
 
         var groupPhoto1 = global_result.results[x].photo_url;
         if(groupPhoto1 === undefined){
-            var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
+            var oldSrc = 'images/default_pic.jpg';
 
             groupPhoto1 = oldSrc;
             photoUrl.push(groupPhoto1);
@@ -272,12 +272,12 @@ function getEventsList(meetupStorage){
             var newImage = $('<img>').addClass('picture').attr(
                 'src', meetupStorage.groupPhoto[i]
             );
-            var nameOfEvent=$('<p>').text(meetupStorage.eventName[i]).addClass("figure-text");
-            newFigure.append(nameOfEvent);
             newFigure.append(newImage);
             figureArray.push(newFigure);
-            var location = $('<figcaption>').text(meetupStorage.venueName[i]).addClass("figure-text");
-            var date = $('<figcaption>').text(meetupStorage.date[i]).addClass("figure-text");
+            var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
+            var location = $('<p>').text(meetupStorage.venueName[i]).addClass("figure-text");
+            var date = $('<p>').text(meetupStorage.date[i]).addClass("figure-text");
+            newFigure.append(nameOfEvent);
             newFigure.append(location);
             newFigure.append(date);
             newFigure.addClass("hidePage");
