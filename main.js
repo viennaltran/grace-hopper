@@ -127,6 +127,7 @@ console.log(meetupStorage);
 
 function addClickHandlers(){
     $(".events-page").on("click",showEventsPage);
+    $(".gallery").on("click",showGallery);
 }
 
 function showEventsPage (){
@@ -175,6 +176,11 @@ function showLandingPageAndHideDataPage () {
     $("#events-to-choose").removeClass("hidePage");
     $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
     $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+}
+
+function showGallery(){
+    $("landing-page").addClass("hidePage");
+    $("#gallery").removeClass("hidePage");
 }
 
 // //images for landing page will change to meetup
@@ -261,6 +267,7 @@ function closeTwitter () {
 function hideDataPage () {
     $("#event-chosen").addClass("hidePage");
     $("#twitter-and-google-maps").addClass("hidePage");
+    $("#gallery").addClass("hidePage");
 }
 
 function getEventsList(meetupStorage){
