@@ -1,6 +1,6 @@
 body {
   margin: 0 5%;
-  font-family: "Libre Baskerville", serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -151,18 +151,34 @@ figure {
 
 .landing_page > figure {
   width: 30%;
-  background-color: #f3eaff;
+  background-color: #f1f1f1;
   height: 100%;
-  min-height: 230px;
+  /* min-height: 300px; */
   margin: 10px 0;
   border-radius: 10px;
   text-align: center;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
 }
 
 .landing_page > figure > img {
-  width: 80%;
-  border-radius: 10%;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
   height: 95%;
+}
+
+p.figure-text {
+  margin: 0;
+  font-size: 1.4rem;
+  margin: 0px 10px;
+}
+
+div.figure-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0px 10px;
 }
 
 /* .landing_page > figure > img:hover {
@@ -373,6 +389,7 @@ ol {
 
   /* landing page */
   .landing_page > figure {
+    /* min-height: 230px; */
     position:relative;
     justify-content: space-around;
     flex-basis: 98%;
