@@ -134,6 +134,10 @@ figure {
   margin: 0;
 }
 
+img.picture{
+  width:50%;
+}
+
 .img-container {
   display: flex;
   justify-content: center;
