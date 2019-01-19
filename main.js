@@ -15,6 +15,7 @@ function initializeApp () {
     chickTechGallery();
     girlDevelopItGallery();
     girlsInTechGallery();
+    
 }
 
 var meetup = {
@@ -39,6 +40,7 @@ var meetup = {
         dataStorage(events);
         getEventsList(meetupStorage);
         addDataOntoPage();
+        getThreeList(meetupStorage);
     },
     error: err=>console.log("error:",err)
 }
@@ -279,7 +281,7 @@ function hideDataPage () {
 
 function getEventsList(meetupStorage){
     var figureArray = [];
-        for(let i = 0; i < 12; i++) {
+        for(let i = 0; i <12; i++) {
             //create an img with the src from the array and append it to the appropriate figure in the figureArray
             //append that figureArray to #events-to-choose
             var newFigure = $('<figure>').addClass('figure').attr('index',i);
@@ -299,8 +301,37 @@ function getEventsList(meetupStorage){
         $('#events-to-choose').append(figureArray);
         // $("figure").on("mouseenter",addHoverText);
         $(".figure").on("click",addDataOntoPage);
-    $(".figure").on("click",hideEventsPageAndShowDataPage);
-    $(".active").on("click",showLandingPageAndHideDataPage);
+        $(".figure").on("click",hideEventsPageAndShowDataPage);
+        $(".active").on("click",showLandingPageAndHideDataPage);
+
+}
+
+function getThreeList(meetupStorage){
+    var figureArray = [];
+        for(let i = 0; i <3; i++) {
+            //create an img with the src from the array and append it to the appropriate figure in the figureArray
+            //append that figureArray to #events-to-choose
+            var newFigure = $('<figure>').addClass('figure').attr('index',i);
+            var newImage = $('<img>').addClass('picture').attr(
+                'src', meetupStorage.groupPhoto[i]
+            );
+            newFigure.append(newImage);
+            figureArray.push(newFigure);
+            var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
+            var location = $('<p>').text(meetupStorage.venueName[i]).addClass("figure-text");
+            var date = $('<p>').text(meetupStorage.date[i]).addClass("figure-text");
+            newFigure.append(nameOfEvent);
+            newFigure.append(location);
+            newFigure.append(date);
+            // newFigure.addClass("hidePage");
+        }
+        $('.newest-section').append(figureArray);
+        // $("figure").on("mouseenter",addHoverText);
+        $(".figure").on("click",addDataOntoPage);
+        $(".figure").on("click",hideEventsPageAndShowDataPage);
+        $(".active").on("click",showLandingPageAndHideDataPage);
+
+        console.log(figureArray);
 
 }
 
