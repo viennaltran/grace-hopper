@@ -12,9 +12,6 @@ function initializeApp () {
     createPhotoArray();
     addClickHandlers();
     hideDataPage(); 
-
-
-
     chickTechGallery();
     girlDevelopItGallery();
     girlsInTechGallery();
@@ -133,7 +130,7 @@ console.log(meetupStorage);
 
 function addClickHandlers(){
     $(".events-page").on("click",showEventsPage);
-    $(".gallery").on("click",showGallery);
+    $(".gallery-page").on("click",showGallery);
 }
 
 function showEventsPage (){
@@ -141,8 +138,8 @@ function showEventsPage (){
     $(".landing-page").addClass("hidePage");
     $("#events-to-choose").removeClass("hidePage");
     $('#gallery').addClass("hidePage");
-    // $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
-    // $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+    $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
+    $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
 }
 
 function initMap () {
@@ -187,6 +184,9 @@ function showLandingPageAndHideDataPage () {
 
 function showGallery(){
     $(".landing-page").addClass("hidePage");
+    $("#events-to-choose").addClass("hidePage");
+    $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
+    $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
     $("#gallery").removeClass("hidePage");
 }
 

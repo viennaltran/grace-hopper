@@ -307,6 +307,14 @@ ol {
   text-align: center;
 }
 
+.gallery-page {
+  cursor: pointer;
+}
+
+.events-page {
+  cursor: pointer;
+}
+
 /* will create this dynamically */
 .event-name {
   text-align: center;
