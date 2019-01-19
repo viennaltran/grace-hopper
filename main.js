@@ -134,7 +134,7 @@ function addClickHandlers(){
 }
 
 function showEventsPage (){
-    $("figure").removeClass("hidePage");
+    $(".figure").removeClass("hidePage");
     $(".landing-page").addClass("hidePage");
     $("#events-to-choose").removeClass("hidePage");
     $('#gallery').addClass("hidePage");
@@ -527,13 +527,13 @@ function placeImages(array, section){
         for(var i = 0; i < array.length; i++) {
             //create an img with the src from the array and append it to the appropriate figure in the figureArray
             //append that figureArray to #events-to-choose
-            var figure = $('<figure>');
+            var imgFigure = $('<figure>');
             var image = $('<img>').addClass('gallery-image').attr({
                 src: array[i],
                 index: i
             });
-            figure.append(image);
-            figureArray.push(figure);
+            imgFigure.append(image);
+            figureArray.push(imgFigure);
             // var hoverP = $('<p>').addClass('hoverText firstp');
             // var hoverP2 = $('<p>').addClass('hoverText2 secondp');
             // newFigure.append(hoverP);
