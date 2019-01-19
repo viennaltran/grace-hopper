@@ -12,6 +12,12 @@ function initializeApp () {
     createPhotoArray();
     addClickHandlers();
     hideDataPage(); 
+
+
+
+    chickTechGallery();
+    girlDevelopItGallery();
+    girlsInTechGallery();
 }
 
 var meetup = {
@@ -367,6 +373,162 @@ function addDataOntoPage () {
         // } 
     }
 }
+
+function chickTechGallery(){
+    var chickTechArray = [];
+    var position = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    $.ajax({
+        url: 'https://api.flickr.com/services/rest/',
+        method: 'get',
+        dataType: 'json',
+        data: {
+            api_key: 'e00e98b08d999c1fbe15689b175ad887',
+            method: 'flickr.photosets.getPhotos',
+            photoset_id: '72157673615663237',
+            user_id: '92769341@N03',
+            format: 'json',
+            nojsoncallback: 1
+        },
+        success: function(response){
+            console.log('got data from ChickTech gallery:', response);
+            var photo = response.photoset.photo;
+            
+            for(var i = 0; i < position.length; i++){
+                var link = '';
+                var photoFarm = photo[i].farm;
+                var photoServer = photo[i].server;
+                var photoID = photo[i].id;
+                var photoSecret = photo[i].secret;
+                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
+                link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
+                
+                chickTechArray.push(link);
+            }
+
+            console.log('chickTechArray:', chickTechArray);
+        }
+    })
+}
+
+function girlDevelopItGallery(){
+    var girlDevelopItArray = [];
+    var position = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    $.ajax({
+        url: 'https://api.flickr.com/services/rest/',
+        method: 'get',
+        dataType: 'json',
+        data: {
+            api_key: 'e00e98b08d999c1fbe15689b175ad887',
+            method: 'flickr.photosets.getPhotos',
+            photoset_id: '72157639104508314',
+            user_id: '10512012@N08',
+            format: 'json',
+            nojsoncallback: 1
+        },
+        success: function(response){
+            console.log('got data from Girl Develop IT gallery:', response);
+            var photo = response.photoset.photo;
+            
+            for(var i = 1; i < position.length; i++){
+                var link = '';
+                var photoFarm = photo[i].farm;
+                var photoServer = photo[i].server;
+                var photoID = photo[i].id;
+                var photoSecret = photo[i].secret;
+                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
+                link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
+                
+                girlDevelopItArray.push(link);
+            }
+
+            console.log('girlDevelopItArray:', girlDevelopItArray);
+        }
+    })
+}
+
+function girlsInTechGallery(){
+    var girlsInTechArray = [];
+    var position = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    $.ajax({
+        url: 'https://api.flickr.com/services/rest/',
+        method: 'get',
+        dataType: 'json',
+        data: {
+            api_key: 'e00e98b08d999c1fbe15689b175ad887',
+            method: 'flickr.people.getPublicPhotos',
+            user_id: '29179749@N03',
+            format: 'json',
+            nojsoncallback: 1
+        },
+        success: function(response){
+            console.log('got data from Girls in Tech gallery:', response);
+            var photo = response.photos.photo;
+            
+            for(var i = 0; i < 10; i++){
+                var link = '';
+                var photoFarm = photo[i].farm;
+                var photoServer = photo[i].server;
+                var photoID = photo[i].id;
+                var photoSecret = photo[i].secret;
+                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
+                link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
+                
+                girlsInTechArray.push(link);
+            }
+
+            console.log('girlsInTechArray:', girlsInTechArray);
+        }
+    })
+
+    // var linkArray = [];
+    // $.ajax({
+    //     url: 'https://api.flickr.com/services/rest/',
+    //     method: 'get',
+    //     dataType: 'json',
+    //     data: {
+    //         api_key: 'e00e98b08d999c1fbe15689b175ad887',
+    //         method:'flickr.people.getPublicPhotos',
+    //         user_id: '136629440@N06',
+    //         format: 'json',
+    //         nojsoncallback: 1
+    //     },
+    //     success: function(response){
+    //         console.log('got data from flickr', response);
+
+    //         for(var i = 66; i < 74; i++){
+    //             var photoFarm = response.photos.photo[i].farm;
+    //             var photoServer = response.photos.photo[i].server;
+    //             var photoID = response.photos.photo[i].id;
+    //             var photoSecret = response.photos.photo[i].secret;
+    //             var link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
+    //             linkArray.push(link);
+    //         }
+    //         // pickRandomImages(linkArray);
+            
+    //     },
+        
+    //   });
+    // var b = "wit.jpg";
+    // var placeholderImages = [b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b];
+    // placeRandomImages(placeholderImages);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function addHoverText (event) {
     // for(let i = 0; i < (storeReply.chickTech.eventName.length + storeReply.girlDev.eventName.length); i++){
