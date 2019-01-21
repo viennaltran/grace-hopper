@@ -447,7 +447,7 @@ function chickTechGallery(){
 
 function girlDevelopItGallery(){
     var girlDevelopItArray = [];
-    var position = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // var position = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     $.ajax({
         url: 'https://api.flickr.com/services/rest/',
@@ -465,7 +465,8 @@ function girlDevelopItGallery(){
             console.log('got data from Girl Develop IT gallery:', response);
             var photo = response.photoset.photo;
             
-            for(var i = 1; i < position.length; i++){
+            for(var i = 1; i < 10; i++){
+
                 var link = '';
                 var photoFarm = photo[i].farm;
                 var photoServer = photo[i].server;
@@ -560,7 +561,7 @@ function placeImages(array, section){
         for(var i = 0; i < array.length; i++) {
             //create an img with the src from the array and append it to the appropriate figure in the figureArray
             //append that figureArray to #events-to-choose
-            var imgFigure = $('<figure>');
+            var imgFigure = $('<figure>').addClass('gallery-figure');
             var image = $('<img>').addClass('gallery-image').attr({
                 src: array[i],
                 index: i

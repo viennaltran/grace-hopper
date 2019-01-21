@@ -335,6 +335,33 @@ ol {
   cursor: pointer;
 }
 
+.gallery-chicktech, .gallery-girlsintech, .gallery-girldevelopit {
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: center; */
+  justify-content: center;
+}
+
+.gallery-figure {
+  margin: .5%;
+  align-self: center;
+  /* margin: 2px; */
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-self: center;
+  margin: 2px;
+  background-color: light-grey; */
+}
+
+.gallery-image {
+  border-radius: 10px;
+}
+
+.gallery-girldevelopit .gallery-image {
+  height: 134px;
+}
+
 .events-page {
   cursor: pointer;
 }
