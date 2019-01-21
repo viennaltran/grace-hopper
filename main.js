@@ -86,7 +86,11 @@ function dataStorage(events) {
         var eventUrl = global_result.results[x].event_url;
         eventUrlArr.push(eventUrl);
 
-        var venueName = global_result.results[x].venue.name;
+        if(global_result.results[x].venue === undefined){
+            continue;
+        } else{
+            venueName = global_result.results[x].venue.name;
+        }
         venueNameArr.push(venueName);
 
         var venueAddress = global_result.results[x].venue.address_1;
@@ -126,8 +130,8 @@ function dataStorage(events) {
     meetupStorage.latitude = latitudeArr;
     meetupStorage.longitude = longitudeArr;
     meetupStorage.date = dateArr;
+    console.log("this is meetupStorage: ",meetupStorage);
 }
-console.log(meetupStorage);
 
 
 function addClickHandlers(){
