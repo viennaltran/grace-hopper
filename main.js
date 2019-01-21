@@ -3,16 +3,19 @@ $(document).ready(initializeApp);
 var map;
 var global_result;
 var meetupStorage = {};
+var twitterFlag = false;
 
 function initializeApp () {
     $.ajax(meetup);
-    addClickHandlerToSubmitButton();
-    addClickHandlerToCloseButton();
+    // addClickHandlerToSubmitButton();
+    // addClickHandlerToCloseButton();
     addClickHandlers();
     hideDataPage(); 
     chickTechGallery();
     girlDevelopItGallery();
     girlsInTechGallery();
+    search();
+    toggleTwitter();
 }
 
 var meetup = {
@@ -131,6 +134,20 @@ function dataStorage(events) {
 function addClickHandlers(){
     $(".events-page").on("click",showEventsPage);
     $(".gallery-page").on("click",showGallery);
+    $("#showTweets").on("click",toggleTwitter);
+}
+
+function toggleTwitter() {
+    if(twitterFlag === false){
+        $('.twitter-list').addClass("hidePage");
+        $('#showTweets').text("Show Tweets");
+        twitterFlag = true;
+    }
+    else {
+        $('.twitter-list').removeClass("hidePage");
+        $('#showTweets').text("Close Tweets");
+        twitterFlag = false;
+    }
 }
 
 function showEventsPage (){
@@ -172,10 +189,10 @@ function showGallery(){
     $("#gallery").removeClass("hidePage");
 }
 
-function addClickHandlerToSubmitButton(){
-    $('#submit').click(search)
-    $("#close").hide();
-}
+// function addClickHandlerToSubmitButton(){
+//     $('#submit').click(search)
+//     $("#close").hide();
+// }
 
 function search () {
     $.ajax({
@@ -190,18 +207,18 @@ function search () {
             }
         }
     });
-    $("#submit").hide();
-    $("#close").show();
+    // $("#submit").hide();
+    // $("#close").show();
 }
 
-function addClickHandlerToCloseButton () {
-    $("#close").click(closeTwitter)
-}
+// function addClickHandlerToCloseButton () {
+//     $("#close").click(closeTwitter)
+// }
 
-function closeTwitter () {
-    $("#tweets").hide()
-    $("#close").hide();
-}
+// function closeTwitter () {
+//     $("#tweets").hide()
+//     $("#close").hide();
+// }
 
 function hideDataPage () {
     $("#event-chosen").addClass("hidePage");
