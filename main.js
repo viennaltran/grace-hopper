@@ -13,7 +13,6 @@ function initializeApp () {
     chickTechGallery();
     girlDevelopItGallery();
     girlsInTechGallery();
-    
 }
 
 var meetup = {
