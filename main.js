@@ -1,7 +1,6 @@
 $(document).ready(initializeApp);
 
 var map;
-var storeReply = {};
 var global_result;
 var meetupStorage = {};
 
@@ -153,7 +152,6 @@ function initMap () {
         zoom: 15,
     }
 
-    map = new google.maps.Map(document.getElementById('map'),options);
 
     //adding a custom icon
     // var icon = {
@@ -175,6 +173,7 @@ function initMap () {
 
 
 function hideEventsPageAndShowDataPage () {
+    $(".landing-page").addClass("hidePage");
     $("#events-to-choose").addClass("hidePage");
     $("#event-chosen").removeClass("hidePage").addClass("event_chosen");
     $("#twitter-and-google-maps").removeClass("hidePage").addClass("twitter_and_google_maps");
@@ -651,6 +650,13 @@ function placeImages(array, section){
 // //adds a marker for each specific meetup location
 
 function addOneMarkerToMap(coordinates, eventName, address) {
+
+    var options = {
+        zoom: 15,
+    }
+
+    map = new google.maps.Map(document.getElementById('map'),options);
+
     var icon = {
         url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
         scaledSize: new google.maps.Size(50, 50),
@@ -685,9 +691,9 @@ function addOneMarkerToMap(coordinates, eventName, address) {
         marker.setAnimation(null);
     });
 
-    marker.addListener('click', function () {
-        marker.setAnimation(null);
-    });
+    // marker.addListener('click', function () {
+    //     marker.setAnimation(null);
+    // });
 
     //resets the center of the google map to our specific coordinates
     map.panTo(coordinates);
