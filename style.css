@@ -338,7 +338,6 @@ ol {
 .gallery-chicktech, .gallery-girlsintech, .gallery-girldevelopit {
   display: flex;
   flex-flow: row wrap;
-  /* justify-content: center; */
   justify-content: center;
 }
 
