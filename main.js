@@ -1,7 +1,6 @@
 $(document).ready(initializeApp);
 
 var map;
-var storeReply = {};
 var global_result;
 var meetupStorage = {};
 
@@ -152,25 +151,6 @@ function initMap () {
     var options = {
         zoom: 15,
     }
-
-    map = new google.maps.Map(document.getElementById('map'),options);
-
-    //adding a custom icon
-    // var icon = {
-    //     url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
-    //     scaledSize: new google.maps.Size(50, 50),
-    //     origin: new google.maps.Point(0,0),
-    //     anchor: new google.maps.Point(0,0)
-    // };
-
-    // //adding multiple markers to the map
-    // function addMarker (coordinates) {
-    //     var marker = new google.maps.Marker ({
-    //     position:coordinates,
-    //     map:map,
-    //     icon:icon
-    //     });
-    // }
 }
 
 
@@ -651,6 +631,13 @@ function placeImages(array, section){
 // //adds a marker for each specific meetup location
 
 function addOneMarkerToMap(coordinates, eventName, address) {
+
+    var options = {
+        zoom: 15,
+    }
+
+    map = new google.maps.Map(document.getElementById('map'),options);
+
     var icon = {
         url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
         scaledSize: new google.maps.Size(50, 50),
@@ -682,10 +669,6 @@ function addOneMarkerToMap(coordinates, eventName, address) {
     // assuming you also want to hide the infowindow when user mouses-out
     marker.addListener('mouseout', function() {
         infowindow.close();
-        marker.setAnimation(null);
-    });
-
-    marker.addListener('click', function () {
         marker.setAnimation(null);
     });
 
