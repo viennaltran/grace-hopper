@@ -161,13 +161,13 @@ figure {
   width: 30%;
   background-color: #f1f1f1;
   height: 100%; 
-  min-height: 300px; 
   margin: 10px 0;
   border-radius: 10px;
   text-align: center;
   -webkit-box-shadow: 0 10px 6px -6px #777;
 	-moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777; 
+  min-height: 316px;
 } 
 
 .three-sections{
@@ -191,6 +191,7 @@ img.picture{
 .landing_page > figure > img {
   width: 100%;
   border-radius: 10px 10px 0px 0px;
+  min-height: 232px;
 }
 
 p.figure-text {
@@ -331,6 +332,22 @@ ol {
 }
 
 /* media queries */
+
+@media (max-width: 1050px) { 
+  .landing_page > figure {
+    width: 45%;
+    background-color: #f1f1f1;
+    height: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+    text-align: center;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    min-height: 335px;
+  }
+}
+
 @media (max-width: 700px) {
   body {
     margin: 0 10%;
