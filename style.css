@@ -157,24 +157,22 @@ figure {
   padding: 2%;
 }
 
-/* .landing_page > figure {
+.landing_page > figure {
   width: 30%;
   background-color: #f1f1f1;
-  /* height: 100%; */
-  /* min-height: 300px; */
-  /* margin: 10px 0;
+  height: 100%; 
+  min-height: 300px; 
+  margin: 10px 0;
   border-radius: 10px;
   text-align: center;
   -webkit-box-shadow: 0 10px 6px -6px #777;
 	-moz-box-shadow: 0 10px 6px -6px #777;
-  box-shadow: 0 10px 6px -6px #777; */
-/* } */ 
+  box-shadow: 0 10px 6px -6px #777; 
+} 
 
 .three-sections{
   width: 75%;
   background-color: #f1f1f1;
-  /* height: 100%; */
-  /* min-height: 300px; */
   margin: 0 auto;
   margin-bottom: 15px;
   border-radius: 10px;
