@@ -134,9 +134,9 @@ figure {
   margin: 0;
 }
 
-img.picture{
+/* img.picture{
   width:50%;
-}
+} */
 
 .img-container {
   display: flex;
@@ -157,17 +157,36 @@ img.picture{
   padding: 2%;
 }
 
-.landing_page > figure {
+/* .landing_page > figure {
   width: 30%;
   background-color: #f1f1f1;
   height: 100%;
   /* min-height: 300px; */
-  margin: 10px 0;
+  /* margin: 10px 0;
   border-radius: 10px;
   text-align: center;
   -webkit-box-shadow: 0 10px 6px -6px #777;
 	-moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777; */
+/* } */ 
+
+.three-sections{
+  width: 75%;
+  background-color: #f1f1f1;
+  /* height: 100%; */
+  /* min-height: 300px; */
+  margin: 0 auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
+}
+
+img.picture{
+  width:100%;
+  border-radius:10px 10px 0 0;
 }
 
 .landing_page > figure > img {
@@ -188,41 +207,6 @@ div.figure-text {
   font-weight: bold;
   margin: 0px 10px;
 }
-
-/* .landing_page > figure > img:hover {
-  opacity: 0.25;
-  filter: alpha(opacity=50);
-} */
-
-/* .hoverText {
-  align-items: center;
-  color: black;
-  font-size: 1.2vw;
-  position: absolute;
-  display: none;
-  width: 100%;
-  text-align: center;
-  top: 18%;
-  word-wrap: break-word;
-  z-index: -1;
-}
-
-.hoverText2 {
-  align-items: center;
-  color: black;
-  font-size: 1.2vw;
-  position: absolute;
-  display: none;
-  width: 100%;
-  text-align: center;
-  top: 60%;
-  word-wrap: break-word;
-  z-index: -1;
-} */
-
-/* img:hover + p {
-  display: block;
-} */
 
 .secondp {
   display: block;
@@ -348,30 +332,6 @@ ol {
   border-bottom: 1px solid black;
 }
 
-/* credit to Sara Vieira from developerdrive.com */
-
-/* @keyframes bounce {
-  0%,
-  20%,
-  60%,
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  40% {
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
-  }
-
-  80% {
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-}
-.landing_page > figure > img:hover {
-  animation: bounce 1s;
-} */
 /* media queries */
 @media (max-width: 700px) {
   body {

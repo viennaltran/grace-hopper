@@ -315,7 +315,7 @@ function getThreeList(meetupStorage){
         for(let i = 0; i <3; i++) {
             //create an img with the src from the array and append it to the appropriate figure in the figureArray
             //append that figureArray to #events-to-choose
-            var newFigure = $('<figure>').addClass('figure').attr('index',i);
+            var newFigure = $('<figure>').addClass('three-sections').attr('index',i);
             var newImage = $('<img>').addClass('picture').attr(
                 'src', meetupStorage.groupPhoto[i]
             );
