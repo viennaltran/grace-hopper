@@ -288,7 +288,7 @@ ol {
 #twitter-feed {
   background-color: #e7e7e7;
   max-height: 350px;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 #tweets {
@@ -301,11 +301,13 @@ ol {
 
 .twitter-section {
   background-color: #e7e7e7;
+  width: 30%;
 }
 
 .newest-section {
   background-color: #e7e7e7;
   text-align: center;
+  width: 68%;
 }
 
 #websiteHeader {
@@ -460,11 +462,6 @@ ol {
   .event-description {
     font-size: 12px;
   }
-}
-
-.twitter-section,
-.newest-section {
-  width: 48%;
 }
 
 .contents-section {
