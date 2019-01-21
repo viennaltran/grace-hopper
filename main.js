@@ -173,6 +173,7 @@ function initMap () {
 
 
 function hideEventsPageAndShowDataPage () {
+    $(".landing-page").addClass("hidePage");
     $("#events-to-choose").addClass("hidePage");
     $("#event-chosen").removeClass("hidePage").addClass("event_chosen");
     $("#twitter-and-google-maps").removeClass("hidePage").addClass("twitter_and_google_maps");
