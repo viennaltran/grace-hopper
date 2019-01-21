@@ -254,8 +254,8 @@ function getThreeList(meetupStorage){
             newFigure.append(date);
         }
         $('.newest-section').append(figureArray);
-        $(".figure").on("click",addDataOntoPage);
-        $(".figure").on("click",hideEventsPageAndShowDataPage);
+        $(".three-sections").on("click",addDataOntoPage);
+        $(".three-sections").on("click",hideEventsPageAndShowDataPage);
         $(".active").on("click",showLandingPageAndHideDataPage);
 
         console.log(figureArray);
