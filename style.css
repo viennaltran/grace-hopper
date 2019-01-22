@@ -340,11 +340,18 @@ ol {
   align-self: center;
   margin: 2px;
   background-color: light-grey; */
+  /* background-clip: content-box; */
 }
 
 .gallery-image {
   border-radius: 10px;
   max-height: 175px;
+  transition: box-shadow .5s ease;
+  box-shadow: 0 3px 9px rgba(0,0,0,.5);
+}
+
+.gallery-image:hover {
+  box-shadow: 0 3px 9px rgba(250,128,114,1.5);
 }
 
 /* .gallery-girldevelopit .gallery-image {
@@ -387,8 +394,20 @@ ol {
   text-align: center;
 }
 
-.gallery-footer {
+.modal-header {
   background-color: #ef5350;
+  border-radius: 5px 5px 0 0;
+}
+
+.modal-footer button {
+  transition: background-color .75s ease;
+  background-color: #ef5350;
+  color: white;
+}
+
+.modal-footer button:hover, .modal-footer button:focus {
+  background-color: #b9403e;
+  color: white;
 }
 
 .events-page {
