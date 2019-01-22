@@ -387,8 +387,20 @@ ol {
   text-align: center;
 }
 
-.gallery-footer {
+.modal-header {
   background-color: #ef5350;
+  border-radius: 5px 5px 0 0;
+}
+
+.modal-footer button {
+  transition: background-color .75s ease;
+  background-color: #ef5350;
+  color: white;
+}
+
+.modal-footer button:hover, .modal-footer button:focus {
+  background-color: #b9403e;
+  color: white;
 }
 
 .events-page {
