@@ -284,18 +284,16 @@ ol {
   display: block;
   text-align: center;
   margin: 10px auto;
-  /* width: 100%; */
 }
 
 #twitter-feed {
   background-color: #e7e7e7;
   max-height: 350px;
-  /* overflow: scroll; */
 }
 
 #tweets {
   max-height: 200px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .twitter-content {
   width: 100%;
@@ -304,6 +302,12 @@ ol {
 .twitter-section {
   background-color: #e7e7e7;
   width: 30%;
+}
+
+.twitter-header {
+  font-size: 150%;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 .newest-section {
