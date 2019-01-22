@@ -340,10 +340,51 @@ ol {
 
 .gallery-image {
   border-radius: 10px;
+  max-height: 175px;
 }
 
-.gallery-girldevelopit .gallery-image {
+/* .gallery-girldevelopit .gallery-image {
   height: 134px;
+} */
+
+.gallery-modal {
+  display: none;
+  position: fixed;
+  padding-top: 100px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.gallery-modal-content {
+  background-color: #FEFEFE;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid blue;
+  width: 80%;
+}
+
+.gallery-modal-close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.gallery-modal-close:hover, .gallery-modal-close:focus, {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-image {
+  text-align: center;
+}
+
+.gallery-footer {
+  background-color: #ef5350;
 }
 
 .events-page {

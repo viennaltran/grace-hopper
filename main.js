@@ -344,8 +344,8 @@ function chickTechGallery(){
                 var photoServer = photo[i].server;
                 var photoID = photo[i].id;
                 var photoSecret = photo[i].secret;
-                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
-                link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
+                link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
+                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
                 
                 chickTechArray.push(link);
             }
@@ -383,8 +383,8 @@ function girlDevelopItGallery(){
                 var photoServer = photo[i].server;
                 var photoID = photo[i].id;
                 var photoSecret = photo[i].secret;
-                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
-                link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
+                link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
+                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
                 
                 girlDevelopItArray.push(link);
             }
@@ -420,8 +420,8 @@ function girlsInTechGallery(){
                 var photoServer = photo[i].server;
                 var photoID = photo[i].id;
                 var photoSecret = photo[i].secret;
-                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
-                link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
+                link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
+                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
                 
                 girlsInTechArray.push(link);
             }
@@ -432,24 +432,29 @@ function girlsInTechGallery(){
     })
 }
 
-
-
-
 function placeImages(array, section){
     var figureArray = [];
-        for(var i = 0; i < array.length; i++) {
-            //create an img with the src from the array and append it to the appropriate figure in the figureArray
-            //append that figureArray to #events-to-choose
-            var imgFigure = $('<figure>').addClass('gallery-figure');
-            var image = $('<img>').addClass('gallery-image').attr({
-                src: array[i],
-                index: i
-            });
-            imgFigure.append(image);
-            figureArray.push(imgFigure);
-        }
-        $(section).append(figureArray);
+    
+    for(var i = 0; i < array.length; i++) {
+        //create an img with the src from the array and append it to the appropriate figure in the figureArray
+        //append that figureArray to #events-to-choose
+        var imgFigure = $('<figure>').addClass('gallery-figure');
+        var image = $('<img>').addClass('gallery-image').click(displayImage).attr({
+            linkData: array[i],
+            src: array[i],
+            index: i
+        });
+        imgFigure.append(image);
+        figureArray.push(imgFigure);
+    }
+    
+    $(section).append(figureArray);
+}
 
+function displayImage(target){
+    var link = target.currentTarget.attributes.linkData.nodeValue;
+    $('.modal-image img').attr('src', link);
+    $('#gallery-modal').modal();
 }
 
 function addOneMarkerToMap(coordinates, eventName, address) {
