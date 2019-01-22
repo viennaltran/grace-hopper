@@ -151,6 +151,7 @@ function toggleTwitter() {
 }
 
 function showEventsPage (){
+    $(".navbar-collapse").removeClass("in");
     $(".figure").removeClass("hidePage");
     $(".landing-page").addClass("hidePage");
     $("#events-to-choose").removeClass("hidePage");
@@ -182,6 +183,7 @@ function showLandingPageAndHideDataPage () {
 }
 
 function showGallery(){
+    $(".navbar-collapse").removeClass("in");
     $(".landing-page").addClass("hidePage");
     $("#events-to-choose").addClass("hidePage");
     $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
