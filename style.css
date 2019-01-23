@@ -322,6 +322,8 @@ ol {
   font-size: 150%;
   font-family: sans-serif;
   text-align: center;
+  padding: 10px;
+  margin: 0px;
 }
 
 .newest-section {
@@ -408,6 +410,14 @@ ol {
 
 .modal-image {
   text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-image > img {
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .modal-header {
