@@ -134,7 +134,7 @@ function dataStorage(events) {
 function addClickHandlers(){
     $(".events-page").on("click",showEventsPage);
     $(".gallery-page").on("click",showGallery);
-    $("#showTweets").on("click",toggleTwitter);
+    $(".showTweets").on("click",toggleTwitter);
 }
 
 function toggleTwitter() {
@@ -142,14 +142,14 @@ function toggleTwitter() {
         $('.twitter-list').addClass("hidePage");
         $('.twitter-header-bird').addClass("hidePage");
         $('.twitter-bird-logo').removeClass("hidePage");
-        $('#showTweets').text("Show Tweets");
+        $('.showTweets').text("Show Tweets");
         twitterFlag = false;
     }
     else {
         $('.twitter-list').removeClass("hidePage");
         $('.twitter-header-bird').removeClass("hidePage");
         $('.twitter-bird-logo').addClass("hidePage");
-        $('#showTweets').text("Close Tweets");
+        $('.showTweets').text("Close Tweets");
         twitterFlag = true;
     }
 }
@@ -207,7 +207,7 @@ function search () {
         success: function(data){
             console.log(data);
             for(item in data.tweets.statuses) {
-                $('#tweets').append( $('<li>', {
+                $('.tweets').append( $('<li>', {
                     text: data.tweets.statuses[item].text
                 }) );
             }
