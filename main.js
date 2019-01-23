@@ -244,10 +244,11 @@ function getEventsList(meetupStorage){
             newFigure.append(newImage);
             figureArray.push(newFigure);
             var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
-            var location = $('<p>').text(meetupStorage.venueName[i]).addClass("figure-text");
+            var city = $ ('<p>').text(meetupStorage.venueCity[i]).addClass("figure-text");
+            // var location = $('<p>').text(meetupStorage.venueName[i]).addClass("figure-text");
             var date = $('<p>').text(meetupStorage.date[i]).addClass("figure-text");
             newFigure.append(nameOfEvent);
-            newFigure.append(location);
+            newFigure.append(city);
             newFigure.append(date);
             newFigure.addClass("hidePage");
         }
@@ -270,7 +271,7 @@ function getThreeList(meetupStorage){
             newFigure.append(newImage);
             figureArray.push(newFigure);
             var nameOfEvent=$('<div>').text(meetupStorage.eventName[i].substring(0,50)+"...").addClass("figure-text");
-            var location = $('<p>').text(meetupStorage.venueName[i]).addClass("figure-text");
+            // var location = $('<p>').text(meetupStorage.venueName[i]).addClass("figure-text");
             var city = $ ('<p>').text(meetupStorage.venueCity[i]).addClass("figure-text");
             var date = $('<p>').text(meetupStorage.date[i]).addClass("figure-text");
             newFigure.append(nameOfEvent);
