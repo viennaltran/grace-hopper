@@ -7,8 +7,7 @@ var twitterFlag = true;
 
 function initializeApp () {
     $.ajax(meetup);
-    // addClickHandlerToSubmitButton();
-    // addClickHandlerToCloseButton();
+    initMap();
     addClickHandlers();
     hideDataPage(); 
     chickTechGallery();
@@ -34,7 +33,6 @@ var meetup = {
         key: '554071754212291c41435871a39671'
     },
     success: function (result) {
-        console.log("success:",result);
         global_result = result;
         var events=global_result.results;
         dataStorage(events);
@@ -127,7 +125,6 @@ function dataStorage(events) {
     meetupStorage.latitude = latitudeArr;
     meetupStorage.longitude = longitudeArr;
     meetupStorage.date = dateArr;
-    console.log("this is meetupStorage: ",meetupStorage);
 }
 
 
@@ -168,6 +165,8 @@ function initMap () {
     var options = {
         zoom: 15,
     }
+
+    map = new google.maps.Map(document.getElementById('map'),options);
 }
 
 
@@ -177,8 +176,6 @@ function hideEventsPageAndShowDataPage () {
     $("#event-chosen").removeClass("hidePage").addClass("event_chosen");
     $("#twitter-and-google-maps").removeClass("hidePage").addClass("twitter_and_google_maps");
 }
-
-//add functionality of showing landing page and showing divs
 
 function showLandingPageAndHideDataPage () {
     $("#events-to-choose").removeClass("hidePage");
@@ -195,17 +192,11 @@ function showGallery(){
     $("#gallery").removeClass("hidePage");
 }
 
-// function addClickHandlerToSubmitButton(){
-//     $('#submit').click(search)
-//     $("#close").hide();
-// }
-
 function search () {
     $.ajax({
         url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php?search_term=womenintech',
         dataType:'json',
         success: function(data){
-            console.log(data);
             for(item in data.tweets.statuses) {
                 $('.tweets').append( $('<li>', {
                     text: data.tweets.statuses[item].text
@@ -213,18 +204,7 @@ function search () {
             }
         }
     });
-    // $("#submit").hide();
-    // $("#close").show();
 }
-
-// function addClickHandlerToCloseButton () {
-//     $("#close").click(closeTwitter)
-// }
-
-// function closeTwitter () {
-//     $("#tweets").hide()
-//     $("#close").hide();
-// }
 
 function hideDataPage () {
     $("#event-chosen").addClass("hidePage");
@@ -235,8 +215,6 @@ function hideDataPage () {
 function getEventsList(meetupStorage){
     var figureArray = [];
         for(let i = 0; i <12; i++) {
-            //create an img with the src from the array and append it to the appropriate figure in the figureArray
-            //append that figureArray to #events-to-choose
             var newFigure = $('<figure>').addClass('figure').attr('index',i);
             var newImage = $('<img>').addClass('picture').attr(
                 'src', meetupStorage.groupPhoto[i]
@@ -245,7 +223,6 @@ function getEventsList(meetupStorage){
             figureArray.push(newFigure);
             var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
             var city = $ ('<p>').text(meetupStorage.venueCity[i]).addClass("figure-text");
-            // var location = $('<p>').text(meetupStorage.venueName[i]).addClass("figure-text");
             var date = $('<p>').text(meetupStorage.date[i]).addClass("figure-text");
             newFigure.append(nameOfEvent);
             newFigure.append(city);
@@ -262,8 +239,6 @@ function getEventsList(meetupStorage){
 function getThreeList(meetupStorage){
     var figureArray = [];
         for(let i = 0; i <3; i++) {
-            //create an img with the src from the array and append it to the appropriate figure in the figureArray
-            //append that figureArray to #events-to-choose
             var newFigure = $('<figure>').addClass('three-sections').attr('index',i);
             var newImage = $('<img>').addClass('picture').attr(
                 'src', meetupStorage.groupPhoto[i]
@@ -271,7 +246,6 @@ function getThreeList(meetupStorage){
             newFigure.append(newImage);
             figureArray.push(newFigure);
             var nameOfEvent=$('<div>').text(meetupStorage.eventName[i].substring(0,50)+"...").addClass("figure-text");
-            // var location = $('<p>').text(meetupStorage.venueName[i]).addClass("figure-text");
             var city = $ ('<p>').text(meetupStorage.venueCity[i]).addClass("figure-text");
             var date = $('<p>').text(meetupStorage.date[i]).addClass("figure-text");
             newFigure.append(nameOfEvent);
@@ -283,8 +257,6 @@ function getThreeList(meetupStorage){
         $(".three-sections").on("click",addDataOntoPage);
         $(".three-sections").on("click",hideEventsPageAndShowDataPage);
         $(".active").on("click",showLandingPageAndHideDataPage);
-
-        console.log(figureArray);
 
 }
 
@@ -306,8 +278,6 @@ function addDataOntoPage () {
             });
             $(".address").text(`Address: ${address}`);
             $(".host").text("Hosted by: " + meetupStorage.groupName[i]);
-            // var oldSrc = 'https://www.televerde.com/wp-content/uploads/2018/08/group-people-meeting-talking.1200x500.jpg';
-            // $('img[src="' + oldSrc + '"]').attr('src', meetupStorage.groupPhoto[i]);
             $('.event-img').attr('src', meetupStorage.groupPhoto[i]);
     
             var coordinates = {
@@ -329,7 +299,6 @@ function addDataOntoPage () {
 
 function chickTechGallery(){
     var chickTechArray = [];
-    var position = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     $.ajax({
         url: 'https://api.flickr.com/services/rest/',
@@ -344,22 +313,18 @@ function chickTechGallery(){
             nojsoncallback: 1
         },
         success: function(response){
-            console.log('got data from ChickTech gallery:', response);
             var photo = response.photoset.photo;
             
-            for(var i = 0; i < position.length; i++){
+            for(var i = 0; i < 10; i++){
                 var link = '';
                 var photoFarm = photo[i].farm;
                 var photoServer = photo[i].server;
                 var photoID = photo[i].id;
                 var photoSecret = photo[i].secret;
                 link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
-                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
-                
                 chickTechArray.push(link);
             }
 
-            console.log('chickTechArray:', chickTechArray);
             placeImages(chickTechArray, '.gallery-chicktech');
         }
     })
@@ -367,7 +332,6 @@ function chickTechGallery(){
 
 function girlDevelopItGallery(){
     var girlDevelopItArray = [];
-    // var position = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     $.ajax({
         url: 'https://api.flickr.com/services/rest/',
@@ -382,7 +346,6 @@ function girlDevelopItGallery(){
             nojsoncallback: 1
         },
         success: function(response){
-            console.log('got data from Girl Develop IT gallery:', response);
             var photo = response.photoset.photo;
             
             for(var i = 1; i < 10; i++){
@@ -393,12 +356,9 @@ function girlDevelopItGallery(){
                 var photoID = photo[i].id;
                 var photoSecret = photo[i].secret;
                 link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
-                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
                 
                 girlDevelopItArray.push(link);
             }
-
-            console.log('girlDevelopItArray:', girlDevelopItArray);
             placeImages(girlDevelopItArray, '.gallery-girldevelopit');
         }
     })
@@ -406,7 +366,6 @@ function girlDevelopItGallery(){
 
 function girlsInTechGallery(){
     var girlsInTechArray = [];
-    var position = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     $.ajax({
         url: 'https://api.flickr.com/services/rest/',
@@ -420,7 +379,6 @@ function girlsInTechGallery(){
             nojsoncallback: 1
         },
         success: function(response){
-            console.log('got data from Girls in Tech gallery:', response);
             var photo = response.photos.photo;
             
             for(var i = 0; i < 10; i++){
@@ -430,12 +388,9 @@ function girlsInTechGallery(){
                 var photoID = photo[i].id;
                 var photoSecret = photo[i].secret;
                 link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '.jpg';
-                // link = 'https://farm' + photoFarm + '.staticflickr.com/' + photoServer + '/' + photoID + '_' + photoSecret + '_m.jpg';
                 
                 girlsInTechArray.push(link);
             }
-
-            console.log('girlsInTechArray:', girlsInTechArray);
             placeImages(girlsInTechArray, '.gallery-girlsintech');
         }
     })
@@ -445,8 +400,6 @@ function placeImages(array, section){
     var figureArray = [];
     
     for(var i = 0; i < array.length; i++) {
-        //create an img with the src from the array and append it to the appropriate figure in the figureArray
-        //append that figureArray to #events-to-choose
         var imgFigure = $('<figure>').addClass('gallery-figure');
         var image = $('<img>').addClass('gallery-image').click(displayImage).attr({
             linkData: array[i],
@@ -468,17 +421,15 @@ function displayImage(target){
 
 function addOneMarkerToMap(coordinates, eventName, address) {
 
-    var options = {
-        zoom: 15,
-    }
-
-    map = new google.maps.Map(document.getElementById('map'),options);
-
     var icon = {
         url: "https://cdn3.iconfinder.com/data/icons/ballicons-free/128/imac.png",
         scaledSize: new google.maps.Size(50, 50),
         origin: new google.maps.Point(0,0),
         anchor: new google.maps.Point(0,0)
+    }
+
+    if (marker && marker.setMap) {
+        marker.setMap(null);
     }
 
     var marker = new google.maps.Marker ({
@@ -498,12 +449,10 @@ function addOneMarkerToMap(coordinates, eventName, address) {
         marker.setAnimation(google.maps.Animation.BOUNCE);
     });
     
-    // assuming you also want to hide the infowindow when user mouses-out
     marker.addListener('mouseout', function() {
         infowindow.close();
         marker.setAnimation(null);
     });
 
-    //resets the center of the google map to our specific coordinates
     map.panTo(coordinates);
 }
