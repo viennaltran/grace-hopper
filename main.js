@@ -4,8 +4,10 @@ var map;
 var global_result;
 var meetupStorage = {};
 var twitterFlag = true;
+var showSpinner = true;
 
 function initializeApp () {
+    initSpinner();
     $.ajax(meetup);
     initMap();
     addClickHandlers();
@@ -33,6 +35,8 @@ var meetup = {
         key: '554071754212291c41435871a39671'
     },
     success: function (result) {
+        showSpinner = false;
+        initSpinner();
         global_result = result;
         var events=global_result.results;
         dataStorage(events);
@@ -41,6 +45,14 @@ var meetup = {
         getThreeList(meetupStorage);
     },
     error: err=>console.log("error:",err)
+}
+
+function initSpinner () {
+    if(showSpinner === false){
+        $('.spinner').addClass("hidePage");
+    }else {
+        $('.spinner').removeClass("hidePage");
+    }
 }
 
 function dataStorage(events) {

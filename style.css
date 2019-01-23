@@ -5,6 +5,47 @@ body {
   flex-direction: column;
 }
 
+.col-sm-2 {
+  padding: 10px;
+  border-radius: 4px;
+  height: 125px;
+  margin-bottom: 10px;
+}
+
+.sp {
+  width: 32px;
+  height: 32px;
+  clear: both;
+  margin: 20px auto;
+}
+
+.sp-circle {
+  height: 20vh;
+  width: 20vh;
+  border: 4px rgba(250, 128, 114, 0.25) solid;
+  border-top: 4px salmon solid;
+  border-radius: 50%;
+  -webkit-animation: spCircRot .6s infinite linear;
+  animation: spCircRot .6s infinite linear;
+}
+
+@-webkit-keyframes spCircRot {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@keyframes spCircRot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 .newest-section-pictures{
   width: 100px;
   height: 100px;
@@ -475,6 +516,7 @@ ol {
   .newest-section{
     background-color: #e7e7e7;
     width: 100%;
+    min-height: 350px;
   }
   .twitter-section {
     background-color: #e7e7e7;
