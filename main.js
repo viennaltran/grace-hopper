@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var map;
 var global_result;
 var meetupStorage = {};
-var twitterFlag = false;
+var twitterFlag = true;
 
 function initializeApp () {
     $.ajax(meetup);
@@ -138,15 +138,19 @@ function addClickHandlers(){
 }
 
 function toggleTwitter() {
-    if(twitterFlag === false){
+    if(twitterFlag === true){
         $('.twitter-list').addClass("hidePage");
+        $('.twitter-header-bird').addClass("hidePage");
+        $('.twitter-bird-logo').removeClass("hidePage");
         $('#showTweets').text("Show Tweets");
-        twitterFlag = true;
+        twitterFlag = false;
     }
     else {
         $('.twitter-list').removeClass("hidePage");
+        $('.twitter-header-bird').removeClass("hidePage");
+        $('.twitter-bird-logo').addClass("hidePage");
         $('#showTweets').text("Close Tweets");
-        twitterFlag = false;
+        twitterFlag = true;
     }
 }
 

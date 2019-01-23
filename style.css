@@ -284,14 +284,11 @@ ol {
 }
 
 #twitter-feed > div > * {
-  display: block;
   text-align: center;
-  margin: 10px auto;
 }
 
 #twitter-feed {
   background-color: #e7e7e7;
-  max-height: 350px;
 }
 
 #tweets {
@@ -300,6 +297,13 @@ ol {
 }
 .twitter-content {
   width: 100%;
+  text-align: center;
+  padding: 2rem;
+}
+
+.twitter-bird-logo {
+  height: 60%;
+  width:60%;
 }
 
 .twitter-section {
