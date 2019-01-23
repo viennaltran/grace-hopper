@@ -242,8 +242,8 @@ function getEventsList(meetupStorage){
             );
             newFigure.append(newImage);
             figureArray.push(newFigure);
-            if(meetupStorage.eventName[i].length > 50){
-                var nameOfEvent = $('<div>').text(meetupStorage.eventName[i].substring(0,50)+"...").addClass("figure-text");
+            if(meetupStorage.eventName[i].length > 40){
+                var nameOfEvent = $('<div>').text(meetupStorage.eventName[i].substring(0,40)+"...").addClass("figure-text");
             }else {
                 var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
             }
@@ -269,8 +269,8 @@ function getThreeList(meetupStorage){
             );
             newFigure.append(newImage);
             figureArray.push(newFigure);
-            if(meetupStorage.eventName[i].length > 50){
-                var nameOfEvent = $('<div>').text(meetupStorage.eventName[i].substring(0,50)+"...").addClass("figure-text");
+            if(meetupStorage.eventName[i].length > 30){
+                var nameOfEvent = $('<div>').text(meetupStorage.eventName[i].substring(0,30)+"...").addClass("figure-text");
             }else {
                 var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
             }

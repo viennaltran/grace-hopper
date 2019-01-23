@@ -215,7 +215,7 @@ figure {
   -webkit-box-shadow: 0 10px 6px -6px #777;
 	-moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777; 
-  min-height: 380px;
+  min-height: 325px;
 } 
 
 .three-sections{
@@ -255,6 +255,19 @@ div.figure-text {
   font-family: 'Raleway', sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
+  margin: 0px 10px;
+}
+
+.three-sections > div.figure-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0px 10px;
+}
+
+.three-sections > p.figure-text {
+  margin: 0;
+  font-size: 1.8rem;
   margin: 0px 10px;
 }
 
@@ -488,13 +501,13 @@ ol {
 
 /* media queries */
 
-@media (max-width: 1239px) {
+@media (max-width: 1039px) {
   .figure-text{
     font-size:1.5rem;
   }
 }
 
-@media (max-width: 1550px) { 
+@media (max-width: 1250px) { 
   .landing_page > figure {
     width: 45%;
     background-color: #f1f1f1;
@@ -505,7 +518,6 @@ ol {
     -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
     box-shadow: 0 10px 6px -6px #777;
-    min-height: 352px;
   }
 }
 @media (min-width: 768px) and (max-width:991px) {
