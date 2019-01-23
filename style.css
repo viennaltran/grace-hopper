@@ -152,8 +152,8 @@ figure {
 }
 
 .landing-page-image {
-  width: 90%;
-  height: 25%;
+  max-width: 642px;
+  max-height: 400px;
   padding: 2%;
 }
 
@@ -433,6 +433,12 @@ ol {
 
 /* media queries */
 
+@media (max-width: 1239px) {
+  .figure-text{
+    font-size:1.5rem;
+  }
+}
+
 @media (max-width: 1050px) { 
   .landing_page > figure {
     width: 45%;
@@ -444,21 +450,37 @@ ol {
     -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
     box-shadow: 0 10px 6px -6px #777;
-    min-height: 335px;
+    min-height: 352px;
+  }
+}
+@media (min-width: 768px) and (max-width:991px) {
+  .newest-section{
+    background-color: #e7e7e7;
+    width: 100%;
+  }
+  .twitter-section {
+    background-color: #e7e7e7;
+    width: 100%;
+    margin-top: -1px;
+
+  }
+  .three-sections{
+    min-height:320px;
   }
 }
 
 @media (max-width: 767px) {
   .newest-section {
-    background-color: #e7e7e7;
     text-align: center;
     width: 86%;
     margin: 0 auto;
+    background-color: transparent;
   }
   .twitter-section {
     background-color: #e7e7e7;
     width: 75%;
     margin: 0 auto;
+    margin-top:5%;
 }
 .three-sections {
     margin: 0 auto;
