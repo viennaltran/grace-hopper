@@ -41,8 +41,11 @@ var meetup = {
         var events=global_result.results;
         dataStorage(events);
         getEventsList(meetupStorage);
-        addDataOntoPage();
+        // addDataOntoPage();
         getThreeList(meetupStorage);
+        // if(!$('.landing-page').hasClass('hidePage')){
+        //     $('')
+        // }
     },
     error: err=>console.log("error:",err)
 }
@@ -164,6 +167,10 @@ function toggleTwitter() {
 }
 
 function showEventsPage (){
+    debugger;
+    if(showSpinner){
+        $(".spinnerForEvents").removeClass("hidePage");
+    }
     $(".navbar-collapse").removeClass("in");
     $(".figure").removeClass("hidePage");
     $(".landing-page").addClass("hidePage");
@@ -226,6 +233,7 @@ function search () {
 
 function hideDataPage () {
     $("#event-chosen").addClass("hidePage");
+    $(".spinnerForEvents").addClass("hidePage");
     $("#twitter-and-google-maps").addClass("hidePage");
     $("#gallery").addClass("hidePage");
 }
@@ -251,7 +259,6 @@ function getEventsList(meetupStorage){
         $(".figure").on("click",addDataOntoPage);
         $(".figure").on("click",hideEventsPageAndShowDataPage);
         $(".active").on("click",showLandingPageAndHideDataPage);
-
 }
 
 function getThreeList(meetupStorage){
