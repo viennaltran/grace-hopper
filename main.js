@@ -162,6 +162,9 @@ function showEventsPage (){
     $('#gallery').addClass("hidePage");
     $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
     $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+    window.setTimeout(function() {
+        $(window).scrollTop(0); 
+    }, 0);
 }
 
 function initMap () {
@@ -193,6 +196,9 @@ function showGallery(){
     $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
     $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
     $("#gallery").removeClass("hidePage");
+    window.setTimeout(function() {
+        $(window).scrollTop(0); 
+    }, 0);
 }
 
 // function addClickHandlerToSubmitButton(){
