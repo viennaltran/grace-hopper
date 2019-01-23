@@ -154,7 +154,9 @@ figure {
 
 .landing-page-image {
   max-width: 642px;
+  width: 80%;
   max-height: 400px;
+  height: 100%;
   padding: 2%;
 }
 
