@@ -284,12 +284,13 @@ ol {
   margin: 0 auto;
 }
 
-#twitter-feed > div > * {
+.twitter-feed > div > * {
   text-align: center;
 }
 
-#twitter-feed {
+.twitter-feed {
   background-color: #e7e7e7;
+  border-radius: 10px;
 }
 
 .tweets {
@@ -312,6 +313,7 @@ ol {
 .twitter-section {
   background-color: #e7e7e7;
   width: 30%;
+  border-radius: 10px;
 }
 
 .twitter-header {
@@ -325,6 +327,7 @@ ol {
   text-align: center;
   width: 68%;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 #websiteHeader {
@@ -464,8 +467,7 @@ ol {
   .twitter-section {
     background-color: #e7e7e7;
     width: 100%;
-    margin-top: -1px;
-
+    margin: 3rem 0px;
   }
   .three-sections{
     min-height:320px;
