@@ -329,6 +329,10 @@ function addDataOntoPage () {
             $(".back_button").on("click",showEventsPage).css("color", "white");
                 
             addOneMarkerToMap(coordinates, eventName, address);
+
+            window.setTimeout(function() {
+                $(window).scrollTop(0); 
+            }, 0);
         }
     }
 }
