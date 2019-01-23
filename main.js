@@ -41,11 +41,7 @@ var meetup = {
         var events=global_result.results;
         dataStorage(events);
         getEventsList(meetupStorage);
-        // addDataOntoPage();
         getThreeList(meetupStorage);
-        // if(!$('.landing-page').hasClass('hidePage')){
-        //     $('')
-        // }
     },
     error: err=>console.log("error:",err)
 }
@@ -167,7 +163,6 @@ function toggleTwitter() {
 }
 
 function showEventsPage (){
-    debugger;
     if(showSpinner){
         $(".spinnerForEvents").removeClass("hidePage");
     }
@@ -247,7 +242,11 @@ function getEventsList(meetupStorage){
             );
             newFigure.append(newImage);
             figureArray.push(newFigure);
-            var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
+            if(meetupStorage.eventName[i].length > 50){
+                var nameOfEvent = $('<div>').text(meetupStorage.eventName[i].substring(0,50)+"...").addClass("figure-text");
+            }else {
+                var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
+            }
             var city = $ ('<p>').text(meetupStorage.venueCity[i]).addClass("figure-text");
             var date = $('<p>').text(meetupStorage.date[i]).addClass("figure-text");
             newFigure.append(nameOfEvent);
@@ -270,7 +269,11 @@ function getThreeList(meetupStorage){
             );
             newFigure.append(newImage);
             figureArray.push(newFigure);
-            var nameOfEvent=$('<div>').text(meetupStorage.eventName[i].substring(0,50)+"...").addClass("figure-text");
+            if(meetupStorage.eventName[i].length > 50){
+                var nameOfEvent = $('<div>').text(meetupStorage.eventName[i].substring(0,50)+"...").addClass("figure-text");
+            }else {
+                var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
+            }
             var city = $ ('<p>').text(meetupStorage.venueCity[i]).addClass("figure-text");
             var date = $('<p>').text(meetupStorage.date[i]).addClass("figure-text");
             newFigure.append(nameOfEvent);

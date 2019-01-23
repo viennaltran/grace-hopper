@@ -183,6 +183,9 @@ figure {
 .img-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  background-color: #e7e7e7;
+  border-radius: 10px;
 }
 
 .landing_page {
@@ -199,6 +202,7 @@ figure {
   max-height: 400px;
   height: 100%;
   padding: 2%;
+  margin: 0 auto;
 }
 
 .landing_page > figure {
@@ -211,7 +215,7 @@ figure {
   -webkit-box-shadow: 0 10px 6px -6px #777;
 	-moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777; 
-  min-height: 346px;
+  min-height: 380px;
 } 
 
 .three-sections{
@@ -269,9 +273,11 @@ div.figure-text {
 }
 
 .event-information > .event-img > figure > img {
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
+    width: 80%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 450px;
+    margin: 0 auto;
 }
 
 .event-info {
@@ -370,8 +376,7 @@ ol {
 .newest-section {
   background-color: #e7e7e7;
   text-align: center;
-  width: 68%;
-  margin: 0 auto;
+  width: 69%;
   border-radius: 10px;
 }
 
@@ -489,7 +494,7 @@ ol {
   }
 }
 
-@media (max-width: 1050px) { 
+@media (max-width: 1550px) { 
   .landing_page > figure {
     width: 45%;
     background-color: #f1f1f1;
@@ -548,7 +553,7 @@ ol {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   body {
     margin: 0 10%;
   }
