@@ -392,14 +392,6 @@ ol {
 .gallery-figure {
   margin: .5%;
   align-self: center;
-  /* margin: 2px; */
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-self: center;
-  margin: 2px;
-  background-color: light-grey; */
-  /* background-clip: content-box; */
 }
 
 .gallery-image {
@@ -407,15 +399,14 @@ ol {
   max-height: 175px;
   transition: box-shadow .5s ease;
   box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  cursor: pointer;
 }
 
 .gallery-image:hover {
-  box-shadow: 0 3px 9px rgba(250,128,114,1.5);
+  box-sizing: border-box;
+  outline: 5px solid #ef5350;
+  outline-offset: -5px;
 }
-
-/* .gallery-girldevelopit .gallery-image {
-  height: 134px;
-} */
 
 .gallery-modal {
   display: none;
@@ -581,7 +572,6 @@ ol {
 
   /* landing page */
   .landing_page > figure {
-    /* min-height: 230px; */
     position:relative;
     justify-content: space-around;
     flex-basis: 98%;
