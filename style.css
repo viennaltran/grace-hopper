@@ -60,10 +60,20 @@ body {
   cursor: pointer;
 }
 
+.contents-section {
+  display: flex;
+  /* height: 80vh; */
+  margin: 10px 0;
+  justify-content: space-between;
+}
+
 .newest-section-header {
-  font-size: 150%;
-  font-family: sans-serif;
   padding: 10px;
+  width: 100%;
+  font-size: 214%;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* header */
@@ -74,9 +84,11 @@ header {
 }
 
 .header-text {
-  font-size: 250%;
+  font-size: 180%;
+  padding: 10px;
   font-family: sans-serif;
   font-weight: bold;
+  position: relative;
   text-align: center;
 }
 
@@ -176,16 +188,14 @@ figure {
   margin: 0;
 }
 
-/* img.picture{
-  width:50%;
-} */
-
 .img-container {
+  height: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background-color: #e7e7e7;
   border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .landing_page {
@@ -218,13 +228,13 @@ figure {
   min-height: 325px;
 } 
 
-.three-sections{
-    width: 29%;
+.four-sections{
+    width: 48%;
     display: inline-block;
     vertical-align: top;
     min-height: 300px;
     background-color: #f1f1f1;
-    margin: 0 15px 30px 0px;
+    margin: 10px auto;
     border-radius: 10px;
     text-align: center;
     -webkit-box-shadow: 0 10px 6px -6px #777;
@@ -258,14 +268,14 @@ div.figure-text {
   margin: 0px 10px;
 }
 
-.three-sections > div.figure-text {
+.four-sections > div.figure-text {
   font-family: 'Raleway', sans-serif;
   font-size: 2rem;
   font-weight: bold;
   margin: 0px 10px;
 }
 
-.three-sections > p.figure-text {
+.four-sections > p.figure-text {
   margin: 0;
   font-size: 1.8rem;
   margin: 0px 10px;
@@ -374,23 +384,31 @@ ol {
 
 .twitter-section {
   background-color: #e7e7e7;
-  width: 30%;
+  height: 49%;
   border-radius: 10px;
 }
 
 .twitter-header {
   font-size: 150%;
   font-family: sans-serif;
+  font-weight: bold;
   text-align: center;
   padding: 10px;
   margin: 0px;
 }
 
+.side-header {
+  width: 24%;
+}
+
 .newest-section {
   background-color: #e7e7e7;
   text-align: center;
-  width: 69%;
+  height: 100%;
+  width: 75%;
   border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #websiteHeader {
@@ -490,7 +508,6 @@ ol {
   cursor: pointer;
 }
 
-/* will create this dynamically */
 .event-name {
   text-align: center;
   font-size: 36px;
@@ -504,6 +521,12 @@ ol {
 @media (max-width: 1039px) {
   .figure-text{
     font-size:1.5rem;
+  }
+}
+
+@media (min-width: 991px) and (max-width:1350px) {
+  .header-text2 {
+    font-size: 1.7rem;
   }
 }
 
@@ -531,25 +554,28 @@ ol {
     width: 100%;
     margin: 3rem 0px;
   }
-  .three-sections{
+  .four-sections{
     min-height:320px;
+  }
+  .img-container {
+    height: auto;
   }
 }
 
 @media (max-width: 767px) {
   .newest-section {
     text-align: center;
-    width: 86%;
+    width: 100%;
     margin: 0 auto;
-    background-color: transparent;
+    background-color: #e7e7e7;
   }
   .twitter-section {
     background-color: #e7e7e7;
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
     margin-top:5%;
-}
-.three-sections {
+  }
+  .four-sections {
     margin: 0 auto;
     width: 90%;
     min-height:0;
@@ -563,6 +589,12 @@ ol {
     cursor: pointer;
     margin-bottom: 15px;
   }
+  .spinner {
+    margin: 0 auto;
+  }
+  .img-container {
+    height: auto;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -571,7 +603,7 @@ ol {
   }
 
   .twitter-content > * {
-    font-size: 1.2rem;
+    font-size: 2rem;
   }
 
   .header-text {
@@ -646,12 +678,6 @@ ol {
   #twitter-and-google-maps{
     margin: 1rem 0;
   }
-
-  /* #twitter-feed > div > * {
-        display: block;
-        margin: 10px auto;
-        width: 100%;
-    } */
 }
 
 @media (max-width: 500px) {
@@ -682,10 +708,6 @@ ol {
   }
   /* Data Page */
 
-  /* .event-name {
-        font-size:12px;
-    } */
-
   .event-info > span {
     font-weight: bold;
     font-size: 12px;
@@ -694,10 +716,4 @@ ol {
   .event-description {
     font-size: 12px;
   }
-}
-
-.contents-section {
-  display: flex;
-  margin: 10px 0;
-  justify-content: space-between;
 }

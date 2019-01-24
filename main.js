@@ -42,7 +42,7 @@ var meetup = {
         dataStorage(events);
         getEventsList(meetupStorage);
         // showEventsPage();
-        getThreeList(meetupStorage);
+        getFourList(meetupStorage);
     },
     error: err=>console.log("error:",err)
 }
@@ -274,10 +274,10 @@ function getEventsList(meetupStorage){
         $(".active").on("click",showLandingPageAndHideDataPage);
 }
 
-function getThreeList(meetupStorage){
+function getFourList(meetupStorage){
     var figureArray = [];
-        for(let i = 0; i <3; i++) {
-            var newFigure = $('<figure>').addClass('three-sections').attr('index',i);
+        for(let i = 0; i <4; i++) {
+            var newFigure = $('<figure>').addClass('four-sections').attr('index',i);
             var newImage = $('<img>').addClass('picture').attr(
                 'src', meetupStorage.groupPhoto[i]
             );
@@ -296,8 +296,8 @@ function getThreeList(meetupStorage){
             newFigure.append(date);
         }
         $('.newest-section').append(figureArray);
-        $(".three-sections").on("click",addDataOntoPage);
-        $(".three-sections").on("click",hideEventsPageAndShowDataPage);
+        $(".four-sections").on("click",addDataOntoPage);
+        $(".four-sections").on("click",hideEventsPageAndShowDataPage);
         $(".active").on("click",showLandingPageAndHideDataPage);
 
 }
