@@ -41,7 +41,6 @@ var meetup = {
         var events=global_result.results;
         dataStorage(events);
         getEventsList(meetupStorage);
-        // showEventsPage();
         getFourList(meetupStorage);
     },
     error: err=>console.log("error:",err)

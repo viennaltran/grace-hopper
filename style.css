@@ -62,7 +62,6 @@ body {
 
 .contents-section {
   display: flex;
-  /* height: 80vh; */
   margin: 10px 0;
   justify-content: space-between;
 }
@@ -376,10 +375,6 @@ ol {
   height: 49%;
 }
 
-/* .tweets {
-  max-height: 200px;
-  overflow-y: scroll;
-} */
 .twitter-content {
   width: 100%;
   text-align: center;
@@ -388,9 +383,9 @@ ol {
 
 .twitter-bird-logo {
   height: 60%;
-  max-height: 300px;
+  max-height: 215px;
   width: 60%;
-  max-width: 300px;
+  max-width: 215px;
 }
 
 .twitter-section {
@@ -584,7 +579,6 @@ ol {
   .twitter-section {
     background-color: #e7e7e7;
     width: 100%;
-    /* margin: 3rem 0px; */
   }
   .four-sections{
     min-height:320px;
@@ -595,13 +589,9 @@ ol {
   }
   .contents-section {
     display: flex;
-    /* height: 80vh; */
     margin: 10px 0;
     justify-content: space-between;
   }
-  /* .img-container {
-    height: auto;
-  } */
 }
 
 @media (max-width: 767px) {
@@ -740,7 +730,7 @@ ol {
   }
 
   .twitter-content > a {
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 0;
   }
 
