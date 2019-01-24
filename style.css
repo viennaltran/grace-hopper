@@ -449,9 +449,9 @@ ol {
 }
 
 .gallery-image:hover {
-  box-sizing: border-box;
-  outline: 5px solid #ef5350;
-  outline-offset: -5px;
+  -moz-box-shadow:    3px 3px 5px 6px #ef5350;
+  -webkit-box-shadow: 3px 3px 5px 6px #ef5350;
+  box-shadow:         3px 3px 5px 6px #ef5350;
 }
 
 .gallery-modal {
