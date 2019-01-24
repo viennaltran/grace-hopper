@@ -41,6 +41,7 @@ var meetup = {
         var events=global_result.results;
         dataStorage(events);
         getEventsList(meetupStorage);
+        // showEventsPage();
         getThreeList(meetupStorage);
     },
     error: err=>console.log("error:",err)
@@ -163,19 +164,32 @@ function toggleTwitter() {
 }
 
 function showEventsPage (){
-    if(showSpinner){
-        $(".spinnerForEvents").removeClass("hidePage");
-    }
-    $(".navbar-collapse").removeClass("in");
-    $(".figure").removeClass("hidePage");
     $(".landing-page").addClass("hidePage");
-    $("#events-to-choose").removeClass("hidePage");
-    $('#gallery').addClass("hidePage");
-    $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
-    $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
-    window.setTimeout(function() {
-        $(window).scrollTop(0); 
-    }, 0);
+    if($(".figure").length === 0){
+        $('.spinnerForEvents').removeClass("hidePage");
+        setTimeout(function(){
+            $('.spinnerForEvents').addClass("hidePage")
+            $(".navbar-collapse").removeClass("in");
+            $(".figure").removeClass("hidePage");
+            $("#events-to-choose").removeClass("hidePage");
+            $('#gallery').addClass("hidePage");
+            $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
+            $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+            window.setTimeout(function() {
+                $(window).scrollTop(0); 
+            }, 0);
+        }, 1000);
+    }else {
+        $(".navbar-collapse").removeClass("in");
+        $(".figure").removeClass("hidePage");
+        $("#events-to-choose").removeClass("hidePage");
+        $('#gallery').addClass("hidePage");
+        $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
+        $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+        window.setTimeout(function() {
+            $(window).scrollTop(0); 
+        }, 0);
+    }
 }
 
 function initMap () {
