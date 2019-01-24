@@ -104,11 +104,14 @@ img {
     border-radius: 50%;
 }
 
-/* .personContainer {
-    height: 90%;
-    width: 80%;
-    margin: 0 auto;
-} */
+.box {
+    background-color: #e7e7e7;
+    border-radius: 10px;
+}
+
+.info-box {
+    margin-left: 10px;
+}
 
 
 
