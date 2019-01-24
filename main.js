@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var map;
 var global_result;
 var meetupStorage = {};
-var twitterFlag = true;
+var twitterFlag = false;
 var showSpinner = true;
 
 function initializeApp () {
@@ -50,6 +50,8 @@ var meetup = {
 function initSpinner () {
     if(showSpinner === false){
         $('.spinner').addClass("hidePage");
+        $('.contents-section').removeClass("hidePage");
+        $('.contents-section').removeClass("importantHidePage");
     }else {
         $('.spinner').removeClass("hidePage");
     }
