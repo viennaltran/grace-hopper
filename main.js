@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var map;
 var global_result;
 var meetupStorage = {};
-var twitterFlag = true;
+var twitterFlag = false;
 var showSpinner = true;
 
 function initializeApp () {
@@ -41,7 +41,6 @@ var meetup = {
         var events=global_result.results;
         dataStorage(events);
         getEventsList(meetupStorage);
-        // showEventsPage();
         getFourList(meetupStorage);
     },
     error: err=>console.log("error:",err)
@@ -50,6 +49,8 @@ var meetup = {
 function initSpinner () {
     if(showSpinner === false){
         $('.spinner').addClass("hidePage");
+        $('.contents-section').removeClass("hidePage");
+        $('.contents-section').removeClass("importantHidePage");
     }else {
         $('.spinner').removeClass("hidePage");
     }
