@@ -229,7 +229,7 @@ function showGallery(){
 
 function search () {
     $.ajax({
-        url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php?search_term=womenintech',
+        url: 'https://s-apis.learningfuze.com/hackathon/twitter/index.php?search_term=womenintech',
         dataType:'json',
         success: function(data){
             for(item in data.tweets.statuses) {
