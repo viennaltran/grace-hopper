@@ -192,7 +192,6 @@ figure {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* background-color: #e7e7e7; */
   background-color: #c5e3ef;
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -252,7 +251,6 @@ img.picture{
 .landing_page > figure > img {
   width: 100%;
   border-radius: 10px 10px 0px 0px;
-  /* min-height: 232px; */
   height: 40%;
 }
 
@@ -372,7 +370,6 @@ ol {
 }
 
 .twitter-feed {
-  /* background-color: #e7e7e7; */
   background-color: #c5e3ef;
   border-radius: 10px;
   height: 49%;
@@ -392,7 +389,6 @@ ol {
 }
 
 .twitter-section {
-  /* background-color: #e7e7e7; */
   background-color: #c5e3ef;
   height: 49%;
   border-radius: 10px;
@@ -581,7 +577,6 @@ ol {
     min-height: 350px;
   }
   .twitter-section {
-    /* background-color: #e7e7e7; */
     background-color: #c5e3ef;
     width: 100%;
   }
@@ -607,7 +602,6 @@ ol {
     background-color: #e7e7e7;
   }
   .twitter-section {
-    /* background-color: #e7e7e7; */
     background-color: #c5e3ef;
     width: 100%;
     margin: 0 auto;
