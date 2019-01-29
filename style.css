@@ -204,6 +204,11 @@ figure {
   position: relative;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 4em;
+}
+
+#events-to-choose, .twitter-and-google-maps, #gallery {
+  margin-bottom: 4em;
 }
 
 .landing-page-image {
@@ -348,11 +353,30 @@ ol {
   justify-content: center;
 }
 
-.twitter_and_google_maps {
-  display: grid;
-  margin: 10px 0;
-  grid-row-gap: 3vh;
-  
+.event-body {
+  display: flex;
+  max-height: 400px;
+  margin: 4em 0em;
+}
+
+.twitter_and_google_maps, .event-description-container {
+  width: 48%;
+  justify-content: space-evenly;
+}
+
+.event-description-container {
+  background-color: #c5e3ef;
+  margin: 0rem 2rem;
+  padding: 0rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.event-description {
+  height: 90%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 2rem;
 }
 
 .twitter_and_google_maps > button {
@@ -775,8 +799,8 @@ ol {
     font-size: 12px;
   }
 
-  #twitter-and-google-maps{
-    margin: 1rem 0;
+  .twitter-and-google-maps{
+    /* margin: 1rem 0; */
   }
 }
 
