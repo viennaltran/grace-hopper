@@ -355,11 +355,28 @@ ol {
 
 .event-body {
   display: flex;
+  max-height: 400px;
+  margin: 4em 0em;
 }
 
-.twitter_and_google_maps, .event-description {
+.twitter_and_google_maps, .event-description-container {
   width: 48%;
   justify-content: space-evenly;
+}
+
+.event-description-container {
+  background-color: #c5e3ef;
+  margin: 0rem 2rem;
+  padding: 0rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.event-description {
+  height: 90%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 2rem;
 }
 
 .twitter_and_google_maps > button {
@@ -766,7 +783,7 @@ ol {
   }
 
   .twitter-and-google-maps{
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
   }
 }
 

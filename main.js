@@ -312,7 +312,7 @@ function addDataOntoPage () {
     
             $(".date").text("Date: " + meetupStorage.date[i]);
             $(".event-name").text(meetupStorage.eventName[i]);
-            var shortenedDescription = meetupStorage.eventDescriptions[i].substring(0,500) + "...";
+            var shortenedDescription = meetupStorage.eventDescriptions[i].substring(0,450) + "...";
             var seeMoreButton = $("<Button>").addClass("show-more-button btn btn-default").text("See More");
             $(".event-description").text(shortenedDescription).css("margin", "1rem 0px");
             $(".event-description").append(seeMoreButton);
