@@ -175,7 +175,7 @@ function showEventsPage (){
             $("#events-to-choose").removeClass("hidePage");
             $('#gallery').addClass("hidePage");
             $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
-            $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+            $(".twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
             window.setTimeout(function() {
                 $(window).scrollTop(0); 
             }, 0);
@@ -186,7 +186,7 @@ function showEventsPage (){
         $("#events-to-choose").removeClass("hidePage");
         $('#gallery').addClass("hidePage");
         $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
-        $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+        $(".twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
         window.setTimeout(function() {
             $(window).scrollTop(0); 
         }, 0);
@@ -206,13 +206,13 @@ function hideEventsPageAndShowDataPage () {
     $(".landing-page").addClass("hidePage");
     $("#events-to-choose").addClass("hidePage");
     $("#event-chosen").removeClass("hidePage").addClass("event_chosen");
-    $("#twitter-and-google-maps").removeClass("hidePage").addClass("twitter_and_google_maps");
+    $(".twitter-and-google-maps").removeClass("hidePage").addClass("twitter_and_google_maps");
 }
 
 function showLandingPageAndHideDataPage () {
     $("#events-to-choose").removeClass("hidePage");
     $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
-    $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+    $(".twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
 }
 
 function showGallery(){
@@ -220,7 +220,7 @@ function showGallery(){
     $(".landing-page").addClass("hidePage");
     $("#events-to-choose").addClass("hidePage");
     $("#event-chosen").addClass("hidePage").removeClass("event_chosen");
-    $("#twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
+    $(".twitter-and-google-maps").addClass("hidePage").removeClass("twitter_and_google_maps");
     $("#gallery").removeClass("hidePage");
     window.setTimeout(function() {
         $(window).scrollTop(0); 
@@ -244,7 +244,7 @@ function search () {
 function hideDataPage () {
     $("#event-chosen").addClass("hidePage");
     $(".spinnerForEvents").addClass("hidePage");
-    $("#twitter-and-google-maps").addClass("hidePage");
+    $(".twitter-and-google-maps").addClass("hidePage");
     $("#gallery").addClass("hidePage");
 }
 
@@ -257,8 +257,8 @@ function getEventsList(meetupStorage){
             );
             newFigure.append(newImage);
             figureArray.push(newFigure);
-            if(meetupStorage.eventName[i].length > 40){
-                var nameOfEvent = $('<div>').text(meetupStorage.eventName[i].substring(0,40)+"...").addClass("figure-text");
+            if(meetupStorage.eventName[i].length > 30){
+                var nameOfEvent = $('<div>').text(meetupStorage.eventName[i].substring(0,30)+"...").addClass("figure-text");
             }else {
                 var nameOfEvent=$('<div>').text(meetupStorage.eventName[i]).addClass("figure-text");
             }
