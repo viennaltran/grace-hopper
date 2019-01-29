@@ -397,12 +397,16 @@ ol {
 }
 
 .twitter-header {
-  font-size: 125%;
+  font-size: 155%;
   font-family: sans-serif;
   font-weight: bold;
   text-align: center;
   padding: 10px;
   margin: 0px;
+}
+
+.tweets > li {
+  font-size:120%;
 }
 
 .side-header {
