@@ -76,7 +76,7 @@ function dataStorage(events) {
 
         var groupPhoto1 = global_result.results[x].photo_url;
         if(groupPhoto1 === undefined){
-            var oldSrc = 'images/default_pic.jpg';
+            var oldSrc = 'images/default_pic.jpg'.css('filter': "blur(10px)");
 
             groupPhoto1 = oldSrc;
             photoUrl.push(groupPhoto1);
