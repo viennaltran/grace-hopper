@@ -406,7 +406,7 @@ function girlDevelopItGallery(){
                 
                 girlDevelopItArray.push(link);
             }
-            placeImages(girlDevelopItArray, '.gallery-girldevelopit');
+            // placeImages(girlDevelopItArray, '.gallery-girldevelopit');
         }
     })
 }
@@ -438,7 +438,7 @@ function girlsInTechGallery(){
                 
                 girlsInTechArray.push(link);
             }
-            placeImages(girlsInTechArray, '.gallery-girlsintech');
+            // placeImages(girlsInTechArray, '.gallery-girlsintech');
         }
     })
 }
@@ -459,7 +459,7 @@ function placeImages(array, section){
         });
         var carouselTarget = $('<li>').attr({
             "data-target": "#eventsCarousel",
-            "data-slide-to": `${i}`
+            // "data-slide-to": `${i}`
         });
 
         if(i === 0){
@@ -479,9 +479,12 @@ function placeImages(array, section){
     $(section).append(figureArray);
 }
 
-function displayImage(target){
-    var link = target.currentTarget.attributes.linkData.nodeValue;
-    $('.modal-image img').attr('src', link);
+function displayImage(event){
+    console.log(event);
+    // console.log(event);
+
+    // var link = event.currentTarget.src;
+    // $('.modal-image img').attr('src', link).addClass('active');
     $('#gallery-modal').modal();
 }
 
