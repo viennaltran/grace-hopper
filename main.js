@@ -445,6 +445,7 @@ function girlsInTechGallery(){
 
 function placeImages(array, section){
     var figureArray = [];
+    var carouselArray = [];
     
     for(var i = 0; i < array.length; i++) {
         var imgFigure = $('<figure>').addClass('gallery-figure');
@@ -453,10 +454,28 @@ function placeImages(array, section){
             src: array[i],
             index: i
         });
+        var imgSrc = $('<img>').attr({
+            src: array[i]
+        });
+        var carouselTarget = $('<li>').attr({
+            "data-target": "#eventsCarousel",
+            "data-slide-to": `${i}`
+        });
+
+        if(i === 0){
+            var imgContainer = $('<div>').addClass("item active");
+        }else {
+            var imgContainer = $('<div>').addClass("item");
+        }
+
+        $('.carousel-indicators').append(carouselTarget);        
+        imgContainer.append(imgSrc);
+        carouselArray.push(imgContainer);
         imgFigure.append(image);
         figureArray.push(imgFigure);
     }
     
+    $('.carousel-inner').append(carouselArray);
     $(section).append(figureArray);
 }
 
