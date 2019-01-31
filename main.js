@@ -406,7 +406,7 @@ function girlDevelopItGallery(){
                 
                 girlDevelopItArray.push(link);
             }
-            // girlDevelopItPlaceImages(girlDevelopItArray, '.gallery-girldevelopit');
+            girlDevelopItPlaceImages(girlDevelopItArray, '.gallery-girldevelopit');
         }
     })
 }
@@ -438,7 +438,7 @@ function girlsInTechGallery(){
                 
                 girlsInTechArray.push(link);
             }
-            // placeImages(girlsInTechArray, '.gallery-girlsintech');
+            girlsInTechPlaceImages(girlsInTechArray, '.gallery-girlsintech');
         }
     })
 }
@@ -454,7 +454,7 @@ function chickTechPlaceImages(array, section){
             src: array[i],
             index: i
         });
-        var imgSrc = $('<img>').attr({
+        var imgSrc = $('<img>').addClass('chickTechImg').attr({
             src: array[i]
         });
         var carouselTarget = $('<li>').attr({
@@ -478,45 +478,80 @@ function chickTechPlaceImages(array, section){
     $(section).append(figureArray);
 }
 
-// function girlDevelopItPlaceImages(array, section){
-//     var figureArray = [];
-//     var carouselArray = [];
+function girlDevelopItPlaceImages(array, section){
+    var figureArray = [];
+    var carouselArray = [];
     
-//     for(var i = 0; i < array.length; i++) {
-//         var imgFigure = $('<figure>').addClass('gallery-figure');
-//         var image = $('<img>').addClass('gallery-image').click(girlDevelopItDisplayImage).attr({
-//             linkData: array[i],
-//             src: array[i],
-//             index: i
-//         });
-//         var imgSrc = $('<img>').attr({
-//             src: array[i]
-//         });
-//         var carouselTarget = $('<li>').attr({
-//             "data-target": "#chickTechCarousel",
-//         });
+    for(var i = 0; i < array.length; i++) {
+        var imgFigure = $('<figure>').addClass('gallery-figure');
+        var image = $('<img>').addClass('gallery-image').click(girlDevelopItDisplayImage).attr({
+            linkData: array[i],
+            src: array[i],
+            index: i
+        });
+        var imgSrc = $('<img>').addClass('girlDevelopItImg').attr({
+            src: array[i]
+        });
+        var carouselTarget = $('<li>').attr({
+            "data-target": "#girlDevelopItCarousel",
+        });
 
-//         if(i === 0){
-//             var imgContainer = $('<div>').addClass("item active");
-//         }else {
-//             var imgContainer = $('<div>').addClass("item");
-//         }
+        if(i === 0){
+            var imgContainer = $('<div>').addClass("item active");
+        }else {
+            var imgContainer = $('<div>').addClass("item");
+        }
 
-//         $('.carousel-indicators').append(carouselTarget);        
-//         imgContainer.append(imgSrc);
-//         carouselArray.push(imgContainer);
-//         imgFigure.append(image);
-//         figureArray.push(imgFigure);
-//     }
+        $('.carousel-indicators').append(carouselTarget);        
+        imgContainer.append(imgSrc);
+        carouselArray.push(imgContainer);
+        imgFigure.append(image);
+        figureArray.push(imgFigure);
+    }
     
-//     $('.carousel-inner').append(carouselArray);
-//     $(section).append(figureArray);
-// }
+    $('.carousel-inner').append(carouselArray);
+    $(section).append(figureArray);
+}
+
+function girlsInTechPlaceImages(array, section){
+    var figureArray = [];
+    var carouselArray = [];
+    
+    for(var i = 0; i < array.length; i++) {
+        var imgFigure = $('<figure>').addClass('gallery-figure');
+        var image = $('<img>').addClass('gallery-image').click(girlsInTechDisplayImage).attr({
+            linkData: array[i],
+            src: array[i],
+            index: i
+        });
+        var imgSrc = $('<img>').addClass('girlsInTechImg').attr({
+            src: array[i]
+        });
+        var carouselTarget = $('<li>').attr({
+            "data-target": "#girlsInTechCarousel",
+        });
+
+        if(i === 0){
+            var imgContainer = $('<div>').addClass("item active");
+        }else {
+            var imgContainer = $('<div>').addClass("item");
+        }
+
+        $('.carousel-indicators').append(carouselTarget);        
+        imgContainer.append(imgSrc);
+        carouselArray.push(imgContainer);
+        imgFigure.append(image);
+        figureArray.push(imgFigure);
+    }
+    
+    $('.carousel-inner').append(carouselArray);
+    $(section).append(figureArray);
+}
 
 function chickTechDisplayImage(event){
     var link = event.currentTarget.src;
     var imgSources = $('div.item img');
-    for(var imgIndex =0; imgIndex < imgSources.length; imgIndex++){
+    for(var imgIndex = 0; imgIndex < imgSources.length; imgIndex++){
         if(imgSources[imgIndex].src === link){
             break;
         }
@@ -525,17 +560,29 @@ function chickTechDisplayImage(event){
     $('#chickTech-modal').modal();
 }
 
-// function girlDevelopItDisplayImage(event){
-//     var link = event.currentTarget.src;
-//     var imgSources = $('div.item img');
-//     for(var imgIndex =0; imgIndex < imgSources.length; imgIndex++){
-//         if(imgSources[imgIndex].src === link){
-//             break;
-//         }
-//     }
-//     $("#chickTechCarousel").carousel(imgIndex);
-//     $('#chickTech-modal').modal();
-// }
+function girlDevelopItDisplayImage(event){
+    var link = event.currentTarget.src;
+    var imgSources = $('div.item img');
+    for(var imgIndex = 0; imgIndex < imgSources.length; imgIndex++){
+        if(imgSources[imgIndex].src === link){
+            break;
+        }
+    }
+    $("#girlDevelopItCarousel").carousel(imgIndex);
+    $('#girlDevelopIt-modal').modal();
+}
+
+function girlsInTechDisplayImage(event){
+    var link = event.currentTarget.src;
+    var imgSources = $('div.item img');
+    for(var imgIndex = 0; imgIndex < imgSources.length; imgIndex++){
+        if(imgSources[imgIndex].src === link){
+            break;
+        }
+    }
+    $('#girlsInTechCarousel').carousel(imgIndex);
+    $('#girlsInTech-modal').modal();
+}
 
 function addOneMarkerToMap(coordinates, eventName, address) {
 
