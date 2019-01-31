@@ -567,6 +567,10 @@ ol {
   color: white;
 }
 
+div.item img {
+  margin: 0 auto;
+}
+
 .events-page {
   cursor: pointer;
 }
