@@ -467,14 +467,14 @@ function chickTechPlaceImages(array, section){
             var imgContainer = $('<div>').addClass("item");
         }
 
-        $('.carousel-indicators').append(carouselTarget);        
+        $('#chickTech-modal .carousel-indicators').append(carouselTarget);        
         imgContainer.append(imgSrc);
         carouselArray.push(imgContainer);
         imgFigure.append(image);
         figureArray.push(imgFigure);
     }
     
-    $('.carousel-inner').append(carouselArray);
+    $('#chickTech-modal .carousel-inner').append(carouselArray);
     $(section).append(figureArray);
 }
 
@@ -502,14 +502,14 @@ function girlDevelopItPlaceImages(array, section){
             var imgContainer = $('<div>').addClass("item");
         }
 
-        $('.carousel-indicators').append(carouselTarget);        
+        $('#girlDevelopIt-modal .carousel-indicators').append(carouselTarget);        
         imgContainer.append(imgSrc);
         carouselArray.push(imgContainer);
         imgFigure.append(image);
         figureArray.push(imgFigure);
     }
     
-    $('.carousel-inner').append(carouselArray);
+    $('#girlDevelopIt-modal .carousel-inner').append(carouselArray);
     $(section).append(figureArray);
 }
 
@@ -537,14 +537,14 @@ function girlsInTechPlaceImages(array, section){
             var imgContainer = $('<div>').addClass("item");
         }
 
-        $('.carousel-indicators').append(carouselTarget);        
+        $('#girlsInTech-modal .carousel-indicators').append(carouselTarget);        
         imgContainer.append(imgSrc);
         carouselArray.push(imgContainer);
         imgFigure.append(image);
         figureArray.push(imgFigure);
     }
     
-    $('.carousel-inner').append(carouselArray);
+    $('#girlsInTech-modal .carousel-inner').append(carouselArray);
     $(section).append(figureArray);
 }
 
