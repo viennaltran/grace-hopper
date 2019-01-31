@@ -313,12 +313,16 @@ div.figure-text {
   display: block;
   position: relative;
   text-align: center;
-  margin: 1rem 0;
+  margin-top: 1rem;
 }
 
 .event-info > span {
   font-weight: bold;
   font-size: 20px;
+}
+
+.back_button, .eventURL {
+  margin: 1rem 0.5rem 0rem 0.5rem;
 }
 
 .date,
@@ -356,7 +360,7 @@ ol {
 .event-body {
   display: flex;
   max-height: 400px;
-  margin: 4em 0em;
+  margin: 2.5em 0em;
 }
 
 .twitter_and_google_maps, .event-description-container {
@@ -732,9 +736,6 @@ div.item img {
 
   .event-body {
     margin: 1rem 0rem;
-  }
-
-  .event-body {
     display: block;
     max-height: 400px;
   }
