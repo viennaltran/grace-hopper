@@ -550,7 +550,7 @@ function girlsInTechPlaceImages(array, section){
 
 function chickTechDisplayImage(event){
     var link = event.currentTarget.src;
-    var imgSources = $('div.item img');
+    var imgSources = $('div.item img.chickTechImg');
     for(var imgIndex = 0; imgIndex < imgSources.length; imgIndex++){
         if(imgSources[imgIndex].src === link){
             break;
@@ -562,7 +562,7 @@ function chickTechDisplayImage(event){
 
 function girlDevelopItDisplayImage(event){
     var link = event.currentTarget.src;
-    var imgSources = $('div.item img');
+    var imgSources = $('div.item img.girlDevelopItImg');
     for(var imgIndex = 0; imgIndex < imgSources.length; imgIndex++){
         if(imgSources[imgIndex].src === link){
             break;
@@ -574,7 +574,7 @@ function girlDevelopItDisplayImage(event){
 
 function girlsInTechDisplayImage(event){
     var link = event.currentTarget.src;
-    var imgSources = $('div.item img');
+    var imgSources = $('div.item img.girlsInTechImg');
     for(var imgIndex = 0; imgIndex < imgSources.length; imgIndex++){
         if(imgSources[imgIndex].src === link){
             break;
