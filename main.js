@@ -372,7 +372,7 @@ function chickTechGallery(){
                 chickTechArray.push(link);
             }
 
-            placeImages(chickTechArray, '.gallery-chicktech');
+            chickTechPlaceImages(chickTechArray, '.gallery-chicktech');
         }
     })
 }
@@ -406,7 +406,7 @@ function girlDevelopItGallery(){
                 
                 girlDevelopItArray.push(link);
             }
-            // placeImages(girlDevelopItArray, '.gallery-girldevelopit');
+            // girlDevelopItPlaceImages(girlDevelopItArray, '.gallery-girldevelopit');
         }
     })
 }
@@ -443,13 +443,13 @@ function girlsInTechGallery(){
     })
 }
 
-function placeImages(array, section){
+function chickTechPlaceImages(array, section){
     var figureArray = [];
     var carouselArray = [];
     
     for(var i = 0; i < array.length; i++) {
         var imgFigure = $('<figure>').addClass('gallery-figure');
-        var image = $('<img>').addClass('gallery-image').click(displayImage).attr({
+        var image = $('<img>').addClass('gallery-image').click(chickTechDisplayImage).attr({
             linkData: array[i],
             src: array[i],
             index: i
@@ -458,8 +458,7 @@ function placeImages(array, section){
             src: array[i]
         });
         var carouselTarget = $('<li>').attr({
-            "data-target": "#eventsCarousel",
-            // "data-slide-to": `${i}`
+            "data-target": "#chickTechCarousel",
         });
 
         if(i === 0){
@@ -479,14 +478,64 @@ function placeImages(array, section){
     $(section).append(figureArray);
 }
 
-function displayImage(event){
-    console.log(event);
-    // console.log(event);
+// function girlDevelopItPlaceImages(array, section){
+//     var figureArray = [];
+//     var carouselArray = [];
+    
+//     for(var i = 0; i < array.length; i++) {
+//         var imgFigure = $('<figure>').addClass('gallery-figure');
+//         var image = $('<img>').addClass('gallery-image').click(girlDevelopItDisplayImage).attr({
+//             linkData: array[i],
+//             src: array[i],
+//             index: i
+//         });
+//         var imgSrc = $('<img>').attr({
+//             src: array[i]
+//         });
+//         var carouselTarget = $('<li>').attr({
+//             "data-target": "#chickTechCarousel",
+//         });
 
-    // var link = event.currentTarget.src;
-    // $('.modal-image img').attr('src', link).addClass('active');
-    $('#gallery-modal').modal();
+//         if(i === 0){
+//             var imgContainer = $('<div>').addClass("item active");
+//         }else {
+//             var imgContainer = $('<div>').addClass("item");
+//         }
+
+//         $('.carousel-indicators').append(carouselTarget);        
+//         imgContainer.append(imgSrc);
+//         carouselArray.push(imgContainer);
+//         imgFigure.append(image);
+//         figureArray.push(imgFigure);
+//     }
+    
+//     $('.carousel-inner').append(carouselArray);
+//     $(section).append(figureArray);
+// }
+
+function chickTechDisplayImage(event){
+    var link = event.currentTarget.src;
+    var imgSources = $('div.item img');
+    for(var imgIndex =0; imgIndex < imgSources.length; imgIndex++){
+        if(imgSources[imgIndex].src === link){
+            break;
+        }
+    }
+    $("#chickTechCarousel").carousel(imgIndex);
+    $('#chickTech-modal').modal();
 }
+
+// function girlDevelopItDisplayImage(event){
+//     var link = event.currentTarget.src;
+//     var imgSources = $('div.item img');
+//     for(var imgIndex =0; imgIndex < imgSources.length; imgIndex++){
+//         if(imgSources[imgIndex].src === link){
+//             break;
+//         }
+//     }
+//     $("#chickTechCarousel").carousel(imgIndex);
+//     $('#chickTech-modal').modal();
+// }
 
 function addOneMarkerToMap(coordinates, eventName, address) {
 
