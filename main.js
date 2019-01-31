@@ -438,7 +438,7 @@ function girlsInTechGallery(){
                 
                 girlsInTechArray.push(link);
             }
-            // placeImages(girlsInTechArray, '.gallery-girlsintech');
+            girlsInTechPlaceImages(girlsInTechArray, '.gallery-girlsintech');
         }
     })
 }
@@ -513,6 +513,41 @@ function girlDevelopItPlaceImages(array, section){
     $(section).append(figureArray);
 }
 
+function girlsInTechPlaceImages(array, section){
+    var figureArray = [];
+    var carouselArray = [];
+    
+    for(var i = 0; i < array.length; i++) {
+        var imgFigure = $('<figure>').addClass('gallery-figure');
+        var image = $('<img>').addClass('gallery-image').click(girlsInTechDisplayImage).attr({
+            linkData: array[i],
+            src: array[i],
+            index: i
+        });
+        var imgSrc = $('<img>').addClass('girlsInTechImg').attr({
+            src: array[i]
+        });
+        var carouselTarget = $('<li>').attr({
+            "data-target": "#girlsInTechCarousel",
+        });
+
+        if(i === 0){
+            var imgContainer = $('<div>').addClass("item active");
+        }else {
+            var imgContainer = $('<div>').addClass("item");
+        }
+
+        $('.carousel-indicators').append(carouselTarget);        
+        imgContainer.append(imgSrc);
+        carouselArray.push(imgContainer);
+        imgFigure.append(image);
+        figureArray.push(imgFigure);
+    }
+    
+    $('.carousel-inner').append(carouselArray);
+    $(section).append(figureArray);
+}
+
 function chickTechDisplayImage(event){
     var link = event.currentTarget.src;
     var imgSources = $('div.item img');
@@ -528,13 +563,25 @@ function chickTechDisplayImage(event){
 function girlDevelopItDisplayImage(event){
     var link = event.currentTarget.src;
     var imgSources = $('div.item img');
-    for(var imgIndex =0; imgIndex < imgSources.length; imgIndex++){
+    for(var imgIndex = 0; imgIndex < imgSources.length; imgIndex++){
         if(imgSources[imgIndex].src === link){
             break;
         }
     }
     $("#girlDevelopItCarousel").carousel(imgIndex);
     $('#girlDevelopIt-modal').modal();
+}
+
+function girlsInTechDisplayImage(event){
+    var link = event.currentTarget.src;
+    var imgSources = $('div.item img');
+    for(var imgIndex = 0; imgIndex < imgSources.length; imgIndex++){
+        if(imgSources[imgIndex].src === link){
+            break;
+        }
+    }
+    $('#girlsInTechCarousel').carousel(imgIndex);
+    $('#girlsInTech-modal').modal();
 }
 
 function addOneMarkerToMap(coordinates, eventName, address) {
