@@ -17,12 +17,12 @@ This project was originally created in a 48 hour coding hackathon
 ## Installation
 
 > 1. Clone repo
->    - `git clone https://github.com/brandon206/women-in-tech-meetup-finder.git`
+>    - `git clone https://github.com/viennaltran/grace-hopper`
 > 1. Change directory into the newly cloned repo
->    - `cd women-in-tech-meetup-finder`
+>    - `cd grace-hopper`
 
 ## Author
 
-Brandon Park - brandonpark206@gmail.com
+Vienna Tran - viennaltran@gmail.com
 
-[https://github.com/brandon206/](https://github.com/brandon206/)
+[https://github.com/viennaltran/](https://github.com/viennaltran/)
