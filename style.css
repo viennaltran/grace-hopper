@@ -541,6 +541,10 @@ ol {
   cursor: pointer;
 }
 
+a.left.carousel-control, a.right.carousel-control {
+  background-image:none;
+}
+
 .modal-image {
   text-align: center;
   width: 100%;
