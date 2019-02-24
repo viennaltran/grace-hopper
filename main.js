@@ -250,7 +250,7 @@ function hideDataPage () {
 
 function getEventsList(meetupStorage){
     var figureArray = [];
-        for(let i = 0; i <12; i++) {
+        for(let i = 0; i <meetupStorage.groupName.length; i++) {
             var newFigure = $('<figure>').addClass('figure').attr('index',i);
             var newImage = $('<img>').addClass('picture').attr(
                 'src', meetupStorage.groupPhoto[i]
