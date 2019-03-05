@@ -43,7 +43,9 @@ var meetup = {
         getEventsList(meetupStorage);
         getFourList(meetupStorage);
     },
-    error: err=>console.log("error:",err)
+    error: function (err) {
+            console.log("error message:",err);
+      }
 }
 
 function initSpinner () {
