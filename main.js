@@ -318,7 +318,8 @@ function addDataOntoPage () {
             var seeMoreButton = $("<Button>").addClass("show-more-button btn btn-default").text("See More");
             $(".event-description").text(shortenedDescription).css("margin", "1rem 0px");
             $(".event-description").append(seeMoreButton);
-            $(".show-more-button").on("click", function() {
+            $(".show-more-button").on("click", function(e) {
+                e.preventDefault();
                 $(".event-description").text(meetupStorage.eventDescriptions[i]);
             });
             $(".address").text(`Address: ${address}`);
