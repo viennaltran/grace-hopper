@@ -305,7 +305,7 @@ function getFourList(meetupStorage){
 
 }
 
-function addDataOntoPage () {
+function addDataOntoPage (event) {
     for(let i = 0; i < meetupStorage.eventName.length; i++){
         var attributeIndex = i.toString();
         if($(event.currentTarget).attr("index") === attributeIndex){
