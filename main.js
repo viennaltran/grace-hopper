@@ -26,13 +26,13 @@ var meetup = {
     data: {
         format: 'json',
         zip: '92833',
-        text: 'women AND tech',
+        text: 'women AND technology',
         time: ',2w',
         and_text: 'true',
         text_format: 'plain',
         radius: '35',
         sign: true,
-        key: '554071754212291c41435871a39671'
+        key: config.meetup
     },
     success: function (result) {
         showSpinner = false;
@@ -355,7 +355,7 @@ function chickTechGallery(){
         method: 'get',
         dataType: 'json',
         data: {
-            api_key: 'e00e98b08d999c1fbe15689b175ad887',
+            api_key: config.flickr,
             method: 'flickr.photosets.getPhotos',
             photoset_id: '72157673615663237',
             user_id: '92769341@N03',
@@ -388,7 +388,7 @@ function girlDevelopItGallery(){
         method: 'get',
         dataType: 'json',
         data: {
-            api_key: 'e00e98b08d999c1fbe15689b175ad887',
+            api_key: config.flickr,
             method: 'flickr.photosets.getPhotos',
             photoset_id: '72157639104508314',
             user_id: '10512012@N08',
@@ -422,7 +422,7 @@ function girlsInTechGallery(){
         method: 'get',
         dataType: 'json',
         data: {
-            api_key: 'e00e98b08d999c1fbe15689b175ad887',
+            api_key: config.flickr,
             method: 'flickr.people.getPublicPhotos',
             user_id: '29179749@N03',
             format: 'json',
